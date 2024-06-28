@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div>
       <div className='init-text'>{myName}</div>
-      <ul>
+      <ul className='listStyleType1'>
         {names.map((nValue,index) => (
           <li>{nValue}</li>
         ))}

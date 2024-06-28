@@ -12,3 +12,7 @@
 .isNotActiveText{
   color: red;
 }
+
+.listStyleType1{
+  list-style: none;
+}
