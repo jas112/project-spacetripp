@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import NavBar from './Components/navBar/NavBar';
+import ForegroundFrame from './Components/parallaxFrames/ForegroundFrame.jsx';
+import BackgroundFrame from './Components/parallaxFrames/BackgroundFrame.jsx';
 
 const App = () => {
 
@@ -16,6 +18,8 @@ const App = () => {
   return (
     <>
       <NavBar/>
+      <ForegroundFrame/>
+      <BackgroundFrame/>
       {/* <div>
         <div className='init-text'>{myName}</div>
         <ul className='listStyleType1'>
