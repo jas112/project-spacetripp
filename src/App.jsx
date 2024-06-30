@@ -3,6 +3,9 @@ import './App.css'
 import NavBar from './Components/navBar/NavBar';
 import ForegroundFrame from './Components/parallaxFrames/ForegroundFrame.jsx';
 import BackgroundFrame from './Components/parallaxFrames/BackgroundFrame.jsx';
+// import FtrSection from './Components/mainContent/FtrSection.jsx'
+import FTRElement from './Components/mainContent/FTRElement.jsx';
+import SectionElement from './Components/mainContent/SectionElement.jsx';
 
 const App = () => {
 
@@ -34,27 +37,18 @@ const App = () => {
 
       var hoursStr;
 
-      if(hourValue < 10){
-        hoursStr = "0" + hourValue;
-      }else{
-        hoursStr = hourValue;
-      }
+      if(hourValue < 10){hoursStr = "0" + hourValue;
+      }else{hoursStr = hourValue;}
 
       var minutesStr;
 
-      if(minutesValue < 10){
-        minutesStr = "0" + minutesValue;
-      }else{
-        minutesStr = minutesValue;
-      }
+      if(minutesValue < 10){minutesStr = "0" + minutesValue;
+      }else{minutesStr = minutesValue;}
 
       var secondsStr;
 
-      if(secondsValue < 10){
-        secondsStr = "0" + secondsValue;
-      }else{
-        secondsStr = secondsValue;
-      }
+      if(secondsValue < 10){secondsStr = "0" + secondsValue;
+      }else{secondsStr = secondsValue;}
 
       var tmStrValue = mdvValue + ', ' + yrValue + ' | ' + hoursStr + "hrs : " + minutesStr + "min : " + secondsStr + 'sec';
 
@@ -68,31 +62,19 @@ const App = () => {
     };
   }, [])
 
-  // const myName = 'SpaceTRIPP';
-  // const names = ['thoth', 'bast', 'khonshu', 'osirus'];
-  // const [isActive, setIsActive] = useState(true);
-
-  // const handleButtonPress = () => {
-  //   setIsActive(isActive => !isActive);
-  // };
-
   return (
     <>
       <NavBar currentScroll={scrollPositionY} currentTime={timeString} />
-      <ForegroundFrame/>
+      <ForegroundFrame />
       <BackgroundFrame/>
-      {/* <div>
-        <div className='init-text'>{myName}</div>
-        <ul className='listStyleType1'>
-          {names.map((nValue,index) => (
-            <li>{nValue}</li>
-          ))}
-        </ul>
-        <button onClick={handleButtonPress}>
-            isActive - {isActive.toString()}
-        </button>
-        { isActive ? <h1 className='isActiveText'>It is active in here!!!</h1> : <h1 className='isNotActiveText'>It is not active in here!!</h1> }
-      </div> */}
+      <div content-container>
+        <SectionElement sectionTitle={'About Me'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={true} GalleryType={'NFO'} GalleryImages={[]} />
+        <SectionElement sectionTitle={'Web Development'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={true} GalleryType={'NFO'} GalleryImages={[]} />
+        <SectionElement sectionTitle={'Graphic Design'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={true} GalleryType={'NFO'} GalleryImages={[]} />
+        <SectionElement sectionTitle={'Visual Design'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={true} GalleryType={'NFO'} GalleryImages={[]} />
+        <SectionElement sectionTitle={'About Me'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={true} GalleryType={'NFO'} GalleryImages={[]} />
+      </div>
+      <FTRElement/>
     </>
   )
 }

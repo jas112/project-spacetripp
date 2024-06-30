@@ -1,8 +1,9 @@
 import React from 'react'
-import './styles/Footer.css'
-import rotatingStar from '../../assets/images/ST_closeup-star-RT-iso-rs-23p5CD.png'
+import './styles/FTRElement.css'
+import './styles/SectionElement.css'
+import rotatingStar from '../../assets/images/ftrParallax_imgs/ST_closeup-star-RT-iso-rs-23p5CD-F.png'
 
-const Footer = () => {
+const FtrSection = () => {
   return (
     <div id='section-FTR' className='section section-endpoint endpoint-bottom ftr-section'>
 
@@ -19,7 +20,6 @@ const Footer = () => {
         <div className='bg-slide3'>
             <div className='starship'></div>
         </div>
-
         <div className='bg-slide4'>
             <div className='starship'></div>
         </div>
@@ -37,4 +37,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default FtrSection

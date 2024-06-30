@@ -16,3 +16,26 @@
 .listStyleType1{
   list-style: none;
 }
+
+.content-container{
+  display:flex;
+  position:relative;
+  /* top:800px; */
+  flex-flow: column nowrap;
+  justify-items: flex-start;
+  justify-content: space-between;
+  align-self: center;
+  width: 100%;
+  height: 3000px;
+  background: rgba(0, 0, 0, 0.7);
+  margin: 0px auto;
+  border-spacing: 0px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  /* background: transparent; */
+  /* filter: blur(2px); */
+  border:1px solid #09ff00;
+  /* z-index: 0; */
+
+}
