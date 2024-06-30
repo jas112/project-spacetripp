@@ -1,16 +1,27 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css'
 import NavBar from './Components/navBar/NavBar';
 import ForegroundFrame from './Components/parallaxFrames/ForegroundFrame.jsx';
 import BackgroundFrame from './Components/parallaxFrames/BackgroundFrame.jsx';
-// import FtrSection from './Components/mainContent/FtrSection.jsx'
 import FTRElement from './Components/mainContent/FTRElement.jsx';
 import SectionElement from './Components/mainContent/SectionElement.jsx';
+import SpacerElement from './Components/mainContent/SpacerElement.jsx';
 
 const App = () => {
 
   const [scrollPositionY, setScrollPositionY] = useState(0);
   const [timeString, setTimeString] = useState('');
+
+  const topRef = useRef(null);
+  const bottomRef = useRef(null);
+  const sectionRefs = {
+    about: useRef(null),
+    webDev: useRef(null),
+    graphicDesign: useRef(null),
+    visualDesign: useRef(null),
+    email: useRef(null),
+  };
 
   useEffect(() => {
 
@@ -62,20 +73,71 @@ const App = () => {
     };
   }, [])
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+  }
+
+  const scrollToSection = (section) => {
+    if(sectionRefs[section] && sectionRefs[section].current){
+
+      const sectionTop = sectionRefs[section].current.offsetTop;
+      const sectionHeight = sectionRefs[section].current.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const offset = sectionTop - (windowHeight / 2) + (sectionHeight / 2);
+
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth',
+      });
+
+      // window.scrollTo({
+      //   top:sectionRefs[section].current.offsetTop,
+      //   behavior: 'smooth',
+      // });
+    }
+  };
+
   return (
-    <>
-      <NavBar currentScroll={scrollPositionY} currentTime={timeString} />
+    <Router>
+      <NavBar currentScroll={scrollPositionY} currentTime={timeString} scrollToTop={scrollToTop} scrollToBottom={scrollToBottom} scrollToSection={scrollToSection} />
+      <div ref={topRef}></div>
       <ForegroundFrame />
-      <BackgroundFrame/>
-      <div content-container>
-        <SectionElement sectionTitle={'About Me'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={true} GalleryType={'NFO'} GalleryImages={[]} />
-        <SectionElement sectionTitle={'Web Development'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={true} GalleryType={'NFO'} GalleryImages={[]} />
-        <SectionElement sectionTitle={'Graphic Design'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={true} GalleryType={'NFO'} GalleryImages={[]} />
-        <SectionElement sectionTitle={'Visual Design'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={true} GalleryType={'NFO'} GalleryImages={[]} />
-        <SectionElement sectionTitle={'About Me'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={true} GalleryType={'NFO'} GalleryImages={[]} />
+      <SpacerElement/>
+      <div className='page-nav-ref' ref={sectionRefs.about}>
+        <SectionElement sectionTitle={'About Me'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={'true'} GalleryType={'NFO'} GalleryImages={[]} />
       </div>
+      <SpacerElement/>
+      <div className='page-nav-ref' ref={sectionRefs.webDev}>
+        <SectionElement sectionTitle={'Web Development'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={'true'} GalleryType={'NFO'} GalleryImages={[]} />
+      </div>
+      <SpacerElement/>
+      <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
+        <SectionElement sectionTitle={'Graphic Design'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={'true'} GalleryType={'NFO'} GalleryImages={[]} />
+      </div>
+      <SpacerElement/>
+      <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
+        <SectionElement sectionTitle={'Visual Design'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={'true'} GalleryType={'NFO'} GalleryImages={[]} />
+      </div>
+      
+      <SpacerElement/>
+      <div className='page-nav-ref' ref={sectionRefs.email}>
+        <SectionElement sectionTitle={'Email'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={'true'} GalleryType={'NFO'} GalleryImages={[]} />
+      </div>
+      <SpacerElement/>
       <FTRElement/>
-    </>
+      <BackgroundFrame/>
+      <div ref={bottomRef}></div>
+    </Router>
   )
 }
 

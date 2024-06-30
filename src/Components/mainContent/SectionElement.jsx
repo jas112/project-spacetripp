@@ -8,12 +8,12 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
 
     const {ref, inView } = useInView({
         triggerOnce: false, // keep observing SectionElement
-        threshold: 0.1, // trigger when 10% of the element is in view
+        threshold: 0.5, // trigger when 10% of the element is in view
     });
 
     const generateGallery = () => {
 
-        console.log(hasGallery.Boolean.ToString)
+        // console.log(hasGallery.Boolean.ToString)
         // if (hasGallery) {
         //     return (
         //         <div style={{color: '#fff'}}>This section has a gallery</div>
@@ -25,7 +25,7 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
 
   return (
     <>
-        <div id={sectionTitle} className={`section-minor ${inView ? 'fade_in' : 'fade-out'}`}>
+        <div id={sectionTitle} ref={ref} className={`section-minor ${inView ? 'fade-in' : 'fade-out'}`}>
             <div className="section-hdr">
                 <div className="section-title">{sectionTitle}</div>
                 <div className="section-position-value">{sectionTitle}</div>
