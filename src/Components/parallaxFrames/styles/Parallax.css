@@ -245,3 +245,12 @@
     background: transparent;
     box-shadow: 541px 218px #FFF , 375px 1009px #FFF , 1368px 50px #FFF , 814px 187px #FFF , 165px 760px #FFF , 1875px 1919px #FFF , 1349px 1892px #FFF , 778px 905px #FFF , 502px 1588px #FFF , 1031px 57px #FFF , 1105px 755px #FFF , 1291px 1805px #FFF , 120px 150px #FFF , 834px 1623px #FFF , 1906px 763px #FFF , 1585px 906px #FFF , 302px 604px #FFF , 751px 300px #FFF , 427px 1392px #FFF , 1364px 1406px #FFF , 1242px 489px #FFF , 1266px 57px #FFF , 975px 1357px #FFF , 611px 702px #FFF , 1044px 1304px #FFF , 1115px 1561px #FFF , 931px 1737px #FFF , 1320px 844px #FFF , 1171px 1277px #FFF , 736px 710px #FFF , 712px 212px #FFF , 1409px 999px #FFF , 281px 1511px #FFF , 1845px 628px #FFF , 1007px 1811px #FFF , 1536px 783px #FFF , 1816px 1419px #FFF , 1153px 1816px #FFF , 1028px 1165px #FFF , 1582px 1134px #FFF , 372px 997px #FFF , 1395px 87px #FFF , 493px 693px #FFF , 923px 1657px #FFF , 647px 1270px #FFF , 699px 1440px #FFF , 1713px 1786px #FFF , 1786px 414px #FFF , 1758px 1431px #FFF , 1558px 1842px #FFF , 660px 391px #FFF , 519px 1653px #FFF , 1406px 127px #FFF , 1907px 723px #FFF , 722px 1118px #FFF , 690px 1124px #FFF , 1566px 836px #FFF , 1520px 1214px #FFF , 745px 53px #FFF , 969px 1169px #FFF , 1371px 1977px #FFF , 718px 1635px #FFF , 370px 366px #FFF , 247px 271px #FFF , 1143px 1849px #FFF , 932px 1810px #FFF , 1222px 360px #FFF , 37px 1556px #FFF , 785px 151px #FFF , 397px 1631px #FFF , 253px 1327px #FFF , 1361px 1706px #FFF , 8px 486px #FFF , 1839px 804px #FFF , 642px 1767px #FFF , 780px 1495px #FFF , 1163px 31px #FFF , 1602px 1354px #FFF , 1111px 16px #FFF , 796px 943px #FFF , 941px 162px #FFF , 1893px 1184px #FFF , 1128px 318px #FFF , 1330px 1475px #FFF , 512px 590px #FFF , 520px 1902px #FFF , 1028px 357px #FFF , 1255px 15px #FFF , 1564px 724px #FFF , 467px 1136px #FFF , 853px 740px #FFF , 158px 490px #FFF , 402px 1718px #FFF , 127px 1102px #FFF , 1774px 885px #FFF , 1365px 1252px #FFF , 1619px 670px #FFF , 317px 717px #FFF , 455px 1731px #FFF , 1389px 855px #FFF;
   }
+
+
+  @media (max-width: 860px) {
+    #trippFigureHelmet {
+        display: none;
+        opacity: 0;
+    }
+  
+}

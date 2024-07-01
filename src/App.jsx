@@ -80,9 +80,10 @@ const App = () => {
       if(secondsValue < 10){secondsStr = "0" + secondsValue;
       }else{secondsStr = secondsValue;}
 
-      var tmStrValue = mdvValue + ', ' + yrValue + ' | ' + hoursStr + "hrs : " + minutesStr + "min : " + secondsStr + 'sec';
+      // var tmStrValue = mdvValue + ', ' + yrValue + ' | ' + hoursStr + "hrs : " + minutesStr + "min : " + secondsStr + 'sec';
+      var tmStrValue2 = 'Mo-' + monthValue + ' // Dy-' + dayValue + ' // Yr-' + yrValue + ' // ' + hoursStr + "H : " + minutesStr + "M : " + secondsStr + 'S';
 
-      setTimeString(tmStrValue)
+      setTimeString(tmStrValue2)
 
     }, 1000)
 
@@ -151,7 +152,7 @@ const App = () => {
         />
       </div>
       <SpacerElement factor={1}/>
-      <div className='page-nav-ref' ref={sectionRefs.webDev}>
+      <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
         <SectionElement 
           sectionTitle={'Web Development'} 
           sectionSubtitle={'My web dev adventures.'} 
@@ -163,7 +164,7 @@ const App = () => {
         />
       </div>
       <SpacerElement factor={1}/>
-      <div className='page-nav-ref' ref={sectionRefs.email}>
+      <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
         <SectionElement 
           sectionTitle={'Email Develoment'} 
           sectionSubtitle={'My adventure in fun space of email!'} 
@@ -199,7 +200,7 @@ const App = () => {
         />
       </div>
       <SpacerElement factor={1}/>
-      {/* <FTRElement/> */}
+      <FTRElement/>
       <BackgroundFrame/>
       <div ref={bottomRef}></div>
     </Router>
