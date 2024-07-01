@@ -37,7 +37,7 @@ const ForegroundFrame = () => {
 
   return (
     <div className='parallax-frame-holder-foreground' style={{overflowX: 'hidden', height: '8000px'}}>
-        <div className='parallaxFrame'>
+        <div className='parallaxFrame figure-plx-frame'>
             <img src={stFigureA_L1} className='frameImage' alt='tripp_Figure' id='trippFigure' style={{transform: 'translate(0px, 0.833333%)'}}/>
             <img src={stFigureA_L4} className='frameImage frameImage-overlay' alt='tripp_Figure_Helmet' id='trippFigureHelmet' style={{transform: 'translate(0px, 0.833333%)'}}/>
         </div>

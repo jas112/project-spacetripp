@@ -13,24 +13,43 @@ const App = () => {
   const [scrollPositionY, setScrollPositionY] = useState(0);
   const [timeString, setTimeString] = useState('');
 
+  const [currentPageLocation, setCurrentPageLocation] = useState('start');
+
   const topRef = useRef(null);
   const bottomRef = useRef(null);
   const sectionRefs = {
     about: useRef(null),
-    webDev: useRef(null),
+    webDevelopment: useRef(null),
+    emailDevelopment: useRef(null),
     graphicDesign: useRef(null),
     visualDesign: useRef(null),
-    email: useRef(null),
   };
 
   useEffect(() => {
 
-    const trackScroll = () => {
+    const trackScrollandSetPageLocation = () => {
       const newScrollPositionValue = window.scrollY;
       setScrollPositionY(newScrollPositionValue);
+
+      if (newScrollPositionValue <= 1800) {
+        setCurrentPageLocation('start');
+      } else if (newScrollPositionValue >= 2228 && newScrollPositionValue <= 3128) {
+        setCurrentPageLocation('about');
+      } else if (newScrollPositionValue >= 3229 && newScrollPositionValue <= 3829) {
+        setCurrentPageLocation('webDevelopment');
+      } else if (newScrollPositionValue >= 3929 && newScrollPositionValue <= 4529) {
+        setCurrentPageLocation('emailDevelopment');
+      } else if (newScrollPositionValue >= 4630 && newScrollPositionValue <= 5230) {
+        setCurrentPageLocation('graphicDesign');
+      } else if (newScrollPositionValue >= 5330 && newScrollPositionValue <= 5930) {
+        setCurrentPageLocation('visualDesign');
+      } else if (newScrollPositionValue >= 6355) {
+        setCurrentPageLocation('end');
+      }
+
     };
 
-    window.addEventListener('scroll', trackScroll);
+    window.addEventListener('scroll', trackScrollandSetPageLocation);
 
     const trackTime = setInterval(() => {
 
@@ -68,7 +87,7 @@ const App = () => {
     }, 1000)
 
     return () => {
-      window.removeEventListener('scroll', trackScroll);
+      window.removeEventListener('scroll', trackScrollandSetPageLocation);
       clearInterval(trackTime);
     };
   }, [])
@@ -109,32 +128,78 @@ const App = () => {
 
   return (
     <Router>
-      <NavBar currentScroll={scrollPositionY} currentTime={timeString} scrollToTop={scrollToTop} scrollToBottom={scrollToBottom} scrollToSection={scrollToSection} />
+      <NavBar 
+        currentScroll={scrollPositionY} 
+        currentTime={timeString} 
+        currentPageLocation={currentPageLocation} 
+        scrollToTop={scrollToTop} 
+        scrollToBottom={scrollToBottom} 
+        scrollToSection={scrollToSection} 
+      />
       <div ref={topRef}></div>
       <ForegroundFrame />
-      <SpacerElement/>
+      <SpacerElement factor={10}/>
       <div className='page-nav-ref' ref={sectionRefs.about}>
-        <SectionElement sectionTitle={'About Me'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={'true'} GalleryType={'NFO'} GalleryImages={[]} />
+        <SectionElement 
+          sectionTitle={'About Me'} 
+          sectionSubtitle={'A brief blurb about me.'} 
+          sectionNfo={'here is the information'} 
+          sectionMarker={'About'} 
+          hasGallery={'true'} 
+          GalleryType={'NFO'} 
+          GalleryImages={[]} 
+        />
       </div>
-      <SpacerElement/>
+      <SpacerElement factor={1}/>
       <div className='page-nav-ref' ref={sectionRefs.webDev}>
-        <SectionElement sectionTitle={'Web Development'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={'true'} GalleryType={'NFO'} GalleryImages={[]} />
+        <SectionElement 
+          sectionTitle={'Web Development'} 
+          sectionSubtitle={'My web dev adventures.'} 
+          sectionNfo={'here is the information'} 
+          sectionMarker={'About'} 
+          hasGallery={'true'} 
+          GalleryType={'NFO'} 
+          GalleryImages={[]} 
+        />
       </div>
-      <SpacerElement/>
-      <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
-        <SectionElement sectionTitle={'Graphic Design'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={'true'} GalleryType={'NFO'} GalleryImages={[]} />
-      </div>
-      <SpacerElement/>
-      <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
-        <SectionElement sectionTitle={'Visual Design'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={'true'} GalleryType={'NFO'} GalleryImages={[]} />
-      </div>
-      
-      <SpacerElement/>
+      <SpacerElement factor={1}/>
       <div className='page-nav-ref' ref={sectionRefs.email}>
-        <SectionElement sectionTitle={'Email'} sectionSubtitle={'this is my subtitle'} sectionNfo={'here is the information'} sectionMarker={'About'} hasGallery={'true'} GalleryType={'NFO'} GalleryImages={[]} />
+        <SectionElement 
+          sectionTitle={'Email Develoment'} 
+          sectionSubtitle={'My adventure in fun space of email!'} 
+          sectionNfo={'here is the information'} 
+          sectionMarker={'About'} 
+          hasGallery={'true'} 
+          GalleryType={'NFO'} 
+          GalleryImages={[]} 
+        />
       </div>
-      <SpacerElement/>
-      <FTRElement/>
+      <SpacerElement factor={1}/>
+      <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
+        <SectionElement 
+          sectionTitle={'Graphic Design'} 
+          sectionSubtitle={'Communication Graphics'} 
+          sectionNfo={'here is the information'} 
+          sectionMarker={'About'} 
+          hasGallery={'true'} 
+          GalleryType={'NFO'} 
+          GalleryImages={[]} 
+        />
+      </div>
+      <SpacerElement factor={1}/>
+      <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
+        <SectionElement 
+          sectionTitle={'Visual Design'} 
+          sectionSubtitle={'Concepts and Illustration'} 
+          sectionNfo={'here is the information'} 
+          sectionMarker={'About'} 
+          hasGallery={'true'} 
+          GalleryType={'NFO'} 
+          GalleryImages={[]} 
+        />
+      </div>
+      <SpacerElement factor={1}/>
+      {/* <FTRElement/> */}
       <BackgroundFrame/>
       <div ref={bottomRef}></div>
     </Router>

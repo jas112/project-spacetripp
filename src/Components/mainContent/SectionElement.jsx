@@ -1,7 +1,7 @@
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
-// import TopSectionPanel from './TopSectionPanel'
-// import BottomSectionPanel from './BottomSectionPanel'
+import TopSectionPanel from './TopSectionPanel.jsx'
+import BottomSectionPanel from './BottomSectionPanel.jsx'
 import './styles/SectionElement.css'
 
 const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, hasGallery, GalleryType, GalleryImages}) => {
@@ -25,16 +25,20 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
 
   return (
     <>
-        <div id={sectionTitle} ref={ref} className={`section-minor ${inView ? 'fade-in' : 'fade-out'}`}>
-            <div className="section-hdr">
-                <div className="section-title">{sectionTitle}</div>
-                <div className="section-position-value">{sectionTitle}</div>
-                <div className="section-subtitle">{sectionSubtitle}</div>
+        <div id={sectionTitle} ref={ref} className={`full-section-config ${inView ? 'fade-in' : 'fade-out'}`}>
+            <TopSectionPanel/>
+            <div id={sectionTitle} ref={ref} className='section-minor'>
+                <div className="section-hdr">
+                    <div className="section-title">{sectionTitle}</div>
+                    <div className="section-position-value">{sectionTitle}</div>
+                    <div className="section-subtitle">{sectionSubtitle}</div>
+                </div>
+                <div className="section-nfo  nfo-scroll" style={{height:'180px'}}>
+                    {sectionNfo}
+                </div>
+                {/* {galleryValue} */}
             </div>
-            <div className="section-nfo  nfo-scroll" style={{height:'180px'}}>
-                {sectionNfo}
-            </div>
-            {/* {galleryValue} */}
+            <BottomSectionPanel/>
         </div>
     </>
 

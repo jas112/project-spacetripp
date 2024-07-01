@@ -41,6 +41,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     z-index:30;
+    overflow-x: hidden;
 }
 
 .low-z-index{
@@ -53,6 +54,11 @@
     margin: 0px auto;
     position: absolute;
     top:0%;
+
+}
+
+.figure-plx-frame{
+    overflow-x: hidden;
 }
 
 .parallax-frame-holder-foreground .parallaxFrame{
@@ -79,7 +85,8 @@
 #trippFigure{
     position: relative;
     z-index:-25;
-    min-width: 842px;
+    max-width: 100%;
+    width: 842px;
 }
 
 #trippFigureHelmet{

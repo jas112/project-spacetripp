@@ -1,9 +1,12 @@
 import React from 'react'
 import './styles/SpacerElement.css'
 
-const SpacerElement = () => {
+const SpacerElement = ({factor}) => {
+
+    const classNameFactor = `spacer-element-${factor}x`;
+
   return (
-    <div className='spacer-element'></div>
+    <div className={classNameFactor}></div>
   )
 }
 
