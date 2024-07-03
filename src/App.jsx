@@ -5,6 +5,7 @@ import NavBar from './Components/navBar/NavBar';
 import ForegroundFrame from './Components/parallaxFrames/ForegroundFrame.jsx';
 import BackgroundFrame from './Components/parallaxFrames/BackgroundFrame.jsx';
 import FTRElement from './Components/mainContent/FTRElement.jsx';
+import FTRElementStarship from './Components/mainContent/FTRElementStarship.jsx';
 import SectionElement from './Components/mainContent/SectionElement.jsx';
 import SpacerElement from './Components/mainContent/SpacerElement.jsx';
 
@@ -138,14 +139,15 @@ const App = () => {
         scrollToSection={scrollToSection} 
       />
       <div ref={topRef}></div>
-      <ForegroundFrame />
+      {/* <ForegroundFrame /> */}
       <SpacerElement factor={10}/>
       <div className='page-nav-ref' ref={sectionRefs.about}>
         <SectionElement 
           sectionTitle={'About Me'} 
           sectionSubtitle={'A brief blurb about me.'} 
           sectionNfo={'here is the information'} 
-          sectionMarker={'About'} 
+          sectionMarker={'about'} 
+          currentPageLocation={currentPageLocation}
           hasGallery={'true'} 
           GalleryType={'NFO'} 
           GalleryImages={[]} 
@@ -157,7 +159,8 @@ const App = () => {
           sectionTitle={'Web Development'} 
           sectionSubtitle={'My web dev adventures.'} 
           sectionNfo={'here is the information'} 
-          sectionMarker={'About'} 
+          sectionMarker={'webDevelopment'} 
+          currentPageLocation={currentPageLocation}
           hasGallery={'true'} 
           GalleryType={'NFO'} 
           GalleryImages={[]} 
@@ -169,7 +172,8 @@ const App = () => {
           sectionTitle={'Email Develoment'} 
           sectionSubtitle={'My adventure in fun space of email!'} 
           sectionNfo={'here is the information'} 
-          sectionMarker={'About'} 
+          sectionMarker={'emailDevelopment'} 
+          currentPageLocation={currentPageLocation}
           hasGallery={'true'} 
           GalleryType={'NFO'} 
           GalleryImages={[]} 
@@ -181,7 +185,8 @@ const App = () => {
           sectionTitle={'Graphic Design'} 
           sectionSubtitle={'Communication Graphics'} 
           sectionNfo={'here is the information'} 
-          sectionMarker={'About'} 
+          sectionMarker={'graphicDesign'} 
+          currentPageLocation={currentPageLocation}
           hasGallery={'true'} 
           GalleryType={'NFO'} 
           GalleryImages={[]} 
@@ -193,14 +198,17 @@ const App = () => {
           sectionTitle={'Visual Design'} 
           sectionSubtitle={'Concepts and Illustration'} 
           sectionNfo={'here is the information'} 
-          sectionMarker={'About'} 
+          sectionMarker={'visualDesign'} 
+          currentPageLocation={currentPageLocation}
           hasGallery={'true'} 
           GalleryType={'NFO'} 
           GalleryImages={[]} 
         />
       </div>
       <SpacerElement factor={1}/>
+      <FTRElementStarship/>
       <FTRElement/>
+      <ForegroundFrame />
       <BackgroundFrame/>
       <div ref={bottomRef}></div>
     </Router>

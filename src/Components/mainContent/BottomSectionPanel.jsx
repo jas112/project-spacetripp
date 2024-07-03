@@ -1,12 +1,13 @@
 import React from 'react'
 import './styles/SectionPanel.css'
 
-const BottomSectionPanel = () => {
+const BottomSectionPanel = ({currentStatusBool}) => {
+    const sectionIsCurrent = currentStatusBool;
   return (
     <div className='bottom-section-panel  section-panel'>
         <div className="section-selection-activation-bar">
             <div className="activation-bar-segment-4-active"></div>
-            <div className="activation-bar-segment-3-active"></div>
+            <div className={`activation-bar-segment-3-active ${sectionIsCurrent ? 'current-section' : ''}`}></div>
             {/* <div className="activation-bar-segment-4-active"></div> */}
         </div>
         <div className="section-comp-detail-panel bottom-section-comp-detail-panel">

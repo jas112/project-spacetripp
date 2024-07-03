@@ -4,12 +4,14 @@ import TopSectionPanel from './TopSectionPanel.jsx'
 import BottomSectionPanel from './BottomSectionPanel.jsx'
 import './styles/SectionElement.css'
 
-const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, hasGallery, GalleryType, GalleryImages}) => {
+const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, GalleryType, GalleryImages}) => {
 
     const {ref, inView } = useInView({
         triggerOnce: false, // keep observing SectionElement
         threshold: 0.5, // trigger when 10% of the element is in view
     });
+
+    const currentStatusBool = sectionMarker == currentPageLocation;
 
     const generateGallery = () => {
 
@@ -25,8 +27,8 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
 
   return (
     <>
-        <div id={sectionTitle} ref={ref} className={`full-section-config ${inView ? 'fade-in' : 'fade-out'}`}>
-            <TopSectionPanel/>
+        <div id={sectionTitle} ref={ref} className={`full-section-config floating ${inView ? 'fade-in' : 'fade-out'}`}>
+            <TopSectionPanel currentStatusBool={currentStatusBool}/>
             <div id={sectionTitle} ref={ref} className='section-minor'>
                 <div className="section-hdr">
                     <div className="section-title">{sectionTitle}</div>
@@ -38,7 +40,7 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
                 </div>
                 {/* {galleryValue} */}
             </div>
-            <BottomSectionPanel/>
+            <BottomSectionPanel currentStatusBool={currentStatusBool}/>
         </div>
     </>
 

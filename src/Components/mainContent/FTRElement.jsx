@@ -11,7 +11,7 @@ const FtrSection = () => {
             <div className='section-position-value'>Terminus</div>
         </div>
 
-        <div className='bg-slide1'>
+        {/* <div className='bg-slide1'>
             <div className='starship'></div>
         </div>
         <div className='bg-slide2'>
@@ -25,7 +25,7 @@ const FtrSection = () => {
         </div>
         <div className='bg-slide5'>
             <div className='starship'></div>
-        </div>
+        </div> */}
 
         <div className='ftr-background'>
             <img className='ftr-star' src={rotatingStar} alt='Rotating Star'/>

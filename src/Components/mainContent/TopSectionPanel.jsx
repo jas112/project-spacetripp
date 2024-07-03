@@ -2,7 +2,8 @@ import React from 'react'
 import './styles/SectionElement.css'
 import './styles/SectionPanel.css'
 
-const TopSectionPanel = () => {
+const TopSectionPanel = ({currentStatusBool}) => {
+    const sectionIsCurrent = currentStatusBool;
   return (
     <div className='top-section-panel section-panel'>
         <div className="section-comp-detail-panel top-section-comp-detail-panel">
@@ -29,7 +30,7 @@ const TopSectionPanel = () => {
             </div>
         </div>
         <div className="section-selection-activation-bar">
-            <div className="activation-bar-segment-2-active"></div>
+            <div className={`activation-bar-segment-2-active ${sectionIsCurrent ? 'current-section' : ''}`}></div>
             <div className="activation-bar-segment-1-active"></div>
             {/* <div className="activation-bar-segment-2-active"></div> */}
         </div>

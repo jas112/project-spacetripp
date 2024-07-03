@@ -2,6 +2,49 @@
 
 /* Animations */
 
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+@keyframes floating2 {
+    0% { transform: translate(0, -0px); }
+    50%  { transform: translate(0, -8px); }
+    100%   { transform: translate(0, 0px); }   
+}
+
+@keyframes floating3 {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 10px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+@keyframes floating4 {
+    0% { transform: translate(0, -0px); }
+    50%  { transform: translate(0, -10px); }
+    100%   { transform: translate(0, 0px); }   
+}
+
+@keyframes floating5 {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 13px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+@keyframes floating6 {
+    0% { transform: translate(0, -0px); }
+    50%  { transform: translate(0, -5px); }
+    100%   { transform: translate(0, 0px); }   
+}
+
+@keyframes floatingFTR {
+    0% { transform: translate(0,  -0px); }
+    50%  { transform: translate(0, -15px); }
+    100%   { transform: translate(0, 0px); }   
+}
+
 @keyframes textGlow {
     0% {
         -webkit-text-fill-color: #ff450000;
@@ -112,6 +155,61 @@
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #ff450000;
     }
+}
+
+
+/* //////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////// */
+
+/* Animation Classes */
+
+.floating { 
+    animation-name: floating;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+ 
+.floating2 { 
+    animation-name: floating2;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.floating3 { 
+    animation-name: floating3;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+ 
+.floating4 { 
+    animation-name: floating4;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.floating5 { 
+    animation-name: floating5;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+ 
+.floating6 { 
+    animation-name: floating6;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.floating-ftr{
+    animation-name: floatingFTR;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;   
 }
 
 
@@ -235,43 +333,6 @@
 /* .section-nfo{
 
 } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* #section-HDR{
     width:100%;

@@ -50,8 +50,26 @@
     align-items: center;
     overflow: hidden;
     width:100%;
-    height: 1500px;
+    height: 3500px;
     /* border: 1px solid white; */
+    position: absolute;
+    top:6678px;
+    left: 0px;
+}
+
+.ftr-section-starship{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    width:100%;
+    height: 900px;
+    /* border: 1px solid white; */
+    position: absolute;
+    top:6678px;
+    left: 0px;
+    z-index: 20;
 }
 
 .endpoint-bottom{
@@ -61,6 +79,11 @@
     height: 1120px;
     margin: 200px 0px 0px 0px;
     /* border: 1px solid yellow; */
+}
+
+.endpoint-bottom-starship{
+    height: 1120px;
+    margin: 200px 0px 0px 0px;
 }
 
 
@@ -138,7 +161,7 @@
     width: 3600px;
     height: 3600px;
     position: relative;
-    top: 850px;
+    top: 1800px;
     margin: 0px auto;
     animation: rotate360Rev 280s infinite;
 }
