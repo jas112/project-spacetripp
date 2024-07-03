@@ -15,7 +15,7 @@ const NavBar = ({currentScroll, currentTime, currentPageLocation, scrollToTop, s
     // };
 
     const getClassName = (id) => {
-        return `nav-link ${currentPageLocation === id ? 'active' : ''}`;
+        return `nav-link ${currentPageLocation == id ? 'active' : ''}`;
     };
 
   return (

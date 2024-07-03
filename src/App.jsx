@@ -8,6 +8,7 @@ import FTRElement from './Components/mainContent/FTRElement.jsx';
 import FTRElementStarship from './Components/mainContent/FTRElementStarship.jsx';
 import SectionElement from './Components/mainContent/SectionElement.jsx';
 import SpacerElement from './Components/mainContent/SpacerElement.jsx';
+import sectionsData from './data/sections.js'
 
 const App = () => {
 
@@ -143,9 +144,9 @@ const App = () => {
       <SpacerElement factor={10}/>
       <div className='page-nav-ref' ref={sectionRefs.about}>
         <SectionElement 
-          sectionTitle={'About Me'} 
-          sectionSubtitle={'A brief blurb about me.'} 
-          sectionNfo={'here is the information'} 
+          sectionTitle={sectionsData.about.title} 
+          sectionSubtitle={sectionsData.about.subTitle} 
+          sectionNfo={sectionsData.about.sectionNfo} 
           sectionMarker={'about'} 
           currentPageLocation={currentPageLocation}
           hasGallery={'true'} 

@@ -35,8 +35,15 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
                     <div className="section-position-value">{sectionTitle}</div>
                     <div className="section-subtitle">{sectionSubtitle}</div>
                 </div>
-                <div className="section-nfo  nfo-scroll" style={{height:'180px'}}>
-                    {sectionNfo}
+                <div className="section-nfo  nfo-scroll" style={{height:'auto'}}>
+                {sectionNfo}
+                    {/* <p> */}
+                        {/* {sectionNfo.split('/n').map((line, idx) => {
+                            <p key={idx}>
+                                {line}<br/>
+                            </p>
+                        })} */}
+                    {/* </p> */}
                 </div>
                 {/* {galleryValue} */}
             </div>

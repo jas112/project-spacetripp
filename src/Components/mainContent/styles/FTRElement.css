@@ -8,9 +8,9 @@
     to {
       transform: translateY(-2000px);
     }
-  }
+}
 
-  @-webkit-keyframes animateStarship {
+@-webkit-keyframes animateStarship {
     0% {
         margin-left: -1000px;
     }

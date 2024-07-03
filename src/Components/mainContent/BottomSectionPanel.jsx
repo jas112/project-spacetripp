@@ -11,13 +11,6 @@ const BottomSectionPanel = ({currentStatusBool}) => {
             {/* <div className="activation-bar-segment-4-active"></div> */}
         </div>
         <div className="section-comp-detail-panel bottom-section-comp-detail-panel">
-            <div className='section-comp-detail-bottom-element-spacer detail-spacer'>
-                <div className="spacer-frame bottom-spacer-frame">
-                    <div className="spacer-element bottom-spacer"></div>
-                    <div className="spacer-element bottom-spacer"></div>
-                    <div className="spacer-element bottom-spacer"></div>
-                </div>
-            </div>
             <div className='section-comp-detail-element-frame element-frame'>
                 <div className='section-comp-detail-element-frame-container bottom-eFrame'>
                     <div className="comp-element-1 endpoint-comp-element comp-element-1-active bt-element"></div>
@@ -29,9 +22,13 @@ const BottomSectionPanel = ({currentStatusBool}) => {
                     <div className="comp-element-1 endpoint-comp-element comp-element-1-active bt-element"></div>
                     <div className="comp-element-1 endpoint-comp-element comp-element-1-active bt-element"></div>
                     <div className="comp-element-1 endpoint-comp-element comp-element-1-active bt-element"></div>
-                    <div className="comp-element-1 endpoint-comp-element comp-element-1-active bt-element"></div>
-                    <div className="comp-element-1 endpoint-comp-element comp-element-1-active bt-element"></div>
-                    <div className="comp-element-1 endpoint-comp-element comp-element-1-active bt-element"></div>
+                </div>
+            </div>
+            <div className='section-comp-detail-element-spacer detail-spacer bottom-detail-spacer'>
+                <div className="spacer-frame bottom-spacer-frame">
+                    <div className="spacer-element bottom-spacer"></div>
+                    <div className="spacer-element bottom-spacer"></div>
+                    <div className="spacer-element bottom-spacer"></div>
                 </div>
             </div>
         </div>
