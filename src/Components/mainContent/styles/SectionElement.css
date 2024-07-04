@@ -327,7 +327,10 @@
 }
 
 .section-minor:hover{
-    filter: drop-shadow(0 0 2em #61dafbaa);
+    /* filter: drop-shadow(0 0 2em #61dafbaa); */
+    /* filter: drop-shadow(0 0 2em #004f64aa); */
+    filter: drop-shadow(0 0 2em #2356ae9f);
+    /* filter: drop-shadow(0 0 2em #033283aa); */
     /* filter: drop-shadow(0 0 2em #ff4500); */
 }
 

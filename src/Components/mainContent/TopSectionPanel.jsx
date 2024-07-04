@@ -1,4 +1,5 @@
 import React from 'react'
+import './styles/Animations.css'
 import './styles/SectionElement.css'
 import './styles/SectionPanel.css'
 

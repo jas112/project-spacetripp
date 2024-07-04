@@ -108,12 +108,14 @@
 .activation-bar-segment-2-active{
     width:10%;
     opacity:1;
+    height: 4px;
     background-color: #ffffff;
     /* transition: width 1s, opacity .6s, background-color 1s; */
 }
 
 .activation-bar-segment-3-active{
     width:10%;
+    height: 4px;
     opacity:1;
     background-color: #ffffff;
     transition: width 1s, opacity .6s, background-color 1s;
@@ -133,7 +135,8 @@
     -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
     -moz-animation: neon2 1.5s ease-in-out infinite alternate;
     animation: neon2 1.5s ease-in-out infinite alternate;
-    animation: titleBlink 2s infinite;
+    /* animation: titleBlink 2s infinite; */
+    animation: crossBlink 3s infinite;
 }
 
 .top-section-panel{

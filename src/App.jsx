@@ -210,7 +210,7 @@ const App = () => {
       <FTRElementStarship/>
       <FTRElement/>
       <ForegroundFrame />
-      <BackgroundFrame/>
+      <BackgroundFrame currentScroll={scrollPositionY}/>
       <div ref={bottomRef}></div>
     </Router>
   )
