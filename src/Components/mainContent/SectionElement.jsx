@@ -46,6 +46,9 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
                     {/* </p> */}
                 </div>
                 {/* {galleryValue} */}
+                <div className='gallery-type-hero'>
+
+                </div>
             </div>
             <BottomSectionPanel currentStatusBool={currentStatusBool}/>
         </div>

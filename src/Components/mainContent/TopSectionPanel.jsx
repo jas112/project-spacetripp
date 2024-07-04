@@ -25,7 +25,6 @@ const TopSectionPanel = ({currentStatusBool}) => {
                     <div className="comp-element-1 endpoint-comp-element comp-element-1-active tp-element"></div>
                     <div className="comp-element-1 endpoint-comp-element comp-element-1-active tp-element"></div>
                     <div className="comp-element-1 endpoint-comp-element comp-element-1-active tp-element"></div>
-                    <div className="comp-element-1 endpoint-comp-element comp-element-1-active tp-element"></div>
                 </div>
             </div>
         </div>

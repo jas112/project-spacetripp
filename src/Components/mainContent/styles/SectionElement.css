@@ -396,7 +396,7 @@
 
 
 .section-nfo{
-    font-size: 12px;
+    font-size: 13px;
 }
 
 /* .section-nfo{
@@ -457,4 +457,14 @@
     height: 1px;
     position: absolute;
     bottom: 0px;
+}
+
+
+/* Gallery Types */
+
+.gallery-type-hero{
+    width: 100%;
+    height: 100px;
+    margin: 20px 0px 0px 0px;
+    background: #00000050
 }
