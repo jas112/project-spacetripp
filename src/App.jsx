@@ -8,9 +8,16 @@ import FTRElement from './Components/mainContent/FTRElement.jsx';
 import FTRElementStarship from './Components/mainContent/FTRElementStarship.jsx';
 import SectionElement from './Components/mainContent/SectionElement.jsx';
 import SpacerElement from './Components/mainContent/SpacerElement.jsx';
-import sectionsData from './data/sections.js'
+import sectionsData from './data/sections.js';
+import aboutSectionData from './data/aboutSectionData.js';
 
 const App = () => {
+
+  aboutSectionData.printSubtitle();
+  // aboutSectionData.printGalleryImages();
+  console.log(JSON.stringify(aboutSectionData.galleryImages, null, 2));
+  console.log(JSON.stringify(aboutSectionData.galleryImages[0], null, 2));
+  console.log(aboutSectionData.galleryImages[0].image);
 
   const [scrollPositionY, setScrollPositionY] = useState(0);
   const [timeString, setTimeString] = useState('');
@@ -144,18 +151,18 @@ const App = () => {
       <SpacerElement factor={10}/>
       <div className='page-nav-ref' ref={sectionRefs.about}>
         <SectionElement 
-          sectionTitle={sectionsData.about.title} 
-          sectionSubtitle={sectionsData.about.subTitle} 
-          sectionNfo={sectionsData.about.sectionNfo} 
-          sectionMarker={'about'} 
+          sectionTitle={aboutSectionData.title} 
+          sectionSubtitle={aboutSectionData.subTitle} 
+          sectionNfo={aboutSectionData.sectionNfo} 
+          sectionMarker={aboutSectionData.marker} 
           currentPageLocation={currentPageLocation}
           hasGallery={'true'} 
           GalleryType={'NFO'} 
-          GalleryImages={[]} 
+          GalleryImages={aboutSectionData.galleryImages} 
         />
       </div>
       <SpacerElement factor={1}/>
-      <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
+      {/* <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
         <SectionElement 
           sectionTitle={'Web Development'} 
           sectionSubtitle={'My web dev adventures.'} 
@@ -166,9 +173,9 @@ const App = () => {
           GalleryType={'NFO'} 
           GalleryImages={[]} 
         />
-      </div>
+      </div> */}
       <SpacerElement factor={1}/>
-      <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
+      {/* <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
         <SectionElement 
           sectionTitle={'Email Develoment'} 
           sectionSubtitle={'My adventure in fun space of email!'} 
@@ -179,9 +186,9 @@ const App = () => {
           GalleryType={'NFO'} 
           GalleryImages={[]} 
         />
-      </div>
+      </div> */}
       <SpacerElement factor={1}/>
-      <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
+      {/* <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
         <SectionElement 
           sectionTitle={'Graphic Design'} 
           sectionSubtitle={'Communication Graphics'} 
@@ -192,9 +199,9 @@ const App = () => {
           GalleryType={'NFO'} 
           GalleryImages={[]} 
         />
-      </div>
+      </div> */}
       <SpacerElement factor={1}/>
-      <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
+      {/* <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
         <SectionElement 
           sectionTitle={'Visual Design'} 
           sectionSubtitle={'Concepts and Illustration'} 
@@ -205,7 +212,7 @@ const App = () => {
           GalleryType={'NFO'} 
           GalleryImages={[]} 
         />
-      </div>
+      </div> */}
       <SpacerElement factor={1}/>
       <FTRElementStarship/>
       <FTRElement/>

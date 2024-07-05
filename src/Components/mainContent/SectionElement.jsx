@@ -6,6 +6,9 @@ import './styles/SectionElement.css'
 
 const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, GalleryType, GalleryImages}) => {
 
+    console.log(JSON.stringify(GalleryImages, null, 2));
+    console.log(GalleryImages[0].image);
+
     const [currentStatusBool, setCurrentStatusBool] = useState(false);
     const [activateSectionMinor, setActivateSectionMinor] = useState(false);
 
@@ -42,6 +45,20 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
 
     // const currentStatusBool = sectionMarker == currentPageLocation;
 
+    const generateText = (str, attr, sMarker) => {
+        return(
+            str.split('/n/n').map((paragraph, idx) => (
+                <p key={`${sMarker}` + `${attr}` + idx}>
+                    {paragraph.split('/n').map((line, i) =>(
+                        <React.Fragment key={`${sMarker}` + `${attr}` + idx + i}>
+                            {line}
+                        </React.Fragment>
+                    ))}
+                </p>
+            ))        
+        )
+    }
+
     const generateGallery = () => {
 
         // console.log(hasGallery.Boolean.ToString)
@@ -65,18 +82,11 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
                     <div className="section-subtitle">{sectionSubtitle}</div>
                 </div>
                 <div className="section-nfo  nfo-scroll" style={{height:'auto'}}>
-                {sectionNfo}
-                    {/* <p> */}
-                        {/* {sectionNfo.split('/n').map((line, idx) => {
-                            <p key={idx}>
-                                {line}<br/>
-                            </p>
-                        })} */}
-                    {/* </p> */}
+                    {generateText(sectionNfo,'sectionNfo', sectionMarker)}
                 </div>
                 {/* {galleryValue} */}
                 <div className='gallery-type-hero'>
-
+                    <img className='hero-image' src={GalleryImages[0].image2} alt={GalleryImages[0].alt} />
                 </div>
             </div>
             <BottomSectionPanel currentStatusBool={currentStatusBool}/>

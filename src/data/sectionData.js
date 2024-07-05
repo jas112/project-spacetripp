@@ -45,4 +45,8 @@ SectionData.prototype.printGalleryType = function() {
     console.log(`Gallery Type: ${this.galleryType}`);
 }
 
-export default {SectionData};
+SectionData.prototype.printGalleryImages = function() {
+    console.log(`Gallery Images: ${JSON.stringify(this.galleryImages, null, 2)}`);
+}
+
+export default SectionData;
