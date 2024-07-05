@@ -352,7 +352,7 @@
 
 .endpoint-comp-element{
     border: 1px solid #ffffff;
-    width:1px;
+    width:2px;
     height: 8px;
     background-color:#00000000;
     border-radius: 0px;
@@ -360,10 +360,28 @@
 }  
 
 .tp-element{
-    animation: rotate360 3s infinite;
+    animation: rotate360Rev 3s infinite;
 }
 
 .bt-element{
-    animation: rotate360Rev 3s infinite;
+    animation: rotate360 3s infinite;
+}
+
+.active-element{
+    background-color: #ffffff;
+    height: 12px;
+    opacity: 1;
+}
+
+.active-spacer-frame{
+    opacity: 1;
+}
+
+.active-spacer{
+    background:#ff4500;
+    border: solid 1px #ff4500;
+    filter: drop-shadow(0 0 3em #ff4500);
+    opacity: 1;
+    /* animation: crossBlink2 3s infinite; */
 }
 

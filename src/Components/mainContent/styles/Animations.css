@@ -478,6 +478,20 @@
     100% {opacity:1;background-color:transparent;border:1px solid #ff4500;}
 }
 
+@keyframes crossBlink2{
+    0% {opacity:1;background-color:transparent;border:1px solid #ff4500;}
+    10% {opacity:.15;background-color:#ff4500;border:0px solid #ff4500;}
+    20% {opacity:.25;}
+    30% {opacity:.35}
+    40% {opacity:.45;}
+    50% {opacity:1;background-color:#ff4500;border:2px solid #ff4500;width: 3px; height: 3px}
+    60% {opacity:.45}
+    70% {opacity:.35;}
+    80% {opacity:.25}
+    90% {opacity:.15;background-color:#ff4500;border:0px solid #ff4500;}
+    100% {opacity:1;background-color:transparent;border:1px solid #ff4500;}
+}
+
 @keyframes elementBlink{
     0% {opacity:1;color: yellow;font-weight: bold;}
     50% {opacity:.5;color: #ff4500;}

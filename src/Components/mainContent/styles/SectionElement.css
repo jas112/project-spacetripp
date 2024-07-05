@@ -295,7 +295,7 @@
     background-color: #0d0d0d90;
     width:100%;
     height:100%;
-    opacity: .7;
+    opacity: .1;
     cursor: pointer;
     /* filter: drop-shadow(0 0 7em #61dafbaa); */
     filter: drop-shadow(0 0 7em #26576489);
@@ -323,7 +323,12 @@
     0 calc(100% - 20px)      /* bottom left */
     );
 
-    transition: background-color .5s, width 1s, margin-left 1s, margin-right 1s;
+    transition: background-color .5s, width 1s, margin-left 1s, margin-right 1s, opacity 1.5s;
+}
+
+.active-section-minor{
+    opacity:.7;
+    transition: opacity 1.5s;
 }
 
 .section-minor:hover{
