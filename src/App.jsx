@@ -10,14 +10,15 @@ import SectionElement from './Components/mainContent/SectionElement.jsx';
 import SpacerElement from './Components/mainContent/SpacerElement.jsx';
 import sectionsData from './data/sections.js';
 import aboutSectionData from './data/aboutSectionData.js';
+import SectionData from './data/sectionData.js';
 
 const App = () => {
 
   aboutSectionData.printSubtitle();
   // aboutSectionData.printGalleryImages();
-  console.log(JSON.stringify(aboutSectionData.galleryImages, null, 2));
-  console.log(JSON.stringify(aboutSectionData.galleryImages[0], null, 2));
-  console.log(aboutSectionData.galleryImages[0].image);
+  // console.log(JSON.stringify(aboutSectionData.galleryImages, null, 2));
+  // console.log(JSON.stringify(aboutSectionData.galleryImages[0], null, 2));
+  // console.log(aboutSectionData.galleryImages[0].image);
 
   const [scrollPositionY, setScrollPositionY] = useState(0);
   const [timeString, setTimeString] = useState('');
@@ -40,9 +41,33 @@ const App = () => {
       const newScrollPositionValue = window.scrollY;
       setScrollPositionY(newScrollPositionValue);
 
+      const aboutSectionTop = sectionRefs['about'].current.offsetTop;
+      const aboutSectionUpperBoundY = sectionRefs['about'].current.offsetTop - 200;
+      const aboutSectionLowerBoundY = sectionRefs['about'].current.offsetTop + sectionRefs['about'].current.offsetHeight + 200;
+      // console.log(`aboutTp - ${aboutSectionTop} , aboutUB - ${aboutSectionUpperBoundY} , aboutLB - ${aboutSectionLowerBoundY}`);
+      const webDevSectionTop = sectionRefs['webDevelopment'].current.offsetTop;
+      const webDevSectionUpperBoundY = sectionRefs['webDevelopment'].current.offsetTop - 200;
+      const webDevSectionLowerBoundY = sectionRefs['webDevelopment'].current.offsetTop + sectionRefs['webDevelopment'].current.offsetHeight + 200;
+
+      const emailDevSectionTop = sectionRefs['emailDevelopment'].current.offsetTop;
+      const emailDevSectionUpperBoundY = sectionRefs['emailDevelopment'].current.offsetTop - 200;
+      const emailDevSectionLowerBoundY = sectionRefs['emailDevelopment'].current.offsetTop + sectionRefs['emailDevelopment'].current.offsetHeight + 200;
+
+      const grfxDsnSectionTop = sectionRefs['graphicDesign'].current.offsetTop;
+      const grfxDsnSectionUpperBoundY = sectionRefs['graphicDesign'].current.offsetTop - 200;
+      const grfxDsnSectionLowerBoundY = sectionRefs['graphicDesign'].current.offsetTop + sectionRefs['graphicDesign'].current.offsetHeight + 200;
+
+      const visDsnSectionTop = sectionRefs['visualDesign'].current.offsetTop;
+      const visDsnSectionUpperBoundY = sectionRefs['visualDesign'].current.offsetTop - 200;
+      const visDsnSectionLowerBoundY = sectionRefs['visualDesign'].current.offsetTop + sectionRefs['visualDesign'].current.offsetHeight + 200;
+
+      // const aboutSectionTop = sectionRefs['about'].current.offsetTop;
+      // const aboutSectionUpperBoundY = sectionRefs['about'].current.offsetTop - 200;
+      // const aboutSectionLowerBoundY = sectionRefs['about'].current.offsetTop + sectionRefs['about'].current.offsetHeight + 200;
+
       if (newScrollPositionValue <= 1800) {
         setCurrentPageLocation('start');
-      } else if (newScrollPositionValue >= 2228 && newScrollPositionValue <= 3128) {
+      } else if (newScrollPositionValue >= aboutSectionUpperBoundY && newScrollPositionValue <= aboutSectionLowerBoundY) {
         setCurrentPageLocation('about');
       } else if (newScrollPositionValue >= 3229 && newScrollPositionValue <= 3829) {
         setCurrentPageLocation('webDevelopment');
@@ -151,68 +176,68 @@ const App = () => {
       <SpacerElement factor={10}/>
       <div className='page-nav-ref' ref={sectionRefs.about}>
         <SectionElement 
-          sectionTitle={aboutSectionData.title} 
-          sectionSubtitle={aboutSectionData.subTitle} 
-          sectionNfo={aboutSectionData.sectionNfo} 
-          sectionMarker={aboutSectionData.marker} 
+          sectionTitle={sectionsData.about.sectionTitle} 
+          sectionSubtitle={sectionsData.about.sectionSubTitle} 
+          sectionNfo={sectionsData.about.sectionNfo} 
+          sectionMarker={sectionsData.about.sectionMarker} 
           currentPageLocation={currentPageLocation}
-          hasGallery={'true'} 
-          GalleryType={'NFO'} 
-          GalleryImages={aboutSectionData.galleryImages} 
+          hasGallery={sectionsData.about.hasGallery} 
+          GalleryType={sectionsData.about.galleryType} 
+          GalleryImages={sectionsData.about.galleryImages} 
         />
       </div>
       <SpacerElement factor={1}/>
-      {/* <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
+      <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
         <SectionElement 
-          sectionTitle={'Web Development'} 
-          sectionSubtitle={'My web dev adventures.'} 
-          sectionNfo={'here is the information'} 
-          sectionMarker={'webDevelopment'} 
+          sectionTitle={sectionsData.webDev.sectionTitle} 
+          sectionSubtitle={sectionsData.webDev.sectionSubTitle} 
+          sectionNfo={sectionsData.webDev.sectionNfo} 
+          sectionMarker={sectionsData.webDev.sectionMarker} 
           currentPageLocation={currentPageLocation}
-          hasGallery={'true'} 
-          GalleryType={'NFO'} 
-          GalleryImages={[]} 
+          hasGallery={sectionsData.webDev.hasGallery} 
+          GalleryType={sectionsData.webDev.galleryType} 
+          GalleryImages={sectionsData.webDev.galleryImages} 
         />
-      </div> */}
+      </div>
       <SpacerElement factor={1}/>
-      {/* <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
+      <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
         <SectionElement 
-          sectionTitle={'Email Develoment'} 
-          sectionSubtitle={'My adventure in fun space of email!'} 
-          sectionNfo={'here is the information'} 
-          sectionMarker={'emailDevelopment'} 
+          sectionTitle={sectionsData.emailDev.sectionTitle} 
+          sectionSubtitle={sectionsData.emailDev.sectionSubTitle} 
+          sectionNfo={sectionsData.emailDev.sectionNfo} 
+          sectionMarker={sectionsData.emailDev.sectionMarker} 
           currentPageLocation={currentPageLocation}
-          hasGallery={'true'} 
-          GalleryType={'NFO'} 
-          GalleryImages={[]} 
+          hasGallery={sectionsData.emailDev.hasGallery} 
+          GalleryType={sectionsData.emailDev.galleryType} 
+          GalleryImages={sectionsData.emailDev.galleryImages} 
         />
-      </div> */}
+      </div>
       <SpacerElement factor={1}/>
-      {/* <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
+      <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
         <SectionElement 
-          sectionTitle={'Graphic Design'} 
-          sectionSubtitle={'Communication Graphics'} 
-          sectionNfo={'here is the information'} 
-          sectionMarker={'graphicDesign'} 
+          sectionTitle={sectionsData.grfxDsn.sectionTitle} 
+          sectionSubtitle={sectionsData.grfxDsn.sectionSubTitle} 
+          sectionNfo={sectionsData.grfxDsn.sectionNfo} 
+          sectionMarker={sectionsData.grfxDsn.sectionMarker} 
           currentPageLocation={currentPageLocation}
-          hasGallery={'true'} 
-          GalleryType={'NFO'} 
-          GalleryImages={[]} 
+          hasGallery={sectionsData.grfxDsn.hasGallery} 
+          GalleryType={sectionsData.grfxDsn.galleryType} 
+          GalleryImages={sectionsData.grfxDsn.galleryImages} 
         />
-      </div> */}
+      </div>
       <SpacerElement factor={1}/>
-      {/* <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
+      <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
         <SectionElement 
-          sectionTitle={'Visual Design'} 
-          sectionSubtitle={'Concepts and Illustration'} 
-          sectionNfo={'here is the information'} 
-          sectionMarker={'visualDesign'} 
+          sectionTitle={sectionsData.visDsn.sectionTitle} 
+          sectionSubtitle={sectionsData.visDsn.sectionSubTitle} 
+          sectionNfo={sectionsData.visDsn.sectionNfo} 
+          sectionMarker={sectionsData.visDsn.sectionMarker} 
           currentPageLocation={currentPageLocation}
-          hasGallery={'true'} 
-          GalleryType={'NFO'} 
-          GalleryImages={[]} 
+          hasGallery={sectionsData.visDsn.hasGallery} 
+          GalleryType={sectionsData.visDsn.galleryType} 
+          GalleryImages={sectionsData.visDsn.galleryImages} 
         />
-      </div> */}
+      </div>
       <SpacerElement factor={1}/>
       <FTRElementStarship/>
       <FTRElement/>

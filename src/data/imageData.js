@@ -1,27 +1,36 @@
 // Image Data Object Definition
 
-function ImageData(image, alt, description, id) {
-    this.image = JSON.stringify(image);
-    this.image2 = image;
+function ImageData(image, thumbnail, alt, description, img_id) {
+    this.image = image;
+    this.thumbnail = thumbnail;
     this.imageAlt = alt;
     this.imageDescription = description;
-    this.imageId = id;
+    this.imageId = img_id;
+    this.thumbId = `${img_id} + '_thumb'`;
 }
 
 ImageData.prototype.printImageImg = function() {
-    console.log(`Image Img: ${this.image}`);
+    console.log(`This ImageData_Image: ${this.image}`);
+}
+
+ImageData.prototype.printImageThumbnail = function() {
+    console.log(`This ImageData_Thumbnail: ${this.thumbnail}`);
 }
 
 ImageData.prototype.printImageAlt = function() {
-    console.log(`Image Alt: ${this.imageAlt}`);
+    console.log(`This ImageData_Alt: ${this.imageAlt}`);
 }
 
 ImageData.prototype.printImageDescription = function() {
-    console.log(`Image Description: ${this.imageDescription}`);
+    console.log(`This ImageData_Description: ${this.imageDescription}`);
 }
 
 ImageData.prototype.printImageId = function() {
-    console.log(`Image Id: ${this.imageId}`);
+    console.log(`This ImageData_ImageId: ${this.imageId}`);
+}
+
+ImageData.prototype.printThumbId = function() {
+    console.log(`This ImageData_ThumbId: ${this.thumbId}`);
 }
 
 export default ImageData;

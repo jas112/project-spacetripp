@@ -6,8 +6,8 @@ import './styles/SectionElement.css'
 
 const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, GalleryType, GalleryImages}) => {
 
-    console.log(JSON.stringify(GalleryImages, null, 2));
-    console.log(GalleryImages[0].image);
+    // console.log(JSON.stringify(GalleryImages, null, 2));
+    // console.log(GalleryImages[0].image);
 
     const [currentStatusBool, setCurrentStatusBool] = useState(false);
     const [activateSectionMinor, setActivateSectionMinor] = useState(false);
@@ -73,9 +73,9 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
 
   return (
     <>
-        <div id={sectionTitle} ref={ref} className={`full-section-config floating ${inView ? 'fade-in' : 'fade-out'}`}>
+        <div id={sectionMarker} ref={ref} className={`full-section-config floating ${inView ? 'fade-in' : 'fade-out'}`}>
             <TopSectionPanel currentStatusBool={currentStatusBool}/>
-            <div id={sectionTitle} ref={ref} className={`section-minor ${activateSectionMinor ? 'active-section-minor' : ''}`}>
+            <div id={`${sectionMarker} + _Mkr`} ref={ref} className={`section-minor ${activateSectionMinor ? 'active-section-minor' : ''}`}>
                 <div className="section-hdr">
                     <div className="section-title">{sectionTitle}</div>
                     <div className="section-position-value">{sectionTitle}</div>
@@ -86,7 +86,7 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
                 </div>
                 {/* {galleryValue} */}
                 <div className='gallery-type-hero'>
-                    <img className='hero-image' src={GalleryImages[0].image2} alt={GalleryImages[0].alt} />
+                    <img className='hero-image' src={GalleryImages[0].image} alt={GalleryImages[0].alt} />
                 </div>
             </div>
             <BottomSectionPanel currentStatusBool={currentStatusBool}/>

@@ -8,7 +8,7 @@ import visualDesignSectionData from "./visualDesignData";
 const sectionsData = {
     about: aboutSectionData,
     webDev: webDevelopmentSectionData,
-    emailDev: emailDevelopmentSectionDat,
+    emailDev: emailDevelopmentSectionData,
     grfxDsn: graphicDesignSectionData,
     visDsn: visualDesignSectionData,
 }

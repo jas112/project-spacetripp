@@ -1,32 +1,31 @@
 // Section Data Object Definition
 
-function SectionData(name, marker, title, subTitle, sectionType, sectionNfo, hasGallery, galleryType, galleryThumbs, galleryImages) {
-    this.name = name;
-    this.marker = marker;
-    this.title = title;
-    this.subTitle = subTitle;
+function SectionData(name, marker, title, subTitle, sectionType, sectionNfo, hasGallery, galleryType, galleryImages) {
+    this.sectionName = name;
+    this.sectionMarker = marker;
+    this.sectionTitle = title;
+    this.sectionSubTitle = subTitle;
     this.sectionType = sectionType;
     this.sectionNfo = sectionNfo;
     this.hasGallery = hasGallery;
     this.galleryType = galleryType;
-    this.galleryThumbs = galleryThumbs;
     this.galleryImages = galleryImages;
 }
 
 SectionData.prototype.printName = function() {
-    console.log(`Name: ${this.name}`);
+    console.log(`Name: ${this.sectionName}`);
 }
 
 SectionData.prototype.printMarker = function() {
-    console.log(`Marker: ${this.marker}`);
+    console.log(`Marker: ${this.sectionMarker}`);
 }
 
 SectionData.prototype.printTitle = function() {
-    console.log(`Title: ${this.title}`);
+    console.log(`Title: ${this.sectionTitle}`);
 }
 
 SectionData.prototype.printSubtitle = function() {
-    console.log(`Subtitle: ${this.subTitle}`);
+    console.log(`Subtitle: ${this.sectionSubTitle}`);
 }
 
 SectionData.prototype.printSectionType = function() {
