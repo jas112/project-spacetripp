@@ -3,14 +3,14 @@
 
 .gallery-item-frame{
     width: 80px;
-    height: 180px;
+    height: 160px;
     margin: 0px 5px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
     opacity: 1;
-    transition: opacity .5s, height .5s;
+    transition: opacity .5s, height 1.5s ease-in-out;
 }
 
 .gallery-type-hero .gallery-item-frame{
@@ -24,10 +24,10 @@
 .gallery-item-indicator{
     width: 100%;
     height: 5px;
-    background:#ffffff00;
+    background:#ffffff30;
     border: solid 1px #ffffff;
     filter: drop-shadow(0 0 3em #ffffff);
-    transition: filter .5s, height 1s;
+    transition: filter .5s, height 1.5s ease-in-out;
 }
 
 .gallery-type-hero .gallery-item-indicator{
@@ -35,9 +35,9 @@
 }
 
 .gallery-item-tile{
-    width: 100%;
-    height: 155px;
-    background-size: 100% 100%;
+    width: 78px;
+    height: 135px;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background:#00000080;
@@ -54,11 +54,19 @@
     0 calc(100% - 20px)      /* bottom left */
     );
 
-    transition: opacity .025s;
+    transition: opacity .025s, height .25s;
+}
+
+.gallery-type-hero .gallery-item-tile{
+    width: 98%; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .gallery-item-frame:hover .gallery-item-tile{
     opacity: 1;
+    height: 175px;
 }
 
 /* Blink Behavior */
@@ -71,10 +79,10 @@
     animation: activeGalleryItemBlink 1.5s ease-in-out infinite;
 }
 
-.gallery-item-frame:hover .blink{
-    background-color: #ff4500;
+.gallery-item-frame:hover .gallery-item-indicator{
+    background-color: #ff450030;
     border: solid 2px #ff4500;
-    filter: drop-shadow(0 0 7em #ff4500);
+    filter: drop-shadow(0 0 9em #ff450050);
 }
 
 .blink-focus-item{
@@ -84,4 +92,17 @@
 
 .active-gallery-element-console .gallery-item-frame{
     height: 200px;
+}
+
+.active-gallery-element-console .gallery-item-tile{
+    height: 155px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: height .5s ease-in-out;
+}
+
+.active-gallery-element-console .gallery-item-indicator{
+    filter: drop-shadow(0 0 3em #ffffff);
+    transition: filter .5s;
 }

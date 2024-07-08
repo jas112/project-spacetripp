@@ -16,7 +16,7 @@ const aboutSectionData = new SectionData(
     []   
 );
 
-const heroImage = new ImageData(aboutSectionHeroImage, defaultThumbImgRef, 'my avatar closeup.', 'closeup illustration of my face centering on my eyes.', 'myHero');
+const heroImage = new ImageData(aboutSectionHeroImage, aboutSectionHeroImage, 'my avatar closeup.', 'closeup illustration of my face centering on my eyes.', 'myHero');
 aboutSectionData.galleryImages.push(heroImage);
 
 export default aboutSectionData;
