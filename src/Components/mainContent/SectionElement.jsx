@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react'
 import { useInView } from 'react-intersection-observer'
 import TopSectionPanel from './TopSectionPanel.jsx'
 import BottomSectionPanel from './BottomSectionPanel.jsx'
+import GalleryElement from './GalleryElement.jsx'
 import './styles/SectionElement.css'
 
-const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, GalleryType, GalleryImages}) => {
+const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, galleryType, galleryImages}) => {
 
     // console.log(JSON.stringify(GalleryImages, null, 2));
     // console.log(GalleryImages[0].image);
@@ -12,9 +13,12 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
     const [currentStatusBool, setCurrentStatusBool] = useState(false);
     const [activateSectionMinor, setActivateSectionMinor] = useState(false);
 
+    const hasGalleryBool = hasGallery === 'true';
+    // console.log(`${sectionMarker} has a gallery: ${hasGalleryBool} ||| ${hasGallery}`);
+
     const {ref, inView } = useInView({
         triggerOnce: false, // keep observing SectionElement
-        threshold: 0.5, // trigger when 10% of the element is in view
+        threshold: 0.2, // trigger when 10% of the element is in view
     });
 
     useEffect(() => {
@@ -30,7 +34,7 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
 
             timer = setTimeout(() => {
                 setActivateSectionMinor(true);
-            }, 1500);
+            }, 100);
 
         }else{
             setActivateSectionMinor(false);
@@ -60,13 +64,15 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
     }
 
     const generateGallery = () => {
-
-        // console.log(hasGallery.Boolean.ToString)
-        // if (hasGallery) {
-        //     return (
-        //         <div style={{color: '#fff'}}>This section has a gallery</div>
-        //     )
-        // }
+        // console.log(`from generateGaller in ${sectionMarker} SectionElement - currentStatusBool: ${currentStatusBool}`);
+        const currentBoolStr = currentStatusBool.toString();
+        // console.log(`currentBoolStr: ${currentBoolStr}`);
+        if(hasGalleryBool){
+            return(
+                <GalleryElement sectionMarker={sectionMarker} galleryType={galleryType} galleryImages={galleryImages} currentStatusBool={currentStatusBool}/>
+                // <div style={{width: '100%', height: '100px', color: '#fff', border: 'solid 1px white'}}>This section has a gallery</div>
+            )
+        }
     }
 
     const galleryValue = generateGallery;
@@ -85,9 +91,10 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
                     {generateText(sectionNfo,'sectionNfo', sectionMarker)}
                 </div>
                 {/* {galleryValue} */}
-                <div className='gallery-type-hero'>
+                {/* <div className='gallery-type-hero'>
                     <img className='hero-image' src={GalleryImages[0].image} alt={GalleryImages[0].alt} />
-                </div>
+                </div> */}
+                {generateGallery()}
             </div>
             <BottomSectionPanel currentStatusBool={currentStatusBool}/>
         </div>

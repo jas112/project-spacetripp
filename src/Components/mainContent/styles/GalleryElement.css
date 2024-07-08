@@ -1,0 +1,73 @@
+/* Gallery Types */
+
+/* Hero Gallery */
+
+.gallery-type-hero{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 620px;
+    min-height: 200px;
+    margin: 20px 0px 0px 0px;
+    background: #00000000;
+    /* overflow: hidden; */
+    /* border: solid 1px yellow; */
+}
+
+/* Dev-Dsn Work Gallery */
+
+.gallery-type-dev-dsn-work{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 620px;
+    min-height: 200px;
+    margin: 20px 0px 0px 0px;
+    background: #00000000;
+    /* border: solid 1px lime; */
+
+}
+
+/* .fade-out .gallery-type-dev-dsn-work{
+    display: none;
+} */
+
+
+/* Gallery Element Components */
+
+.gallery-item-border{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gallery-element-border-pulse-segment{
+    width:5%;
+    height: 2px;
+    background: #ffffff;
+}
+
+.gallery-element-border-spacer-segment{
+    width:95%;
+    height: 2px;
+    background: transparent;
+}
+
+.gallery-element-console{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    background: #00000000; 
+    /* border: solid 1px red; */
+    padding: 5px 0px;
+}
+
+.gallery-type-hero .gallery-element-console{
+    flex-flow: column nowrap;
+}

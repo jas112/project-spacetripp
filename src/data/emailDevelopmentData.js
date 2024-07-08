@@ -18,5 +18,8 @@ const emailDevelopmentSectionData = new SectionData(
 
 const imageFull_01 = new ImageData(imageFull_01ref, imageThumb_01ref, 'emailDev image-1 fullsize', 'emailDev-full-01', 'emailDev-full-01');
 emailDevelopmentSectionData.galleryImages.push(imageFull_01);
+emailDevelopmentSectionData.galleryImages.push(imageFull_01);
+emailDevelopmentSectionData.galleryImages.push(imageFull_01);
+emailDevelopmentSectionData.galleryImages.push(imageFull_01);
 
 export default emailDevelopmentSectionData;

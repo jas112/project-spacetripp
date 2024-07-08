@@ -9,16 +9,8 @@ import FTRElementStarship from './Components/mainContent/FTRElementStarship.jsx'
 import SectionElement from './Components/mainContent/SectionElement.jsx';
 import SpacerElement from './Components/mainContent/SpacerElement.jsx';
 import sectionsData from './data/sections.js';
-import aboutSectionData from './data/aboutSectionData.js';
-import SectionData from './data/sectionData.js';
 
 const App = () => {
-
-  aboutSectionData.printSubtitle();
-  // aboutSectionData.printGalleryImages();
-  // console.log(JSON.stringify(aboutSectionData.galleryImages, null, 2));
-  // console.log(JSON.stringify(aboutSectionData.galleryImages[0], null, 2));
-  // console.log(aboutSectionData.galleryImages[0].image);
 
   const [scrollPositionY, setScrollPositionY] = useState(0);
   const [timeString, setTimeString] = useState('');
@@ -44,40 +36,46 @@ const App = () => {
       const aboutSectionTop = sectionRefs['about'].current.offsetTop;
       const aboutSectionUpperBoundY = sectionRefs['about'].current.offsetTop - 200;
       const aboutSectionLowerBoundY = sectionRefs['about'].current.offsetTop + sectionRefs['about'].current.offsetHeight + 200;
+
       // console.log(`aboutTp - ${aboutSectionTop} , aboutUB - ${aboutSectionUpperBoundY} , aboutLB - ${aboutSectionLowerBoundY}`);
+
       const webDevSectionTop = sectionRefs['webDevelopment'].current.offsetTop;
       const webDevSectionUpperBoundY = sectionRefs['webDevelopment'].current.offsetTop - 200;
       const webDevSectionLowerBoundY = sectionRefs['webDevelopment'].current.offsetTop + sectionRefs['webDevelopment'].current.offsetHeight + 200;
+
+      // console.log(`webDevTp - ${webDevSectionTop} , webDevUB - ${webDevSectionUpperBoundY} , webDevLB - ${webDevSectionLowerBoundY}`);
 
       const emailDevSectionTop = sectionRefs['emailDevelopment'].current.offsetTop;
       const emailDevSectionUpperBoundY = sectionRefs['emailDevelopment'].current.offsetTop - 200;
       const emailDevSectionLowerBoundY = sectionRefs['emailDevelopment'].current.offsetTop + sectionRefs['emailDevelopment'].current.offsetHeight + 200;
 
+      // console.log(`emailDevTp - ${emailDevSectionTop} , emailDevUB - ${emailDevSectionUpperBoundY} , emailDevLB - ${emailDevSectionLowerBoundY}`);
+
       const grfxDsnSectionTop = sectionRefs['graphicDesign'].current.offsetTop;
       const grfxDsnSectionUpperBoundY = sectionRefs['graphicDesign'].current.offsetTop - 200;
       const grfxDsnSectionLowerBoundY = sectionRefs['graphicDesign'].current.offsetTop + sectionRefs['graphicDesign'].current.offsetHeight + 200;
+
+      // console.log(`grfxDsnTp - ${grfxDsnSectionTop} , grfxDsnUB - ${grfxDsnSectionUpperBoundY} , grfxDsnLB - ${grfxDsnSectionLowerBoundY}`);
 
       const visDsnSectionTop = sectionRefs['visualDesign'].current.offsetTop;
       const visDsnSectionUpperBoundY = sectionRefs['visualDesign'].current.offsetTop - 200;
       const visDsnSectionLowerBoundY = sectionRefs['visualDesign'].current.offsetTop + sectionRefs['visualDesign'].current.offsetHeight + 200;
 
-      // const aboutSectionTop = sectionRefs['about'].current.offsetTop;
-      // const aboutSectionUpperBoundY = sectionRefs['about'].current.offsetTop - 200;
-      // const aboutSectionLowerBoundY = sectionRefs['about'].current.offsetTop + sectionRefs['about'].current.offsetHeight + 200;
+      // console.log(`visDevTp - ${visDsnSectionTop} , visDevUB - ${visDsnSectionUpperBoundY} , visDevLB - ${visDsnSectionLowerBoundY}`);
 
-      if (newScrollPositionValue <= 1800) {
+      if (newScrollPositionValue <= (aboutSectionUpperBoundY - 100)) {
         setCurrentPageLocation('start');
       } else if (newScrollPositionValue >= aboutSectionUpperBoundY && newScrollPositionValue <= aboutSectionLowerBoundY) {
         setCurrentPageLocation('about');
-      } else if (newScrollPositionValue >= 3229 && newScrollPositionValue <= 3829) {
+      } else if (newScrollPositionValue >= webDevSectionUpperBoundY && newScrollPositionValue <= webDevSectionLowerBoundY) {
         setCurrentPageLocation('webDevelopment');
-      } else if (newScrollPositionValue >= 3929 && newScrollPositionValue <= 4529) {
+      } else if (newScrollPositionValue >= emailDevSectionUpperBoundY && newScrollPositionValue <= emailDevSectionLowerBoundY) {
         setCurrentPageLocation('emailDevelopment');
-      } else if (newScrollPositionValue >= 4630 && newScrollPositionValue <= 5230) {
+      } else if (newScrollPositionValue >= grfxDsnSectionUpperBoundY && newScrollPositionValue <= grfxDsnSectionLowerBoundY) {
         setCurrentPageLocation('graphicDesign');
-      } else if (newScrollPositionValue >= 5330 && newScrollPositionValue <= 5930) {
+      } else if (newScrollPositionValue >= visDsnSectionUpperBoundY && newScrollPositionValue <= visDsnSectionLowerBoundY) {
         setCurrentPageLocation('visualDesign');
-      } else if (newScrollPositionValue >= 6355) {
+      } else if (newScrollPositionValue >= (visDsnSectionUpperBoundY + 100)) {
         setCurrentPageLocation('end');
       }
 
@@ -182,11 +180,11 @@ const App = () => {
           sectionMarker={sectionsData.about.sectionMarker} 
           currentPageLocation={currentPageLocation}
           hasGallery={sectionsData.about.hasGallery} 
-          GalleryType={sectionsData.about.galleryType} 
-          GalleryImages={sectionsData.about.galleryImages} 
+          galleryType={sectionsData.about.galleryType} 
+          galleryImages={sectionsData.about.galleryImages} 
         />
       </div>
-      <SpacerElement factor={1}/>
+      <SpacerElement factor={2}/>
       <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
         <SectionElement 
           sectionTitle={sectionsData.webDev.sectionTitle} 
@@ -195,11 +193,11 @@ const App = () => {
           sectionMarker={sectionsData.webDev.sectionMarker} 
           currentPageLocation={currentPageLocation}
           hasGallery={sectionsData.webDev.hasGallery} 
-          GalleryType={sectionsData.webDev.galleryType} 
-          GalleryImages={sectionsData.webDev.galleryImages} 
+          galleryType={sectionsData.webDev.galleryType} 
+          galleryImages={sectionsData.webDev.galleryImages} 
         />
       </div>
-      <SpacerElement factor={1}/>
+      <SpacerElement factor={2}/>
       <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
         <SectionElement 
           sectionTitle={sectionsData.emailDev.sectionTitle} 
@@ -208,11 +206,11 @@ const App = () => {
           sectionMarker={sectionsData.emailDev.sectionMarker} 
           currentPageLocation={currentPageLocation}
           hasGallery={sectionsData.emailDev.hasGallery} 
-          GalleryType={sectionsData.emailDev.galleryType} 
-          GalleryImages={sectionsData.emailDev.galleryImages} 
+          galleryType={sectionsData.emailDev.galleryType} 
+          galleryImages={sectionsData.emailDev.galleryImages} 
         />
       </div>
-      <SpacerElement factor={1}/>
+      <SpacerElement factor={2}/>
       <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
         <SectionElement 
           sectionTitle={sectionsData.grfxDsn.sectionTitle} 
@@ -221,11 +219,11 @@ const App = () => {
           sectionMarker={sectionsData.grfxDsn.sectionMarker} 
           currentPageLocation={currentPageLocation}
           hasGallery={sectionsData.grfxDsn.hasGallery} 
-          GalleryType={sectionsData.grfxDsn.galleryType} 
-          GalleryImages={sectionsData.grfxDsn.galleryImages} 
+          galleryType={sectionsData.grfxDsn.galleryType} 
+          galleryImages={sectionsData.grfxDsn.galleryImages} 
         />
       </div>
-      <SpacerElement factor={1}/>
+      <SpacerElement factor={2}/>
       <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
         <SectionElement 
           sectionTitle={sectionsData.visDsn.sectionTitle} 
@@ -234,11 +232,11 @@ const App = () => {
           sectionMarker={sectionsData.visDsn.sectionMarker} 
           currentPageLocation={currentPageLocation}
           hasGallery={sectionsData.visDsn.hasGallery} 
-          GalleryType={sectionsData.visDsn.galleryType} 
-          GalleryImages={sectionsData.visDsn.galleryImages} 
+          galleryType={sectionsData.visDsn.galleryType} 
+          galleryImages={sectionsData.visDsn.galleryImages} 
         />
       </div>
-      <SpacerElement factor={1}/>
+      <SpacerElement factor={5}/>
       <FTRElementStarship/>
       <FTRElement/>
       <ForegroundFrame />

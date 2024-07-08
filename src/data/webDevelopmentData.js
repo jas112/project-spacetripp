@@ -18,5 +18,9 @@ const webDevelopmentSectionData = new SectionData(
 
 const imageFull_01 = new ImageData(imageFull_01ref, imageThumb_01ref, 'webDev image-1 fullsize', 'webDev-full-01', 'webDev-full-01');
 webDevelopmentSectionData.galleryImages.push(imageFull_01);
+webDevelopmentSectionData.galleryImages.push(imageFull_01);
+webDevelopmentSectionData.galleryImages.push(imageFull_01);
+webDevelopmentSectionData.galleryImages.push(imageFull_01);
+webDevelopmentSectionData.galleryImages.push(imageFull_01);
 
 export default webDevelopmentSectionData;

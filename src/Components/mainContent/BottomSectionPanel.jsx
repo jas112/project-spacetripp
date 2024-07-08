@@ -13,7 +13,7 @@ const BottomSectionPanel = ({currentStatusBool}) => {
         let interval;
         if(activatePanel){
             interval = setInterval(() => {
-                setBlinkingElement((prev) => (prev + 1) % 9);
+                setBlinkingElement((prev) => (prev + 1) % 6);
             }, 200);
         }else{
             setBlinkingElement(-1);
@@ -56,7 +56,7 @@ const BottomSectionPanel = ({currentStatusBool}) => {
             <div className='section-comp-detail-element-frame element-frame'>
                 <div className='section-comp-detail-element-frame-container bottom-eFrame'>
 
-                    {[...Array(9)].map((_, idxElement) => (
+                    {[...Array(6)].map((_, idxElement) => (
                         <div key={idxElement} className={`comp-element-1 endpoint-comp-element comp-element-1-active bt-element ${blinkingElement === idxElement ? 'active-element' : ''}`}></div>
                     ))}
 

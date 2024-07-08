@@ -18,5 +18,10 @@ const visualDesignSectionData = new SectionData(
 
 const imageFull_01 = new ImageData(imageFull_01ref, imageThumb_01ref, 'visDsn image-1 fullsize', 'visDsn visualDesign-full-01', 'visDsn visualDesign-full-01');
 visualDesignSectionData.galleryImages.push(imageFull_01);
+visualDesignSectionData.galleryImages.push(imageFull_01);
+visualDesignSectionData.galleryImages.push(imageFull_01);
+visualDesignSectionData.galleryImages.push(imageFull_01);
+visualDesignSectionData.galleryImages.push(imageFull_01);
+visualDesignSectionData.galleryImages.push(imageFull_01);
 
 export default visualDesignSectionData;

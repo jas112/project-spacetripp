@@ -53,8 +53,9 @@
     height: 3500px;
     /* border: 1px solid white; */
     position: absolute;
-    top:6678px;
+    top:8878px;
     left: 0px;
+    z-index: -10;
 }
 
 .ftr-section-starship{
@@ -67,9 +68,9 @@
     height: 900px;
     /* border: 1px solid white; */
     position: absolute;
-    top:6678px;
+    top:8878px;
     left: 0px;
-    z-index: 20;
+    z-index: -5;
 }
 
 .endpoint-bottom{
@@ -128,6 +129,8 @@
 
 .bg-slide4 {
     width: 200%;
+    position: relative;
+    top: 35px;
     z-index: -2000;
 	-webkit-animation: animateStarship 70s linear infinite;
 	-moz-animation: animateStarship 70s linear infinite;

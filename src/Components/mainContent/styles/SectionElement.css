@@ -329,9 +329,9 @@
 }
 
 .active-section-minor{
-    opacity:.7;
+    opacity: 1;
     /* top: 0; */
-    transition: opacity 1.5s, top .5s;
+    transition: opacity .5s, top .5s;
 }
 
 .section-minor:hover{

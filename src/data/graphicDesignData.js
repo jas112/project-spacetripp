@@ -18,5 +18,10 @@ const graphicDesignSectionData = new SectionData(
 
 const imageFull_01 = new ImageData(imageFull_01ref, imageThumb_01ref, 'grfxDsn image-1 fullsize', 'grfxDsn-full-01', 'grfxDsn-full-01');
 graphicDesignSectionData.galleryImages.push(imageFull_01);
+graphicDesignSectionData.galleryImages.push(imageFull_01);
+graphicDesignSectionData.galleryImages.push(imageFull_01);
+graphicDesignSectionData.galleryImages.push(imageFull_01);
+graphicDesignSectionData.galleryImages.push(imageFull_01);
+graphicDesignSectionData.galleryImages.push(imageFull_01);
 
 export default graphicDesignSectionData;
