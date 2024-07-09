@@ -1,6 +1,6 @@
 // Section Data Object Definition
 
-function SectionData(name, marker, title, subTitle, sectionType, sectionNfo, hasGallery, galleryType, galleryImages) {
+function SectionData(name, marker, title, subTitle, sectionType, sectionNfo, hasGallery, galleryType, galleryImages, sectionLinks) {
     this.sectionName = name;
     this.sectionMarker = marker;
     this.sectionTitle = title;
@@ -10,6 +10,7 @@ function SectionData(name, marker, title, subTitle, sectionType, sectionNfo, has
     this.hasGallery = hasGallery;
     this.galleryType = galleryType;
     this.galleryImages = galleryImages;
+    this.sectionLinks = sectionLinks;
 }
 
 SectionData.prototype.printName = function() {
@@ -46,6 +47,10 @@ SectionData.prototype.printGalleryType = function() {
 
 SectionData.prototype.printGalleryImages = function() {
     console.log(`Gallery Images: ${JSON.stringify(this.galleryImages, null, 2)}`);
+}
+
+SectionData.prototype.printSectionLinks = function() {
+    console.log(`Section Links: ${JSON.stringify(this.sectionLinks, null, 2)}`);
 }
 
 export default SectionData;

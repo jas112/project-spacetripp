@@ -1,13 +1,77 @@
 import React, {useState, useEffect} from 'react'
+import { useInView } from 'react-intersection-observer'
 import TopTerminusSectionPanel from './TopTerminusSectionPanel'
+import BottomSectionPanel from './BottomSectionPanel'
 import './styles/SectionPanel.css'
-import './styles/TerminusSectionPanel.css'
+import './styles/TerminusSection.css'
+import BottomTerminusSectionPanel from './BottomTerminusSectionPanel'
+import {generateText} from '../../data/contentTools.jsx'
 
 
-const TerminusSection = () => {
+const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, galleryType, galleryImages, sectionLinks}) => {
+
+    const [currentStatusBool, setCurrentStatusBool] = useState(false);
+    const [activateSectionMinor, setActivateSectionMinor] = useState(false);
+
+    const hasGalleryBool = hasGallery === 'true';
+    // console.log(`${sectionMarker} has a gallery: ${hasGalleryBool} ||| ${hasGallery}`);
+
+    const {ref, inView } = useInView({
+        triggerOnce: false, // keep observing SectionElement
+        threshold: 0.2, // trigger when 10% of the element is in view
+    });
+
+    useEffect(() => {
+
+        setCurrentStatusBool(sectionMarker == currentPageLocation);
+
+    }, [currentPageLocation])
+
+    useEffect(() => {
+
+        let timer;
+        if (currentStatusBool) {
+
+            timer = setTimeout(() => {
+                setActivateSectionMinor(true);
+            }, 100);
+
+        }else{
+            setActivateSectionMinor(false);
+        }
+
+        return () => {
+            clearTimeout(timer);
+        }
+
+      }, [currentStatusBool]);
+
   return (
-    <TopTerminusSectionPanel/>
-    // <div>TerminusSection</div>
+    <div id={sectionMarker} ref={ref} className={`full-section-config floating ${inView ? 'fade-in' : 'fade-out'}`}>
+        <div className='terminus-console-frame-outer'>
+            <TopTerminusSectionPanel />
+            <div className='terminus-hdr-frame'>
+                <div className="ftr-txt-title ftr-main-title">{sectionTitle}</div>
+            </div>
+            <div className='terminus-console-frame-inner'>
+                <div className='terminus-console-panel'>
+                    <div className='terminus-avatar-frame'>
+                        <div className='terminus-avatar' style={{backgroundImage: `url(${galleryImages[0].image})`}}></div>
+                    </div>
+                    <div className='terminus-end-msg-frame'>
+                        <div className='terminus-end-msg'>
+                            {generateText(sectionNfo,'sectionNfo', sectionMarker)}
+                        </div>
+                    </div>
+                </div>
+                <div className='terminus-console-panel'>
+                    
+                    </div>
+            </div>
+            <BottomTerminusSectionPanel /> 
+        </div>
+    </div>
+
   )
 }
 

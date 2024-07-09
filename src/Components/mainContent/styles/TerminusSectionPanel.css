@@ -1,0 +1,21 @@
+.top-terminus-eFrame{
+    color: #000000;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
+    font-weight: 800;
+    align-self: flex-start;
+    opacity: .6;
+    animation: elementBlink 3s infinite;
+}
+
+.terminus-eFrame{
+    -webkit-text-fill-color: #ff450000;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ff4500;
+    -webkit-text-stroke-color: #f3b50c;
+    /* padding: 0px 20px; */
+
+    /* animation: textGlow 3s infinite; */
+    animation: elementBlink 3s infinite;
+}

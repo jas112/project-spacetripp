@@ -4,6 +4,7 @@ import TopSectionPanel from './TopSectionPanel.jsx'
 import BottomSectionPanel from './BottomSectionPanel.jsx'
 import GalleryElement from './GalleryElement.jsx'
 import './styles/SectionElement.css'
+import {generateText} from '../../data/contentTools.jsx'
 
 const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, galleryType, galleryImages}) => {
 
@@ -48,20 +49,6 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
     
 
     // const currentStatusBool = sectionMarker == currentPageLocation;
-
-    const generateText = (str, attr, sMarker) => {
-        return(
-            str.split('/n/n').map((paragraph, idx) => (
-                <p key={`${sMarker}` + `${attr}` + idx}>
-                    {paragraph.split('/n').map((line, i) =>(
-                        <React.Fragment key={`${sMarker}` + `${attr}` + idx + i}>
-                            {line}
-                        </React.Fragment>
-                    ))}
-                </p>
-            ))        
-        )
-    }
 
     const generateGallery = () => {
         // console.log(`from generateGaller in ${sectionMarker} SectionElement - currentStatusBool: ${currentStatusBool}`);

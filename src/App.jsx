@@ -8,6 +8,7 @@ import FTRElement from './Components/mainContent/FTRElement.jsx';
 import FTRElementStarship from './Components/mainContent/FTRElementStarship.jsx';
 import SectionElement from './Components/mainContent/SectionElement.jsx';
 import SpacerElement from './Components/mainContent/SpacerElement.jsx';
+import TerminusSection from './Components/mainContent/TerminusSection.jsx';
 import sectionsData from './data/sections.js';
 
 const App = () => {
@@ -236,12 +237,23 @@ const App = () => {
           galleryImages={sectionsData.visDsn.galleryImages} 
         />
       </div>
-      <SpacerElement factor={5}/>
+      <SpacerElement factor={7}/>
+      <div className='page-nav-ref terminus-nav' ref={bottomRef}>
+        <TerminusSection 
+          sectionTitle={sectionsData.terminus.sectionTitle}
+          sectionSubtitle={sectionsData.terminus.sectionSubTitle}
+          sectionNfo={sectionsData.terminus.sectionNfo}
+          sectionMarker={sectionsData.terminus.sectionMarker}
+          currentPageLocation={currentPageLocation}
+          hasGallery={sectionsData.terminus.hasGallery} 
+          galleryType={sectionsData.terminus.galleryType} 
+          galleryImages={sectionsData.terminus.galleryImages}
+        />
+      </div>
       <FTRElementStarship/>
       <FTRElement/>
       <ForegroundFrame />
       <BackgroundFrame currentScroll={scrollPositionY}/>
-      <div ref={bottomRef}></div>
     </Router>
   )
 }

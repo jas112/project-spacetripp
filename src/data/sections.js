@@ -3,6 +3,7 @@ import webDevelopmentSectionData from "./webDevelopmentData";
 import emailDevelopmentSectionData from "./emailDevelopmentData";
 import graphicDesignSectionData from "./graphicDesignData";
 import visualDesignSectionData from "./visualDesignData";
+import terminusSectionData from "./terminusSectionData";
 
 
 const sectionsData = {
@@ -11,6 +12,7 @@ const sectionsData = {
     emailDev: emailDevelopmentSectionData,
     grfxDsn: graphicDesignSectionData,
     visDsn: visualDesignSectionData,
+    terminus: terminusSectionData
 }
 
 export default sectionsData;
