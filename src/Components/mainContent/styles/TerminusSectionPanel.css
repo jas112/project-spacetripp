@@ -19,3 +19,16 @@
     /* animation: textGlow 3s infinite; */
     animation: elementBlink 3s infinite;
 }
+
+.tp-ele-spacer{
+    animation: shiftElementMotionA .5s infinite ease-in-out;
+}
+
+.btm-ele-spacer{
+    animation: shiftElementMotionB .5s infinite;
+}
+
+.ele-bar{
+    background: #00000010;
+    height: 8px;
+}

@@ -238,6 +238,9 @@ const App = () => {
         />
       </div>
       <SpacerElement factor={7}/>
+      <FTRElementStarship/>
+      <FTRElement/>
+      <ForegroundFrame />
       <div className='page-nav-ref terminus-nav' ref={bottomRef}>
         <TerminusSection 
           sectionTitle={sectionsData.terminus.sectionTitle}
@@ -250,9 +253,6 @@ const App = () => {
           galleryImages={sectionsData.terminus.galleryImages}
         />
       </div>
-      <FTRElementStarship/>
-      <FTRElement/>
-      <ForegroundFrame />
       <BackgroundFrame currentScroll={scrollPositionY}/>
     </Router>
   )

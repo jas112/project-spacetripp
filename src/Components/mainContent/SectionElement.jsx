@@ -4,7 +4,7 @@ import TopSectionPanel from './TopSectionPanel.jsx'
 import BottomSectionPanel from './BottomSectionPanel.jsx'
 import GalleryElement from './GalleryElement.jsx'
 import './styles/SectionElement.css'
-import {generateText} from '../../data/contentTools.jsx'
+import {generateText} from '../../utils/contentTools.jsx'
 
 const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, galleryType, galleryImages}) => {
 

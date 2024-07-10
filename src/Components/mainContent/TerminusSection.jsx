@@ -2,10 +2,14 @@ import React, {useState, useEffect} from 'react'
 import { useInView } from 'react-intersection-observer'
 import TopTerminusSectionPanel from './TopTerminusSectionPanel'
 import BottomSectionPanel from './BottomSectionPanel'
+import BottomTerminusSectionPanel from './BottomTerminusSectionPanel'
+import {generateText} from '../../utils/contentTools.jsx'
 import './styles/SectionPanel.css'
 import './styles/TerminusSection.css'
-import BottomTerminusSectionPanel from './BottomTerminusSectionPanel'
-import {generateText} from '../../data/contentTools.jsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedinIn, faGitAlt } from '@fortawesome/free-brands-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons'
+
 
 
 const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, galleryType, galleryImages, sectionLinks}) => {
@@ -49,12 +53,12 @@ const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMark
   return (
     <div id={sectionMarker} ref={ref} className={`full-section-config floating ${inView ? 'fade-in' : 'fade-out'}`}>
         <div className='terminus-console-frame-outer'>
-            <TopTerminusSectionPanel />
+            <TopTerminusSectionPanel currentStatusBool={currentStatusBool} />
             <div className='terminus-hdr-frame'>
                 <div className="ftr-txt-title ftr-main-title">{sectionTitle}</div>
             </div>
             <div className='terminus-console-frame-inner'>
-                <div className='terminus-console-panel'>
+                <div className='terminus-console-panel terminus-console-panel-A'>
                     <div className='terminus-avatar-frame'>
                         <div className='terminus-avatar' style={{backgroundImage: `url(${galleryImages[0].image})`}}></div>
                     </div>
@@ -64,11 +68,41 @@ const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMark
                         </div>
                     </div>
                 </div>
-                <div className='terminus-console-panel'>
-                    
+                <div className='terminus-console-panel terminus-console-panel-B'>
+                    <div className='terminus-console-panel-indicator'></div>
+                    <div className='terminus-console-panel-button-A'>
+                        <a className='terminus-console-panel-button-text' href='www.cartoonbrew.com' target='_blank' rel='noopener noreferrer'>Email Me</a>
                     </div>
+                    <div className='terminus-console-panel-button-A'>
+                        <a className='terminus-console-panel-button-text' href='www.cartoonbrew.com' target='_blank' rel='noopener noreferrer'>Resume</a>
+                    </div>
+                    <div className='terminus-console-panel-button-B-frame'>
+                        <div className='terminus-console-panel-button-shell'>
+                            <div className='terminus-console-panel-button-B' title='My LinkedIn'>
+                                <div className='icon-frame'>
+                                    <FontAwesomeIcon icon={faLinkedinIn} className="icon linkedin" size='2x' />
+                                </div>
+                            </div>
+                        </div>
+                        <div className='terminus-console-panel-button-shell'>
+                            <div className='terminus-console-panel-button-B' title='My Github Portal'>
+                                <div className='icon-frame'>
+                                    <FontAwesomeIcon icon={faGitAlt} className="icon linkedin" size='2x' />
+                                </div>
+                            </div>
+                        </div>
+                        <div className='terminus-console-panel-button-shell'>
+                            <div className='terminus-console-panel-button-B' title='My Cargocollective Site'>
+                                <div className='icon-frame'>
+                                    <FontAwesomeIcon icon={faBolt} className="icon linkedin" size='2x' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='terminus-console-panel-indicator'></div>
+                </div>
             </div>
-            <BottomTerminusSectionPanel /> 
+            <BottomTerminusSectionPanel currentStatusBool={currentStatusBool} /> 
         </div>
     </div>
 

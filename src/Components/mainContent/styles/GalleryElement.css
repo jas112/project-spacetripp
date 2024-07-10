@@ -8,10 +8,10 @@
     justify-content: center;
     align-items: center;
     max-width: 620px;
-    min-height: 200px;
+    min-height: 230px;
     margin: 20px 0px 0px 0px;
-    background: #00000000;
-    /* overflow: hidden; */
+    background: #00000030;
+    overflow: hidden
     /* border: solid 1px yellow; */
 }
 
@@ -23,9 +23,10 @@
     justify-content: space-around;
     align-items: center;
     max-width: 620px;
-    min-height: 200px;
+    min-height: 230px;
     margin: 20px 0px 0px 0px;
-    background: #00000000;
+    background: #00000060;
+    /* overflow-x: scroll; */
     /* border: solid 1px lime; */
 
 }

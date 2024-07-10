@@ -551,3 +551,18 @@
     50% {opacity:0;}
     100% {opacity:1;}
 }
+
+/* //////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////// */
+
+/* Terminus Animations */
+
+@keyframes shiftElementMotionA{
+    0% {justify-content: flex-start;}
+    100% {justify-content: flex-end;}
+}
+
+@keyframes shiftElementMotionB{
+    0% {justify-content: flex-end;}
+    100% {justify-content: flex-start;}
+}

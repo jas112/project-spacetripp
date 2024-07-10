@@ -8,7 +8,7 @@ import avatarImage3Ref from '../assets/images/stEmail_imgs/ST_emAvatarCircleWhtw
 
 const terminusSectionData = new SectionData(
     'terminus',
-    'bottom',
+    'end',
     'Terminus',
     `That's it, folks!`,
     'Nfo',
