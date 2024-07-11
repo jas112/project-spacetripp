@@ -27,7 +27,11 @@ const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMark
 
     useEffect(() => {
 
-        setCurrentStatusBool(sectionMarker == currentPageLocation);
+        const isTheEnd = (sectionMarker == currentPageLocation) || (currentPageLocation == 'end');
+
+        // setCurrentStatusBool(sectionMarker == currentPageLocation);
+
+        setCurrentStatusBool(isTheEnd);
 
     }, [currentPageLocation])
 
@@ -51,9 +55,9 @@ const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMark
       }, [currentStatusBool]);
 
   return (
-    <div id={sectionMarker} ref={ref} className={`full-section-config floating ${inView ? 'fade-in' : 'fade-out'}`}>
+    <div id={sectionMarker} ref={ref} className={`full-section-config floating ${currentStatusBool ? 'fade-in' : 'fade-out'}`}>
         <div className='terminus-console-frame-outer'>
-            <TopTerminusSectionPanel currentStatusBool={currentStatusBool} />
+            {/* <TopTerminusSectionPanel currentStatusBool={currentStatusBool} /> */}
             <div className='terminus-hdr-frame'>
                 <div className="ftr-txt-title ftr-main-title">{sectionTitle}</div>
             </div>
@@ -102,7 +106,7 @@ const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMark
                     <div className='terminus-console-panel-indicator'></div>
                 </div>
             </div>
-            <BottomTerminusSectionPanel currentStatusBool={currentStatusBool} /> 
+            {/* <BottomTerminusSectionPanel currentStatusBool={currentStatusBool} />  */}
         </div>
     </div>
 

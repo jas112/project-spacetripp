@@ -1,22 +1,35 @@
+html, body{
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  /* border: solid 5px lightskyblue; */
+}
+
+.content-element{
+  width: 100%;
+  min-height: 100%;
+  /* background: #ff000030; */
+  /* border: solid 1px red; */
+  padding: 0px;
+  /* position: relative; */
+}
+
+.ftr-element{
+  /* position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px; */
+  background: #00ff0030;
+  /* border: solid 1px lime; */
+  /* overflow: hidden; */
+}
+
 .init-text{
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 900;
   font-size: x-large;
 }
-
-.isActiveText{
-  color: green;
-}
-
-.isNotActiveText{
-  color: red;
-}
-
-.listStyleType1{
-  list-style: none;
-}
-
 
 .page-nav-ref{
   z-index: 99999;

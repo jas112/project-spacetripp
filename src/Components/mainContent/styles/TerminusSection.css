@@ -4,10 +4,10 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* border: solid 1px red; */
+    border: solid 1px red;
     position: relative;
     left: 0;
-    top: 100px;
+    top: 0px;
     cursor: pointer;
 
 }
@@ -112,6 +112,7 @@
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #ff4500;
     padding: 0px 20px;
+    word-break:break-word;
 
     animation: textGlow 3s infinite;
 }

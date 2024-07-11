@@ -9,7 +9,11 @@ const aboutSectionData = new SectionData(
     'About Me',
     'A blurb about myself.',
     'nfo',
-    `People say I am soft-spoken and contemplative, but I see myself as thoughtful, inquisitive, and deeply analytical. With over seven years of experience in design solutions, from architectural principles to web development, I believe curiosity, adaptability, and continuous learning are key to effective problem-solving and happiness.\n\nI love activities that spark my imagination, like drawing, sci-fi/fantasy, comics, animation, classic samurai films, architecture, and art. I aim to be a great collaborator and connect with like-minded tech creatives.`,
+    `People say I am soft-spoken and contemplative, but I see myself as thoughtful, inquisitive, and deeply analytical. 
+    With over seven years of experience in design solutions, from architectural principles to web development, I believe 
+    curiosity, adaptability, and continuous learning are key to effective problem-solving and happiness.\n\nI love 
+    activities that spark my imagination, like drawing, sci-fi/fantasy, comics, animation, classic samurai films, 
+    architecture, and art. I aim to be a great collaborator and connect with like-minded tech creatives.`,
     'true',
     'hero', 
     [],

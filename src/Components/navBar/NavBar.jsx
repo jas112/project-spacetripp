@@ -39,6 +39,7 @@ const NavBar = ({currentScroll, currentTime, currentPageLocation, scrollToTop, s
                 <div className={getClassName('emailDevelopment')} id='emailDevelopment' onClick={() => scrollToSection('emailDevelopment')}>Email+Dev</div>
                 <div className={getClassName('graphicDesign')} id='graphicDesign' onClick={() => scrollToSection('graphicDesign')}>Gfx+Dsn</div>
                 <div className={getClassName('visualDesign')} id='visualDesign' onClick={() => scrollToSection('visualDesign')}>Vis+Dsn</div>
+                <div className={getClassName('terminus')} id='terminus' onClick={() => scrollToSection('terminus')}>Terminus</div>
                 <div className={getClassName('end')} id='end' onClick={scrollToBottom}>&#9737;</div>
             </div>
             {/* <ul className={`navbar-links ${isNavOpen ? 'linksActive' : ''}`}>

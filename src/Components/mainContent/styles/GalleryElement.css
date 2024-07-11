@@ -60,13 +60,32 @@
 
 .gallery-element-console{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-around;
     width: 100%;
-    height: auto;
+    height: 230px;
     background: #00000000; 
     /* border: solid 1px red; */
     padding: 5px 0px;
+}
+
+.gallery-type-dev-dsn-work .gallery-element-console{
+    overflow-x: scroll;
+}
+
+.gallery-type-dev-dsn-work .gallery-element-console::-webkit-scrollbar {
+    /* margin-top: 15px; */
+    width: 6px;
+    height: 9px;
+}
+
+.gallery-type-dev-dsn-work .gallery-element-console::-webkit-scrollbar-track {
+    background-color: #00000060;
+}
+
+.gallery-type-dev-dsn-work .gallery-element-console::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ff4500;
 }
 
 .gallery-type-hero .gallery-element-console{

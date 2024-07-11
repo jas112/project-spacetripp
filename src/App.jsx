@@ -26,6 +26,7 @@ const App = () => {
     emailDevelopment: useRef(null),
     graphicDesign: useRef(null),
     visualDesign: useRef(null),
+    terminus: useRef(null)
   };
 
   useEffect(() => {
@@ -64,6 +65,12 @@ const App = () => {
 
       // console.log(`visDevTp - ${visDsnSectionTop} , visDevUB - ${visDsnSectionUpperBoundY} , visDevLB - ${visDsnSectionLowerBoundY}`);
 
+      const terminusSectionTop = sectionRefs['terminus'].current.offsetTop;
+      const terminusSectionUpperBoundY = sectionRefs['terminus'].current.offsetTop - 200;
+      const terminusSectionLowerBoundY = sectionRefs['terminus'].current.offsetTop + sectionRefs['terminus'].current.offsetHeight + 200;
+
+      // console.log(`terminusTp - ${terminusSectionTop} , terminusUB - ${terminusSectionUpperBoundY} , terminusLB - ${terminusSectionLowerBoundY}`);
+
       if (newScrollPositionValue <= (aboutSectionUpperBoundY - 100)) {
         setCurrentPageLocation('start');
       } else if (newScrollPositionValue >= aboutSectionUpperBoundY && newScrollPositionValue <= aboutSectionLowerBoundY) {
@@ -76,6 +83,8 @@ const App = () => {
         setCurrentPageLocation('graphicDesign');
       } else if (newScrollPositionValue >= visDsnSectionUpperBoundY && newScrollPositionValue <= visDsnSectionLowerBoundY) {
         setCurrentPageLocation('visualDesign');
+      } else if (newScrollPositionValue >= terminusSectionUpperBoundY && newScrollPositionValue <= terminusSectionLowerBoundY) {
+        setCurrentPageLocation('terminus');
       } else if (newScrollPositionValue >= (visDsnSectionUpperBoundY + 100)) {
         setCurrentPageLocation('end');
       }
@@ -170,90 +179,98 @@ const App = () => {
         scrollToBottom={scrollToBottom} 
         scrollToSection={scrollToSection} 
       />
-      <div ref={topRef}></div>
-      {/* <ForegroundFrame /> */}
-      <SpacerElement factor={10}/>
-      <div className='page-nav-ref' ref={sectionRefs.about}>
-        <SectionElement 
-          sectionTitle={sectionsData.about.sectionTitle} 
-          sectionSubtitle={sectionsData.about.sectionSubTitle} 
-          sectionNfo={sectionsData.about.sectionNfo} 
-          sectionMarker={sectionsData.about.sectionMarker} 
-          currentPageLocation={currentPageLocation}
-          hasGallery={sectionsData.about.hasGallery} 
-          galleryType={sectionsData.about.galleryType} 
-          galleryImages={sectionsData.about.galleryImages} 
-        />
+      <div className='hdr-element'>
+        {/* <ForegroundFrame /> */}
       </div>
-      <SpacerElement factor={2}/>
-      <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
-        <SectionElement 
-          sectionTitle={sectionsData.webDev.sectionTitle} 
-          sectionSubtitle={sectionsData.webDev.sectionSubTitle} 
-          sectionNfo={sectionsData.webDev.sectionNfo} 
-          sectionMarker={sectionsData.webDev.sectionMarker} 
-          currentPageLocation={currentPageLocation}
-          hasGallery={sectionsData.webDev.hasGallery} 
-          galleryType={sectionsData.webDev.galleryType} 
-          galleryImages={sectionsData.webDev.galleryImages} 
-        />
+      <div className='content-element'>
+        <div ref={topRef}></div>
+        <SpacerElement factor={10}/>
+        <div className='page-nav-ref' ref={sectionRefs.about}>
+          {/* <SectionElement 
+            sectionTitle={sectionsData.about.sectionTitle} 
+            sectionSubtitle={sectionsData.about.sectionSubTitle} 
+            sectionNfo={sectionsData.about.sectionNfo} 
+            sectionMarker={sectionsData.about.sectionMarker} 
+            currentPageLocation={currentPageLocation}
+            hasGallery={sectionsData.about.hasGallery} 
+            galleryType={sectionsData.about.galleryType} 
+            galleryImages={sectionsData.about.galleryImages} 
+          /> */}
+        </div>
+        <SpacerElement factor={2}/>
+        <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
+          {/* <SectionElement 
+            sectionTitle={sectionsData.webDev.sectionTitle} 
+            sectionSubtitle={sectionsData.webDev.sectionSubTitle} 
+            sectionNfo={sectionsData.webDev.sectionNfo} 
+            sectionMarker={sectionsData.webDev.sectionMarker} 
+            currentPageLocation={currentPageLocation}
+            hasGallery={sectionsData.webDev.hasGallery} 
+            galleryType={sectionsData.webDev.galleryType} 
+            galleryImages={sectionsData.webDev.galleryImages} 
+          /> */}
+        </div>
+        <SpacerElement factor={2}/>
+        <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
+          {/* <SectionElement 
+            sectionTitle={sectionsData.emailDev.sectionTitle} 
+            sectionSubtitle={sectionsData.emailDev.sectionSubTitle} 
+            sectionNfo={sectionsData.emailDev.sectionNfo} 
+            sectionMarker={sectionsData.emailDev.sectionMarker} 
+            currentPageLocation={currentPageLocation}
+            hasGallery={sectionsData.emailDev.hasGallery} 
+            galleryType={sectionsData.emailDev.galleryType} 
+            galleryImages={sectionsData.emailDev.galleryImages} 
+          /> */}
+        </div>
+        <SpacerElement factor={2}/>
+        <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
+          {/* <SectionElement 
+            sectionTitle={sectionsData.grfxDsn.sectionTitle} 
+            sectionSubtitle={sectionsData.grfxDsn.sectionSubTitle} 
+            sectionNfo={sectionsData.grfxDsn.sectionNfo} 
+            sectionMarker={sectionsData.grfxDsn.sectionMarker} 
+            currentPageLocation={currentPageLocation}
+            hasGallery={sectionsData.grfxDsn.hasGallery} 
+            galleryType={sectionsData.grfxDsn.galleryType} 
+            galleryImages={sectionsData.grfxDsn.galleryImages} 
+          /> */}
+        </div>
+        <SpacerElement factor={2}/>
+        <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
+          {/* <SectionElement 
+            sectionTitle={sectionsData.visDsn.sectionTitle} 
+            sectionSubtitle={sectionsData.visDsn.sectionSubTitle} 
+            sectionNfo={sectionsData.visDsn.sectionNfo} 
+            sectionMarker={sectionsData.visDsn.sectionMarker} 
+            currentPageLocation={currentPageLocation}
+            hasGallery={sectionsData.visDsn.hasGallery} 
+            galleryType={sectionsData.visDsn.galleryType} 
+            galleryImages={sectionsData.visDsn.galleryImages} 
+          /> */}
+        </div>
+        <SpacerElement factor={7}/>
       </div>
-      <SpacerElement factor={2}/>
-      <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
-        <SectionElement 
-          sectionTitle={sectionsData.emailDev.sectionTitle} 
-          sectionSubtitle={sectionsData.emailDev.sectionSubTitle} 
-          sectionNfo={sectionsData.emailDev.sectionNfo} 
-          sectionMarker={sectionsData.emailDev.sectionMarker} 
-          currentPageLocation={currentPageLocation}
-          hasGallery={sectionsData.emailDev.hasGallery} 
-          galleryType={sectionsData.emailDev.galleryType} 
-          galleryImages={sectionsData.emailDev.galleryImages} 
-        />
+      <div className='ftr-element'>
+        {/* <SpacerElement factor={5}/> */}
+        <div className='page-nav-ref terminus-nav' ref={sectionRefs.terminus}>
+          {/* <TerminusSection 
+            sectionTitle={sectionsData.terminus.sectionTitle}
+            sectionSubtitle={sectionsData.terminus.sectionSubTitle}
+            sectionNfo={sectionsData.terminus.sectionNfo}
+            sectionMarker={sectionsData.terminus.sectionMarker}
+            currentPageLocation={currentPageLocation}
+            hasGallery={sectionsData.terminus.hasGallery} 
+            galleryType={sectionsData.terminus.galleryType} 
+            galleryImages={sectionsData.terminus.galleryImages}
+          /> */}
+        </div>
+        <FTRElementStarship/>
+        <FTRElement/>
       </div>
-      <SpacerElement factor={2}/>
-      <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
-        <SectionElement 
-          sectionTitle={sectionsData.grfxDsn.sectionTitle} 
-          sectionSubtitle={sectionsData.grfxDsn.sectionSubTitle} 
-          sectionNfo={sectionsData.grfxDsn.sectionNfo} 
-          sectionMarker={sectionsData.grfxDsn.sectionMarker} 
-          currentPageLocation={currentPageLocation}
-          hasGallery={sectionsData.grfxDsn.hasGallery} 
-          galleryType={sectionsData.grfxDsn.galleryType} 
-          galleryImages={sectionsData.grfxDsn.galleryImages} 
-        />
-      </div>
-      <SpacerElement factor={2}/>
-      <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
-        <SectionElement 
-          sectionTitle={sectionsData.visDsn.sectionTitle} 
-          sectionSubtitle={sectionsData.visDsn.sectionSubTitle} 
-          sectionNfo={sectionsData.visDsn.sectionNfo} 
-          sectionMarker={sectionsData.visDsn.sectionMarker} 
-          currentPageLocation={currentPageLocation}
-          hasGallery={sectionsData.visDsn.hasGallery} 
-          galleryType={sectionsData.visDsn.galleryType} 
-          galleryImages={sectionsData.visDsn.galleryImages} 
-        />
-      </div>
-      <SpacerElement factor={7}/>
-      <FTRElementStarship/>
-      <FTRElement/>
       <ForegroundFrame />
-      <div className='page-nav-ref terminus-nav' ref={bottomRef}>
-        <TerminusSection 
-          sectionTitle={sectionsData.terminus.sectionTitle}
-          sectionSubtitle={sectionsData.terminus.sectionSubTitle}
-          sectionNfo={sectionsData.terminus.sectionNfo}
-          sectionMarker={sectionsData.terminus.sectionMarker}
-          currentPageLocation={currentPageLocation}
-          hasGallery={sectionsData.terminus.hasGallery} 
-          galleryType={sectionsData.terminus.galleryType} 
-          galleryImages={sectionsData.terminus.galleryImages}
-        />
-      </div>
       <BackgroundFrame currentScroll={scrollPositionY}/>
+      <div className='page-nav-ref' ref={bottomRef}></div>
     </Router>
   )
 }

@@ -74,7 +74,7 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
                     <div className="section-position-value">{sectionTitle}</div>
                     <div className="section-subtitle">{sectionSubtitle}</div>
                 </div>
-                <div className="section-nfo  nfo-scroll" style={{height:'auto'}}>
+                <div className="section-nfo  nfo-scroll">
                     {generateText(sectionNfo,'sectionNfo', sectionMarker)}
                 </div>
                 {/* {galleryValue} */}

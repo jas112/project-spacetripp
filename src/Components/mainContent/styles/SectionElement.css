@@ -411,6 +411,26 @@
     font-size: 13px;
 }
 
+.nfo-scroll{
+    height: 130px;
+    overflow-y: scroll;
+    padding: 0px 5px;
+}
+
+.nfo-scroll::-webkit-scrollbar {
+    margin-top: 15px;
+    width: 6px;
+}
+
+.nfo-scroll::-webkit-scrollbar-track {
+    background-color: #00000060;
+}
+
+.nfo-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ff4500;
+}
+
 /* .section-nfo{
 
 } */
