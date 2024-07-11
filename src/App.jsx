@@ -10,6 +10,8 @@ import SectionElement from './Components/mainContent/SectionElement.jsx';
 import SpacerElement from './Components/mainContent/SpacerElement.jsx';
 import TerminusSection from './Components/mainContent/TerminusSection.jsx';
 import sectionsData from './data/sections.js';
+import stFigureA_L1 from './assets/images/hdrParallax_imgs/ST_tripp_figure-A-L1-RSCC.png'
+import HDRParallaxFrames from './Components/parallaxFrames/HDRParallaxFrames.jsx';
 
 const App = () => {
 
@@ -179,14 +181,15 @@ const App = () => {
         scrollToBottom={scrollToBottom} 
         scrollToSection={scrollToSection} 
       />
+      <HDRParallaxFrames />
       <div className='hdr-element'>
-        {/* <ForegroundFrame /> */}
+
       </div>
       <div className='content-element'>
         <div ref={topRef}></div>
         <SpacerElement factor={10}/>
         <div className='page-nav-ref' ref={sectionRefs.about}>
-          {/* <SectionElement 
+          <SectionElement 
             sectionTitle={sectionsData.about.sectionTitle} 
             sectionSubtitle={sectionsData.about.sectionSubTitle} 
             sectionNfo={sectionsData.about.sectionNfo} 
@@ -195,11 +198,11 @@ const App = () => {
             hasGallery={sectionsData.about.hasGallery} 
             galleryType={sectionsData.about.galleryType} 
             galleryImages={sectionsData.about.galleryImages} 
-          /> */}
+          />
         </div>
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
-          {/* <SectionElement 
+          <SectionElement 
             sectionTitle={sectionsData.webDev.sectionTitle} 
             sectionSubtitle={sectionsData.webDev.sectionSubTitle} 
             sectionNfo={sectionsData.webDev.sectionNfo} 
@@ -208,11 +211,11 @@ const App = () => {
             hasGallery={sectionsData.webDev.hasGallery} 
             galleryType={sectionsData.webDev.galleryType} 
             galleryImages={sectionsData.webDev.galleryImages} 
-          /> */}
+          />
         </div>
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
-          {/* <SectionElement 
+          <SectionElement 
             sectionTitle={sectionsData.emailDev.sectionTitle} 
             sectionSubtitle={sectionsData.emailDev.sectionSubTitle} 
             sectionNfo={sectionsData.emailDev.sectionNfo} 
@@ -221,11 +224,11 @@ const App = () => {
             hasGallery={sectionsData.emailDev.hasGallery} 
             galleryType={sectionsData.emailDev.galleryType} 
             galleryImages={sectionsData.emailDev.galleryImages} 
-          /> */}
+          />
         </div>
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
-          {/* <SectionElement 
+          <SectionElement 
             sectionTitle={sectionsData.grfxDsn.sectionTitle} 
             sectionSubtitle={sectionsData.grfxDsn.sectionSubTitle} 
             sectionNfo={sectionsData.grfxDsn.sectionNfo} 
@@ -234,11 +237,11 @@ const App = () => {
             hasGallery={sectionsData.grfxDsn.hasGallery} 
             galleryType={sectionsData.grfxDsn.galleryType} 
             galleryImages={sectionsData.grfxDsn.galleryImages} 
-          /> */}
+          />
         </div>
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
-          {/* <SectionElement 
+          <SectionElement 
             sectionTitle={sectionsData.visDsn.sectionTitle} 
             sectionSubtitle={sectionsData.visDsn.sectionSubTitle} 
             sectionNfo={sectionsData.visDsn.sectionNfo} 
@@ -247,14 +250,14 @@ const App = () => {
             hasGallery={sectionsData.visDsn.hasGallery} 
             galleryType={sectionsData.visDsn.galleryType} 
             galleryImages={sectionsData.visDsn.galleryImages} 
-          /> */}
+          />
         </div>
         <SpacerElement factor={7}/>
       </div>
       <div className='ftr-element'>
-        {/* <SpacerElement factor={5}/> */}
+        <SpacerElement factor={5}/>
         <div className='page-nav-ref terminus-nav' ref={sectionRefs.terminus}>
-          {/* <TerminusSection 
+          <TerminusSection 
             sectionTitle={sectionsData.terminus.sectionTitle}
             sectionSubtitle={sectionsData.terminus.sectionSubTitle}
             sectionNfo={sectionsData.terminus.sectionNfo}
@@ -263,12 +266,12 @@ const App = () => {
             hasGallery={sectionsData.terminus.hasGallery} 
             galleryType={sectionsData.terminus.galleryType} 
             galleryImages={sectionsData.terminus.galleryImages}
-          /> */}
+          />
         </div>
         <FTRElementStarship/>
         <FTRElement/>
       </div>
-      <ForegroundFrame />
+      {/* <ForegroundFrame /> */}
       <BackgroundFrame currentScroll={scrollPositionY}/>
       <div className='page-nav-ref' ref={bottomRef}></div>
     </Router>

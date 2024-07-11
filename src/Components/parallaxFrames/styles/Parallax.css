@@ -52,9 +52,13 @@
     width:100%;
     max-width:100%;
     margin: 0px auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
     position: absolute;
     top:0%;
-
+    /* overflow-x: hidden; */
+    /* background: blue; */
 }
 
 .figure-plx-frame{
@@ -70,10 +74,10 @@
     /* overflow-x: hidden; */
 }
 
-.frameImage{
+/* .frameImage{
     display:block;
     margin:0px auto;
-}
+} */
 
 
 /* //////////////////////////////////////////////////////////////////////////////// */
@@ -85,7 +89,7 @@
 #trippFigure{
     position: relative;
     z-index:-25;
-    max-width: 100%;
+    max-width: none;
     width: 842px;
 }
 
@@ -138,7 +142,7 @@
 
 .frameImage{
     width:842px;
-    max-width:100%;
+    max-width:none;
     margin: 0px auto;
     object-fit: cover;
 
@@ -150,6 +154,7 @@
     background-image: url('images/star_field1C.png');
     background-size: 400px auto;
     background-repeat: repeat;
+    /* border: 1px solid lime; */
 }
 
 
@@ -195,6 +200,7 @@
 .stars {
     background:#000 url('../../../assets/images/') repeat top center;
     z-index:0;
+    border: 1px solid lime;
 }
 
 .twinkling{

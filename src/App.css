@@ -5,6 +5,18 @@ html, body{
   /* border: solid 5px lightskyblue; */
 }
 
+.hdr-element{
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  overflow-x: hidden; /* Hides overflow on the x-axis */
+  width: 100%;
+}
+
+.hdr-element img{
+  max-width: none; /* Prevents the image from scaling down */
+  width: 842px; /* Ensures the image remains 842px wide */
+}
+
 .content-element{
   width: 100%;
   min-height: 100%;
@@ -19,8 +31,8 @@ html, body{
   left: 0px;
   right: 0px;
   bottom: 0px; */
-  background: #00ff0030;
-  /* border: solid 1px lime; */
+  /* background: #00ff0030; */
+  border: solid 1px lime;
   /* overflow: hidden; */
 }
 
