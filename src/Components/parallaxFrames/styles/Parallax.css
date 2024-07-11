@@ -200,7 +200,7 @@
 .stars {
     background:#000 url('../../../assets/images/') repeat top center;
     z-index:0;
-    border: 1px solid lime;
+    /* border: 1px solid lime; */
 }
 
 .twinkling{

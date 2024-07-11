@@ -57,7 +57,7 @@ const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMark
   return (
     <div id={sectionMarker} ref={ref} className={`full-section-config floating ${currentStatusBool ? 'fade-in' : 'fade-out'}`}>
         <div className='terminus-console-frame-outer'>
-            {/* <TopTerminusSectionPanel currentStatusBool={currentStatusBool} /> */}
+            <TopTerminusSectionPanel currentStatusBool={currentStatusBool} />
             <div className='terminus-hdr-frame'>
                 <div className="ftr-txt-title ftr-main-title">{sectionTitle}</div>
             </div>
@@ -84,21 +84,27 @@ const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMark
                         <div className='terminus-console-panel-button-shell'>
                             <div className='terminus-console-panel-button-B' title='My LinkedIn'>
                                 <div className='icon-frame'>
-                                    <FontAwesomeIcon icon={faLinkedinIn} className="icon linkedin" size='2x' />
+                                    <a href="https://www.linkedin.com/in/jim-tripp-sanders-10739495/" className='terminus-nfo-link'>
+                                        <FontAwesomeIcon icon={faLinkedinIn} className="icon linkedin" size='2x' />
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div className='terminus-console-panel-button-shell'>
                             <div className='terminus-console-panel-button-B' title='My Github Portal'>
                                 <div className='icon-frame'>
-                                    <FontAwesomeIcon icon={faGitAlt} className="icon linkedin" size='2x' />
+                                    <a href="https://github.com/jas112" className='terminus-nfo-link'>
+                                        <FontAwesomeIcon icon={faGitAlt} className="icon linkedin" size='2x' />
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div className='terminus-console-panel-button-shell'>
                             <div className='terminus-console-panel-button-B' title='My Cargocollective Site'>
                                 <div className='icon-frame'>
-                                    <FontAwesomeIcon icon={faBolt} className="icon linkedin" size='2x' />
+                                    <a href="https://cargocollective.com/TrippSanders" className='terminus-nfo-link'>
+                                        <FontAwesomeIcon icon={faBolt} className="icon linkedin" size='2x' />
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +112,7 @@ const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMark
                     <div className='terminus-console-panel-indicator'></div>
                 </div>
             </div>
-            {/* <BottomTerminusSectionPanel currentStatusBool={currentStatusBool} />  */}
+            <BottomTerminusSectionPanel currentStatusBool={currentStatusBool} /> 
         </div>
     </div>
 

@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    border: solid 1px red;
+    /* border: solid 1px red; */
     position: relative;
     left: 0;
     top: 0px;
@@ -334,6 +334,11 @@
 .icon-frame:hover{
     border: solid 3px #ff4500;
     box-shadow: 0 0 2em #ff4500;
+}
+
+.terminus-nfo-link{
+    text-decoration: none;
+    color: #ff4500;
 }
 
 /* .terminus-console-panel-button-B.parent:hover{

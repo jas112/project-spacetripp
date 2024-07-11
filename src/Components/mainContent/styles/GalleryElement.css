@@ -84,7 +84,7 @@
 }
 
 .gallery-type-dev-dsn-work .gallery-element-console::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: 0px;
     background-color: #ff4500;
 }
 

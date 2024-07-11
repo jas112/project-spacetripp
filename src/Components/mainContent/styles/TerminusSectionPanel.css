@@ -32,3 +32,32 @@
     background: #00000010;
     height: 8px;
 }
+
+.eFrame-chevron{
+    width: 2px;
+    height: 18px;
+    background: transparent;
+    border: 1px solid #ffffff;
+    opacity:.3;
+}
+
+.eFrame-chevron-1{
+    transform: rotate(-36deg);
+}
+
+.eFrame-chevron-2{
+    transform: rotate(-36deg);
+}
+
+
+.active-terminus-section-panel eFrame-chevron{
+    border: 1px solid #ff4500;
+    opacity:1;
+}
+
+.blink-chevron{
+    background-color: #ff4500;
+    border: 1px solid #ff4500;
+    height: 36px;
+    opacity: 1;
+}
