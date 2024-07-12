@@ -33,14 +33,14 @@ const NavBar = ({currentScroll, currentTime, currentPageLocation, scrollToTop, s
                 <div className='time-data console-data'>{currentTime}</div> 
             </div>
             <div className={`nav-links ${isNavOpen ? 'linksActive' : ''}`}>
-                <div className={getClassName('start')} id='start' onClick={scrollToTop}>&#9737;</div>
+                <div className={getClassName('start')} id='start' onClick={scrollToTop}>Start</div>
                 <div className={getClassName('about')} id='about' onClick={() => scrollToSection('about')}>About</div>
                 <div className={getClassName('webDevelopment')} id='webDevelopment' onClick={() => scrollToSection('webDevelopment')}>Web+Dev</div>
                 <div className={getClassName('emailDevelopment')} id='emailDevelopment' onClick={() => scrollToSection('emailDevelopment')}>Email+Dev</div>
                 <div className={getClassName('graphicDesign')} id='graphicDesign' onClick={() => scrollToSection('graphicDesign')}>Gfx+Dsn</div>
                 <div className={getClassName('visualDesign')} id='visualDesign' onClick={() => scrollToSection('visualDesign')}>Vis+Dsn</div>
                 <div className={getClassName('terminus')} id='terminus' onClick={() => scrollToSection('terminus')}>Terminus</div>
-                <div className={getClassName('end')} id='end' onClick={scrollToBottom}>&#9737;</div>
+                <div className={getClassName('end')} id='end' onClick={scrollToBottom}>End</div>
             </div>
             {/* <ul className={`navbar-links ${isNavOpen ? 'linksActive' : ''}`}>
                 <li className={getClassName('start')} id='start' onClick={scrollToTop}>&#9737;</li>

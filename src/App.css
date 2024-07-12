@@ -36,6 +36,12 @@ html, body{
   /* overflow: hidden; */
 }
 
+.ftr-scene{
+  border: 1px solid orange;
+  overflow-y: hidden;
+  height: 700px;
+}
+
 .init-text{
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -44,5 +50,10 @@ html, body{
 }
 
 .page-nav-ref{
-  z-index: 99999;
+  z-index: 8999;
+}
+
+.terminus-nav{
+  position: relative;
+  top:1200px;
 }

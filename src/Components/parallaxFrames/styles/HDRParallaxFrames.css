@@ -27,8 +27,8 @@
     overflow: hidden; /* Hides overflow on the x-axis */
     /* overflow-y: visible; */
     width: 100%;
-    background: #ff000060;
-    background: blue;
+    /* background: #ff000060;
+    background: blue; */
     /* border:1px solid red; */
 }
 

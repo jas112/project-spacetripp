@@ -1,10 +1,15 @@
 import SectionData from "./sectionData";
 import ImageData from "./imageData";
+import LinkData from "./linkData";
+import { faLinkedinIn, faGitAlt } from '@fortawesome/free-brands-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons'
 import imageThumb_01ref from '../assets/images/siteFeatures_imgs/ST_tripp_figure-head-closeup-75.png';
 import imageFull_01ref from '../assets/images/siteFeatures_imgs/ST_tripp_figure-head-closeup-75.png';
 import avatarImage1Ref from '../assets/images/stEmail_imgs/ST_emAvatarCircleOngwb.png';
 import avatarImage2Ref from '../assets/images/stEmail_imgs/ST_emAvatarCircleOngWhtCwb.png';
 import avatarImage3Ref from '../assets/images/stEmail_imgs/ST_emAvatarCircleWhtwb.png';
+import resumeRef from '../assets/documents/resumeNfo_docs/JamesSanders_Resume_WebDev.pdf';
+import { MemoryRouter } from "react-router-dom";
 
 const terminusSectionData = new SectionData(
     'terminus',
@@ -15,6 +20,8 @@ const terminusSectionData = new SectionData(
     `Thanks for visiting my custom corner of the web! I hope you had a positive experience. For more info, send an email, check my resume, or visit my links. See you on the flip side!`,
     'true',
     'Nfo',
+    'terminusGallery',
+    [],
     [],
     []     
 );
@@ -51,8 +58,51 @@ const avatarImage3 = new ImageData(
     'avatarImage1-full-03'
 );
 
+const myEmailLink = new LinkData(
+    'mailto:jas.sandmaster@gmail.com',
+    '-',
+    'Email me here.',
+    'Email Me'
+);
+
+const myResumeLink = new LinkData(
+    resumeRef,
+    '-',
+    'Read my resume.',
+    'Resume'
+);
+
+
+const myLinkedInLink = new LinkData(
+    'https://www.linkedin.com/in/jim-tripp-sanders-10739495/',
+    faLinkedinIn,
+    'My LinkedIn Profile',
+    '-'
+);
+
+const myGitHubLink = new LinkData(
+    'https://github.com/jas112',
+    faGitAlt,
+    'My GitHub Repository',
+    '-'
+);
+
+const myCargoLink = new LinkData(
+    'https://cargocollective.com/TrippSanders',
+    faBolt ,
+    'My Cargocollective Site',
+    '-'
+);
+
 terminusSectionData.galleryImages.push(avatarImage1);
 terminusSectionData.galleryImages.push(avatarImage2);
 terminusSectionData.galleryImages.push(avatarImage2);
+
+terminusSectionData.sectionLinksA.push(myEmailLink);
+terminusSectionData.sectionLinksA.push(myResumeLink);
+
+terminusSectionData.sectionLinksB.push(myLinkedInLink);
+terminusSectionData.sectionLinksB.push(myGitHubLink);
+terminusSectionData.sectionLinksB.push(myCargoLink);
 
 export default terminusSectionData;

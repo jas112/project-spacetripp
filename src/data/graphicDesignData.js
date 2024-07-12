@@ -13,6 +13,8 @@ const graphicDesignSectionData = new SectionData(
     My interests gravitate towards activities where my imagination is allowed to lead and discover new paths. I enjoy drawing, scifi/fantasy, comics/bande dessinee, animation, classic chambara samurai films, architecture, and art in all its forms. I strive towards being an effective collaborator and seek to connect and pool skills with fellow like-minded tech creatives.`,
     'true',
     'designWork',
+    'grfxDsnGallery',
+    [],
     [],
     []     
 );

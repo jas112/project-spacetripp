@@ -15,6 +15,8 @@ const webDevelopmentSectionData = new SectionData(
     part of a team effort in collaboration with some pretty cool folks.`,
     'true',
     'devWork',
+    'webDevGallery',
+    [],
     [],
     []     
 );

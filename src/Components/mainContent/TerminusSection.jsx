@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import TopTerminusSectionPanel from './TopTerminusSectionPanel'
 import BottomSectionPanel from './BottomSectionPanel'
 import BottomTerminusSectionPanel from './BottomTerminusSectionPanel'
+import LinkButtonTile from './LinkButtonTile.jsx'
 import {generateText} from '../../utils/contentTools.jsx'
 import './styles/SectionPanel.css'
 import './styles/TerminusSection.css'
@@ -12,7 +13,7 @@ import { faBolt } from '@fortawesome/free-solid-svg-icons'
 
 
 
-const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, galleryType, galleryImages, sectionLinks}) => {
+const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, galleryType, galleryImages, sectionLinksA, sectionLinksB}) => {
 
     const [currentStatusBool, setCurrentStatusBool] = useState(false);
     const [activateSectionMinor, setActivateSectionMinor] = useState(false);
@@ -73,41 +74,24 @@ const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMark
                     </div>
                 </div>
                 <div className='terminus-console-panel terminus-console-panel-B'>
-                    <div className='terminus-console-panel-indicator'></div>
+                    {/* <div className='terminus-console-panel-indicator'></div>
                     <div className='terminus-console-panel-button-A'>
                         <a className='terminus-console-panel-button-text' href='www.cartoonbrew.com' target='_blank' rel='noopener noreferrer'>Email Me</a>
                     </div>
                     <div className='terminus-console-panel-button-A'>
                         <a className='terminus-console-panel-button-text' href='www.cartoonbrew.com' target='_blank' rel='noopener noreferrer'>Resume</a>
-                    </div>
+                    </div> */}
+                    {
+                        sectionLinksA.map((link, idx) => (
+                            <LinkButtonTile key={`${sectionMarker}LinkA` + '-' + idx} linkData={link} linkBtnTileType={'A'} />
+                        )) 
+                    }
                     <div className='terminus-console-panel-button-B-frame'>
-                        <div className='terminus-console-panel-button-shell'>
-                            <div className='terminus-console-panel-button-B' title='My LinkedIn'>
-                                <div className='icon-frame'>
-                                    <a href="https://www.linkedin.com/in/jim-tripp-sanders-10739495/" className='terminus-nfo-link'>
-                                        <FontAwesomeIcon icon={faLinkedinIn} className="icon linkedin" size='2x' />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='terminus-console-panel-button-shell'>
-                            <div className='terminus-console-panel-button-B' title='My Github Portal'>
-                                <div className='icon-frame'>
-                                    <a href="https://github.com/jas112" className='terminus-nfo-link'>
-                                        <FontAwesomeIcon icon={faGitAlt} className="icon linkedin" size='2x' />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='terminus-console-panel-button-shell'>
-                            <div className='terminus-console-panel-button-B' title='My Cargocollective Site'>
-                                <div className='icon-frame'>
-                                    <a href="https://cargocollective.com/TrippSanders" className='terminus-nfo-link'>
-                                        <FontAwesomeIcon icon={faBolt} className="icon linkedin" size='2x' />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    {
+                        sectionLinksB.map((link, idx) => (
+                            <LinkButtonTile key={`${sectionMarker}LinkB` + '-' + idx} linkData={link} linkBtnTileType={'B'} />
+                        )) 
+                    }
                     </div>
                     <div className='terminus-console-panel-indicator'></div>
                 </div>

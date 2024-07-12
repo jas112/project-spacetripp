@@ -4,7 +4,7 @@ import './styles/TerminusSectionPanel.css'
 
 const TopTerminusSectionPanel = ({currentStatusBool}) => {
 
-    console.log(`from TopterminusSectionPanel - currentStatusBool = ${currentStatusBool}`);
+    // console.log(`from TopterminusSectionPanel - currentStatusBool = ${currentStatusBool}`);
 
     const [activatePanel, setActivatePanel] = useState(false);
     const [blinkingChevron, setBlinkingChevron] = useState(-1);

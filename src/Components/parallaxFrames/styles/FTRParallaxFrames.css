@@ -37,13 +37,9 @@
     }
 }
 
-/* //////////////////////////////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////////////////////////////// */
+/* FTR Parallax Frames Style Definitions */
 
-
-/* FTR Section Definitions */
-
-.ftr-section{
+.ftr-plx-frames-holder{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -53,49 +49,20 @@
     /* height: 3500px; */
     height: 1000px;
     /* border: 1px solid white; */
-    /* position: absolute;
-    top:9978px;
-    left: 0px; */
     z-index: -15;
 }
 
-.ftr-section-starship{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    overflow: hidden;
-    width:100%;
-    height: 900px;
-    /* border: 1px solid green; */
-    position: relative;
-    top:1319px;
-    left: 0px;
-    z-index: 10;
-}
-
-.endpoint-bottom{
-    /* background: linear-gradient(rgba(0, 0, 0, 0.65),rgba(38, 69, 122, 0.309), rgba(240, 21, 21, 0.15)); */
-    /* background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(255, 69, 0, 0.2), rgba(255, 69, 0, 0.4), rgba(255, 69, 0, 0.6)); */
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(255, 69, 0, 0.0), rgba(255, 69, 0, 0.3), rgba(255, 69, 0, 0.6));
+.ftr-plx-star-frame{
     height: 1120px;
     margin: 200px 0px 0px 0px;
-    /* border: 1px solid yellow; */
+    /* background: linear-gradient(#000000a6, #ff450000, #ff45004d, #ff450099); */
+    background: linear-gradient(#000000a6,#ff44000f, #ff440020, #ff45004d, #ff450099);
+    /* background: linear-gradient(#000000a6, #ff45004d, #ff450099); */
 }
-
-.endpoint-bottom-starship{
-    height: 1120px;
-    margin: 200px 0px 0px 0px;
-}
-
-
-/* //////////////////////////////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////////////////////////////// */
-
 
 /* Starship Slide Definitions */
 
-.bg-slide1 {
+.ftr-plx-slide1 {
     width: 130%;
     z-index: -3000;
 	-webkit-animation: animateStarship 350s linear infinite;
@@ -106,7 +73,7 @@
 	transform: scale(.2);
 }
 
-.bg-slide2 {
+.ftr-plx-slide2 {
     width: 130%;
     z-index: -3000;
 	-webkit-animation: animateStarship 350s linear infinite;
@@ -117,7 +84,7 @@
 	transform: scale(.4);
 }
 
-.bg-slide3 {
+.ftr-plx-slide3 {
     width: 200%;
     z-index: -3000;
 	-webkit-animation: animateStarship 400s linear infinite;
@@ -128,7 +95,7 @@
 	transform: scale(.3);
 }
 
-.bg-slide4 {
+.ftr-plx-slide4 {
     width: 200%;
     position: relative;
     top: 35px;
@@ -141,7 +108,7 @@
 	transform: scale(3.5);
 }
 
-.bg-slide5 {
+.ftr-plx-slide5 {
     width: 200%;
     z-index: -3000;
 	-webkit-animation: animateStarship 325s linear infinite;
@@ -161,11 +128,11 @@
     background-position: top center;
 }
 
-.ftr-star{
+.ftr-plx-star{
     width: 3600px;
     height: 3600px;
     position: relative;
-    top: 0px;
+    top: 1800px;
     margin: 0px auto;
     animation: rotate360Rev 100s infinite;
 }

@@ -12,6 +12,9 @@ import TerminusSection from './Components/mainContent/TerminusSection.jsx';
 import sectionsData from './data/sections.js';
 import stFigureA_L1 from './assets/images/hdrParallax_imgs/ST_tripp_figure-A-L1-RSCC.png'
 import HDRParallaxFrames from './Components/parallaxFrames/HDRParallaxFrames.jsx';
+import FTRParallaxFrames_Starships from './Components/parallaxFrames/FTRParallaxFrames_Starships.jsx';
+import FTRParallaxFrames_Star from './Components/parallaxFrames/FTRParallaxFrames_Star.jsx';
+import FTR_Element from './Components/mainContent/FTR_Element.jsx';
 
 const App = () => {
 
@@ -71,7 +74,11 @@ const App = () => {
       const terminusSectionUpperBoundY = sectionRefs['terminus'].current.offsetTop - 200;
       const terminusSectionLowerBoundY = sectionRefs['terminus'].current.offsetTop + sectionRefs['terminus'].current.offsetHeight + 200;
 
-      // console.log(`terminusTp - ${terminusSectionTop} , terminusUB - ${terminusSectionUpperBoundY} , terminusLB - ${terminusSectionLowerBoundY}`);
+      console.log(`terminusTp - ${terminusSectionTop} , terminusUB - ${terminusSectionUpperBoundY} , terminusLB - ${terminusSectionLowerBoundY}`);
+
+      const endTop = bottomRef.current.offsetTop;
+
+      console.log(`endTop - ${end}`);
 
       if (newScrollPositionValue <= (aboutSectionUpperBoundY - 100)) {
         setCurrentPageLocation('start');
@@ -87,7 +94,7 @@ const App = () => {
         setCurrentPageLocation('visualDesign');
       } else if (newScrollPositionValue >= terminusSectionUpperBoundY && newScrollPositionValue <= terminusSectionLowerBoundY) {
         setCurrentPageLocation('terminus');
-      } else if (newScrollPositionValue >= (visDsnSectionUpperBoundY + 100)) {
+      } else if (newScrollPositionValue >= (terminusSectionLowerBoundY + 10)) {
         setCurrentPageLocation('end');
       }
 
@@ -255,7 +262,7 @@ const App = () => {
         <SpacerElement factor={7}/>
       </div>
       <div className='ftr-element'>
-        <SpacerElement factor={5}/>
+        <SpacerElement factor={2}/>
         <div className='page-nav-ref terminus-nav' ref={sectionRefs.terminus}>
           <TerminusSection 
             sectionTitle={sectionsData.terminus.sectionTitle}
@@ -266,10 +273,17 @@ const App = () => {
             hasGallery={sectionsData.terminus.hasGallery} 
             galleryType={sectionsData.terminus.galleryType} 
             galleryImages={sectionsData.terminus.galleryImages}
+            sectionLinksA={sectionsData.terminus.sectionLinksA}
+            sectionLinksB={sectionsData.terminus.sectionLinksB}
           />
         </div>
-        <FTRElementStarship/>
-        <FTRElement/>
+        <FTR_Element currentPageLocation={currentPageLocation} />
+        {/* <FTRParallaxFrames_Starships />
+        <FTRParallaxFrames_Star /> */}
+        {/* <div className='ftr-scene'>
+          <FTRElementStarship/>
+          <FTRElement/>
+        </div> */}
       </div>
       {/* <ForegroundFrame /> */}
       <BackgroundFrame currentScroll={scrollPositionY}/>

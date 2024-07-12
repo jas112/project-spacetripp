@@ -15,7 +15,9 @@ const aboutSectionData = new SectionData(
     activities that spark my imagination, like drawing, sci-fi/fantasy, comics, animation, classic samurai films, 
     architecture, and art. I aim to be a great collaborator and connect with like-minded tech creatives.`,
     'true',
-    'hero', 
+    'hero',
+    'aboutGallery', 
+    [],
     [],
     []   
 );

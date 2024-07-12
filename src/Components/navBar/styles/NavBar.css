@@ -110,7 +110,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 0px 0px 0px;
-    z-index: 1000;
+    z-index: 9000;
 }
 
 .navbar-logo{
@@ -200,7 +200,7 @@
     color: #ffffff;
     text-decoration: none;
     margin-left: 0px;
-    font-size: 13px;
+    font-size: 12px;
     opacity: .25;
     transition: color 0.3s;
     transition: opacity 0.3s;
