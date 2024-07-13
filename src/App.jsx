@@ -19,6 +19,7 @@ import FTR_Element from './Components/mainContent/FTR_Element.jsx';
 const App = () => {
 
   const [scrollPositionY, setScrollPositionY] = useState(0);
+  const [dateString, setDateString] = useState('');
   const [timeString, setTimeString] = useState('');
 
   const [currentPageLocation, setCurrentPageLocation] = useState('start');
@@ -116,6 +117,8 @@ const App = () => {
       var mdvValue = months[monthValue] + dayValue;
       var yrValue = yearValue;
 
+      console.log(`monthValue: ${monthValue}`);
+
       var hoursStr;
 
       if(hourValue < 10){hoursStr = "0" + hourValue;
@@ -132,8 +135,10 @@ const App = () => {
       }else{secondsStr = secondsValue;}
 
       // var tmStrValue = mdvValue + ', ' + yrValue + ' | ' + hoursStr + "hrs : " + minutesStr + "min : " + secondsStr + 'sec';
-      var tmStrValue2 = 'Mo-' + monthValue + ' // Dy-' + dayValue + ' // Yr-' + yrValue + ' // ' + hoursStr + "H : " + minutesStr + "M : " + secondsStr + 'S';
+      var d8StrValue = `${monthValue}/${dayValue}/${yrValue}`;
+      var tmStrValue2 = `${hoursStr}.${minutesStr}.${secondsStr}` ;
 
+      setDateString(d8StrValue)
       setTimeString(tmStrValue2)
 
     }, 1000)
@@ -182,6 +187,7 @@ const App = () => {
     <Router>
       <NavBar 
         currentScroll={scrollPositionY} 
+        currentDate={dateString}
         currentTime={timeString} 
         currentPageLocation={currentPageLocation} 
         scrollToTop={scrollToTop} 

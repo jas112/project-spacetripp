@@ -1,9 +1,16 @@
 import React, {useState, useEffect} from 'react'
+import { Fancybox } from '@fancyapps/ui'
+import '@fancyapps/ui/dist/fancybox/fancybox.css'
 import './styles/GalleryElement.css'
 import GalleryItemTypeA from './GalleryItemTypeA.jsx'
 
 
 const GalleryElement = ({sectionMarker, galleryType, galleryImages, currentStatusBool}) => {
+
+    useEffect(() => {
+        Fancybox.bind('[data-fancybox]', {});
+    }, [])
+    
 
     const determineGalleryClass = () => {
         if(galleryType == 'hero'){
@@ -14,14 +21,15 @@ const GalleryElement = ({sectionMarker, galleryType, galleryImages, currentStatu
     }
 
     const galleryClass = determineGalleryClass();
+
     // console.log(`${sectionMarker} has galleryType: ${galleryType} and galleryClass: ${galleryClass}`);
 
     const generateGalleryItems = () => {
         return(
             galleryImages.map((image, idx) => (
-                <React.Fragment key={`${sectionMarker}` + '-' + idx}>
-                    <GalleryItemTypeA galleryItemImage={image.thumbnail} />
-                </React.Fragment>
+                <a key={`${sectionMarker}` + '-' + idx} data-fancybox={sectionMarker} href={image.image}>
+                    <GalleryItemTypeA galleryItemImage={image} />
+                </a>
             ))        
         )
     }
@@ -38,9 +46,9 @@ const GalleryElement = ({sectionMarker, galleryType, galleryImages, currentStatu
 
             {
                 galleryImages.map((image, idx) => (
-                    <React.Fragment key={`${sectionMarker}` + '-' + idx}>
-                        <GalleryItemTypeA galleryItemImage={image} sectionMarker={sectionMarker} />
-                    </React.Fragment>
+                    <a key={`${sectionMarker}` + '-' + idx} data-fancybox={sectionMarker} href={image.image}>
+                        <GalleryItemTypeA galleryItemImage={image} />
+                    </a>
                 )) 
             }
 

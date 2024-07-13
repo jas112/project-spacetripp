@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './styles/NavBar.css';
 import stLogo from '../../assets/images/siteFeatures_imgs/ST_logo-RSCCsm.png'
+import NavBar_NavPoint from './NavBar_NavPoint';
 
-const NavBar = ({currentScroll, currentTime, currentPageLocation, scrollToTop, scrollToBottom, scrollToSection}) => {
+const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, scrollToTop, scrollToBottom, scrollToSection}) => {
 
     const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -21,36 +22,122 @@ const NavBar = ({currentScroll, currentTime, currentPageLocation, scrollToTop, s
   return (
     <nav className='navbar'>
         <img src={stLogo} className='navbar-logo' alt='SpaceTripp Logo'/>
-        <div className="nav-minimized" onClick={toggleNavMode}>
+        {/* <div className="nav-minimized" onClick={toggleNavMode}>
             <div></div>
             <div></div>
             <div></div>
             <div></div>
-        </div>
+        </div> */}
         <div className='nav-console'>
-            <div className='nfo-console'>
+            {/* <div className='nfo-console'>
                 <div className='scroll-data console-data'>SROLV-{currentScroll}</div>
+                <div className='date-data console-data'>{currentDate}</div> 
                 <div className='time-data console-data'>{currentTime}</div> 
-            </div>
+            </div> */}
             <div className={`nav-links ${isNavOpen ? 'linksActive' : ''}`}>
-                <div className={getClassName('start')} id='start' onClick={scrollToTop}>Start</div>
-                <div className={getClassName('about')} id='about' onClick={() => scrollToSection('about')}>About</div>
-                <div className={getClassName('webDevelopment')} id='webDevelopment' onClick={() => scrollToSection('webDevelopment')}>Web+Dev</div>
-                <div className={getClassName('emailDevelopment')} id='emailDevelopment' onClick={() => scrollToSection('emailDevelopment')}>Email+Dev</div>
-                <div className={getClassName('graphicDesign')} id='graphicDesign' onClick={() => scrollToSection('graphicDesign')}>Gfx+Dsn</div>
-                <div className={getClassName('visualDesign')} id='visualDesign' onClick={() => scrollToSection('visualDesign')}>Vis+Dsn</div>
-                <div className={getClassName('terminus')} id='terminus' onClick={() => scrollToSection('terminus')}>Terminus</div>
-                <div className={getClassName('end')} id='end' onClick={scrollToBottom}>End</div>
+                <div 
+                    className={getClassName('start')} 
+                    id='start' 
+                    onClick={scrollToTop}
+                >
+                    <div className='nav-link-element-1'>
+                        <NavBar_NavPoint />
+                    </div>
+                    <div className='nav-link-element-2'>
+                        <div className='nav-link-label'>Start</div>
+                    </div>
+                </div>
+                <div 
+                className={getClassName('about')} 
+                id='about' 
+                onClick={() => scrollToSection('about')}
+                >
+                    <div className='nav-link-element-1'>
+                        <NavBar_NavPoint />
+                    </div>
+                    <div className='nav-link-element-2'>
+                        <div className='nav-link-label'>About</div>
+                    </div>
+                </div>
+                <div 
+                className={getClassName('webDevelopment')} 
+                id='webDevelopment' 
+                onClick={() => scrollToSection('webDevelopment')}
+                >
+                    <div className='nav-link-element-1'>
+                        <NavBar_NavPoint />
+                    </div>
+                    <div className='nav-link-element-2'>
+                        <div className='nav-link-label'>Web+Dev</div>
+                    </div>
+                </div>
+                <div 
+                className={getClassName('emailDevelopment')} 
+                id='emailDevelopment' 
+                onClick={() => scrollToSection('emailDevelopment')}
+                >
+                    <div className='nav-link-element-1'>
+                        <NavBar_NavPoint />
+                    </div>
+                    <div className='nav-link-element-2'>
+                        <div className='nav-link-label'>Email+Dev</div>
+                    </div>
+                </div>
+                <div 
+                className={getClassName('graphicDesign')} 
+                id='graphicDesign' 
+                onClick={() => scrollToSection('graphicDesign')}
+                >
+                    <div className='nav-link-element-1'>
+                        <NavBar_NavPoint />
+                    </div>
+                    <div className='nav-link-element-2'>
+                        <div className='nav-link-label'>Gfx+Dsn</div>
+                    </div>
+                </div>
+                <div 
+                className={getClassName('visualDesign')} 
+                id='visualDesign' 
+                onClick={() => scrollToSection('visualDesign')}
+                >
+                    <div className='nav-link-element-1'>
+                        <NavBar_NavPoint />
+                    </div>
+                    <div className='nav-link-element-2'>
+                        <div className='nav-link-label'>Vis+Dsn</div>
+                    </div>
+                </div>
+                <div 
+                className={getClassName('terminus')} 
+                id='terminus' 
+                onClick={() => scrollToSection('terminus')}
+                >
+                    <div className='nav-link-element-1'>
+                        <NavBar_NavPoint />
+                    </div>
+                    <div className='nav-link-element-2'>
+                        <div className='nav-link-label'>Terminus</div>
+                    </div>
+                </div>
+                <div 
+                className={getClassName('end')} 
+                id='end' 
+                onClick={scrollToBottom}
+                >
+                    <div className='nav-link-element-1'>
+                        <NavBar_NavPoint />
+                    </div>
+                    <div className='nav-link-element-2'>
+                        <div className='nav-link-label'>End</div>
+                    </div>
+                </div>
             </div>
-            {/* <ul className={`navbar-links ${isNavOpen ? 'linksActive' : ''}`}>
-                <li className={getClassName('start')} id='start' onClick={scrollToTop}>&#9737;</li>
-                <li className={getClassName('about')} id='about' onClick={() => scrollToSection('about')}>About</li>
-                <li className={getClassName('webDevelopment')} id='webDevelopment' onClick={() => scrollToSection('webDevelopment')}>Web+Dev</li>
-                <li className={getClassName('emailDevelopment')} id='emailDevelopment' onClick={() => scrollToSection('emailDevelopment')}>Email+Dev</li>
-                <li className={getClassName('graphicDesign')} id='graphicDesign' onClick={() => scrollToSection('graphicDesign')}>Gfx+Dsn</li>
-                <li className={getClassName('visualDesign')} id='visualDesign' onClick={() => scrollToSection('visualDesign')}>Vis+Dsn</li>
-                <li className={getClassName('end')} id='end' onClick={scrollToBottom}>&#9737;</li>
-            </ul> */}
+        </div>
+        <div className={`nav-minimized ${isNavOpen ? 'vNavOpen' : ''}`} onClick={toggleNavMode}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     </nav>
   )

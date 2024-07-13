@@ -91,3 +91,9 @@
 .gallery-type-hero .gallery-element-console{
     flex-flow: column nowrap;
 }
+
+.fancybox__container {
+    --fancybox-bg: #0f0d0db8;
+    z-index: 9999;
+}
+
