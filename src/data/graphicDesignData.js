@@ -14,8 +14,6 @@ import imageThumb_06ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thum
 import imageFull_06ref from '../assets/images/grfxDsnProjects_imgs/HCL_poster_innovation_conf.jpg'
 import imageThumb_07ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/HCL_Compton_Ready_Promo_rs_thumb.jpg'
 import imageFull_07ref from '../assets/images/grfxDsnProjects_imgs/HCL_Compton_Ready_Promo_rs.jpg'
-// import imageThumb_08ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/IICFF_Poster_Contest_Entry_thumb.jpg'
-// import imageFull_08ref from '../assets/images/grfxDsnProjects_imgs/IICFF_Poster_Contest_Entry.jpg'
 
 const graphicDesignSectionData = new SectionData(
     'graphicDesign',
