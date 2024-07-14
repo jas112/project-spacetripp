@@ -7,7 +7,7 @@ const aboutSectionData = new SectionData(
     'about',
     'about',
     'About Me',
-    'A blurb about myself.',
+    'Exploring Design with Curiosity',
     'nfo',
     `People say I am soft-spoken and contemplative, but I see myself as thoughtful, inquisitive, and deeply analytical. 
     With over seven years of experience in design solutions, from architectural principles to web development, I believe 

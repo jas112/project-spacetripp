@@ -234,7 +234,7 @@
 }
 
 .nav-minimized{
-    display: flex;
+    display: none;
     flex-direction: column;
     cursor: pointer;
     filter: drop-shadow(0 0 2em #ffffff);
@@ -248,6 +248,7 @@
     background-color: #fff;
     box-shadow: 0px 0px 3px #fff;
     margin: 2.5px 0;
+    opacity: .2;
     filter: drop-shadow(0 0 2em #ffffff);
     /* -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
     -moz-animation: neon2 1.5s ease-in-out infinite alternate;
@@ -256,9 +257,37 @@
 }
 
 .nav-minimized:hover div{
+    opacity: 1;
     box-shadow: 0px 0px 7px #fff;
     filter: drop-shadow(0 0 1em #ffffff);
 }
+
+.vNavOpen div{
+    opacity: 1;
+    box-shadow: 0px 0px 7px #fff;
+    filter: drop-shadow(0 0 1em #ffffff);
+}
+
+.vNavOpen:hover div{
+    opacity: 1;
+    height: 1px;
+    border: 1px solid #ff4500;
+    box-shadow: 0px 0px 7px #ff4500;
+    filter: drop-shadow(0 0 1em #ff4500);
+}
+
+.vNavClosed div{
+    height: 1px;
+    background: transparent;
+    border: 1px solid #ffffff;
+}
+
+.vNavClosed:hover div{
+    height: 2px;
+    background: #ffffff;
+    border: 0px solid #ffffff;
+}
+
 
 @media (max-width: 1598px) {
     .navbar{
@@ -303,7 +332,6 @@
         display: flex;
         position: absolute;
         right: 50px;
-
     }
 }
 

@@ -1,16 +1,35 @@
 import SectionData from "./sectionData";
 import ImageData from "./imageData";
-import imageThumb_01ref from '../assets/images/siteFeatures_imgs/ST_tripp_figure-head-closeup-75.png';
-import imageFull_01ref from '../assets/images/siteFeatures_imgs/ST_tripp_figure-head-closeup-75.png';
+import imageThumb_01ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/IICFF_Poster_Contest_Entry_thumb.jpg';
+import imageFull_01ref from '../assets/images/grfxDsnProjects_imgs/IICFF_Poster_Contest_Entry.jpg';
+import imageThumb_02ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/RMS_BCard_Layout_rs_thumb.jpg'
+import imageFull_02ref from '../assets/images/grfxDsnProjects_imgs/RMS_BCard_Layout_rs.jpg'
+import imageThumb_03ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/AmaniKateeb_logo_thumb.jpg'
+import imageFull_03ref from '../assets/images/grfxDsnProjects_imgs/AmaniKateeb_logo_t2.gif'
+import imageThumb_04ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/LA_USA_TOURS_logo_thumb.jpg'
+import imageFull_04ref from '../assets/images/grfxDsnProjects_imgs/LA_USA_TOURS_project_anim_v2.gif'
+import imageThumb_05ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/HCL_FundraiserFlyer_option1_thumb.jpg'
+import imageFull_05ref from '../assets/images/grfxDsnProjects_imgs/HCL_FundraiserFlyer_options_fullwb.jpg'
+import imageThumb_06ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/HCL_poster_innovation_conf_thumb.jpg'
+import imageFull_06ref from '../assets/images/grfxDsnProjects_imgs/HCL_poster_innovation_conf.jpg'
+import imageThumb_07ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/HCL_Compton_Ready_Promo_rs_thumb.jpg'
+import imageFull_07ref from '../assets/images/grfxDsnProjects_imgs/HCL_Compton_Ready_Promo_rs.jpg'
+// import imageThumb_08ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/IICFF_Poster_Contest_Entry_thumb.jpg'
+// import imageFull_08ref from '../assets/images/grfxDsnProjects_imgs/IICFF_Poster_Contest_Entry.jpg'
 
 const graphicDesignSectionData = new SectionData(
     'graphicDesign',
     'graphicDesign',
     'Graphic Design',
-    'Communication + Graphics',
+    'Designing Effective Visual Communication',
     'designWork',
-    `Some would say that I am soft spoken and contemplative. I would say that I am thoughtful, inquisitive and deeply analytical. A creative problem-solver with more than seven years of delivering design solutions with a breadth of training spanning architectural principles to web development. A personal philosophy revolving around the idea that curiosity, adaptability, continued learning and observation are vital to being an effective problem solver/designer/developer and a happy person./n/n
-    My interests gravitate towards activities where my imagination is allowed to lead and discover new paths. I enjoy drawing, scifi/fantasy, comics/bande dessinee, animation, classic chambara samurai films, architecture, and art in all its forms. I strive towards being an effective collaborator and seek to connect and pool skills with fellow like-minded tech creatives.`,
+    `I have crafted compelling visual identities across various projects. 
+    From premium packaging and captivating book covers to innovative NFTs 
+    and cryptocurrency symbols, my work blends creativity with technical 
+    precision. I excel in logo design, poster artwork, and developing unique 
+    brand elements, always aiming to bring a distinct visual voice to every 
+    project. Passionate about collaborating with like-minded creatives, I 
+    strive to create impactful and memorable design solutions.`,
     'true',
     'designWork',
     'grfxDsnGallery',
@@ -19,12 +38,76 @@ const graphicDesignSectionData = new SectionData(
     []     
 );
 
-const imageFull_01 = new ImageData(imageFull_01ref, imageThumb_01ref, 'grfxDsn image-1 fullsize', 'grfxDsn-full-01', 'grfxDsn-full-01');
+const imageFull_01 = new ImageData(
+    imageFull_01ref, 
+    imageThumb_01ref, 
+    'grfxDsn image-1 fullsize', 
+    'grfxDsn-full-01', 
+    'grfxDsn-full-01'
+);
+
+const imageFull_02 = new ImageData(
+    imageFull_02ref, 
+    imageThumb_02ref, 
+    'grfxDsn image-1 fullsize', 
+    'grfxDsn-full-01', 
+    'grfxDsn-full-01'
+);
+
+const imageFull_03 = new ImageData(
+    imageFull_03ref, 
+    imageThumb_03ref, 
+    'grfxDsn image-1 fullsize', 
+    'grfxDsn-full-01', 
+    'grfxDsn-full-01'
+);
+
+const imageFull_04 = new ImageData(
+    imageFull_04ref, 
+    imageThumb_04ref, 
+    'grfxDsn image-1 fullsize', 
+    'grfxDsn-full-01', 
+    'grfxDsn-full-01'
+);
+
+const imageFull_05 = new ImageData(
+    imageFull_05ref, 
+    imageThumb_05ref, 
+    'grfxDsn image-1 fullsize', 
+    'grfxDsn-full-01', 
+    'grfxDsn-full-01'
+);
+
+const imageFull_06 = new ImageData(
+    imageFull_06ref, 
+    imageThumb_06ref, 
+    'grfxDsn image-1 fullsize', 
+    'grfxDsn-full-01', 
+    'grfxDsn-full-01'
+);
+
+const imageFull_07 = new ImageData(
+    imageFull_07ref, 
+    imageThumb_07ref, 
+    'grfxDsn image-1 fullsize', 
+    'grfxDsn-full-01', 
+    'grfxDsn-full-01'
+);
+
+const imageFull_08 = new ImageData(
+    imageFull_06ref, 
+    imageThumb_06ref, 
+    'grfxDsn image-1 fullsize', 
+    'grfxDsn-full-01', 
+    'grfxDsn-full-01'
+);
+
 graphicDesignSectionData.galleryImages.push(imageFull_01);
-graphicDesignSectionData.galleryImages.push(imageFull_01);
-graphicDesignSectionData.galleryImages.push(imageFull_01);
-graphicDesignSectionData.galleryImages.push(imageFull_01);
-graphicDesignSectionData.galleryImages.push(imageFull_01);
-graphicDesignSectionData.galleryImages.push(imageFull_01);
+graphicDesignSectionData.galleryImages.push(imageFull_02);
+graphicDesignSectionData.galleryImages.push(imageFull_03);
+graphicDesignSectionData.galleryImages.push(imageFull_04);
+graphicDesignSectionData.galleryImages.push(imageFull_05);
+graphicDesignSectionData.galleryImages.push(imageFull_06);
+graphicDesignSectionData.galleryImages.push(imageFull_07);
 
 export default graphicDesignSectionData;

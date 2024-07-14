@@ -2,7 +2,7 @@
 /* Gallery Item Type A */
 
 .gallery-item-frame{
-    width: 80px;
+    width: 62px;
     height: 100px;
     margin: 0px 5px;
     display: flex;
@@ -35,7 +35,7 @@
 }
 
 .gallery-item-tile{
-    width: 78px;
+    width: 60px;
     height: 95px;
     background-size: contain;
     background-repeat: no-repeat;

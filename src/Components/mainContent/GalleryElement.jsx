@@ -46,7 +46,7 @@ const GalleryElement = ({sectionMarker, galleryType, galleryImages, currentStatu
 
             {
                 galleryImages.map((image, idx) => (
-                    <a key={`${sectionMarker}` + '-' + idx} data-fancybox={sectionMarker} href={image.image}>
+                    <a key={`${sectionMarker}` + '-' + idx} data-fancybox={sectionMarker} data-caption={image.imageDescription} href={image.image}>
                         <GalleryItemTypeA galleryItemImage={image} />
                     </a>
                 )) 

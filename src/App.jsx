@@ -18,6 +18,7 @@ import FTR_Element from './Components/mainContent/FTR_Element.jsx';
 
 const App = () => {
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [scrollPositionY, setScrollPositionY] = useState(0);
   const [dateString, setDateString] = useState('');
   const [timeString, setTimeString] = useState('');
@@ -75,11 +76,11 @@ const App = () => {
       const terminusSectionUpperBoundY = sectionRefs['terminus'].current.offsetTop - 200;
       const terminusSectionLowerBoundY = sectionRefs['terminus'].current.offsetTop + sectionRefs['terminus'].current.offsetHeight + 200;
 
-      console.log(`terminusTp - ${terminusSectionTop} , terminusUB - ${terminusSectionUpperBoundY} , terminusLB - ${terminusSectionLowerBoundY}`);
+      // console.log(`terminusTp - ${terminusSectionTop} , terminusUB - ${terminusSectionUpperBoundY} , terminusLB - ${terminusSectionLowerBoundY}`);
 
       const endTop = bottomRef.current.offsetTop;
 
-      console.log(`endTop - ${end}`);
+      // console.log(`endTop - ${end}`);
 
       if (newScrollPositionValue <= (aboutSectionUpperBoundY - 100)) {
         setCurrentPageLocation('start');
@@ -107,7 +108,7 @@ const App = () => {
 
       var dateValue = new Date();
       var yearValue = dateValue.getFullYear();
-      var monthValue = dateValue.getMonth();
+      var monthValue = dateValue.getMonth() + 1;
       var dayValue = dateValue.getDate();
       var hourValue = dateValue.getHours()
       var minutesValue = dateValue.getMinutes();
@@ -117,7 +118,7 @@ const App = () => {
       var mdvValue = months[monthValue] + dayValue;
       var yrValue = yearValue;
 
-      console.log(`monthValue: ${monthValue}`);
+      // console.log(`monthValue: ${monthValue}`);
 
       var hoursStr;
 
@@ -143,11 +144,36 @@ const App = () => {
 
     }, 1000)
 
+    // const trackWindowWidth = () => {
+    //   setWindowWidth(window.innerWidth);
+    // };
+
+    // window.addEventListener('widthTracker', trackWindowWidth);
+    // console.log(`window width - ${windowWidth}`);
+
     return () => {
       window.removeEventListener('scroll', trackScrollandSetPageLocation);
       clearInterval(trackTime);
+      // window.removeEventListener('widthTracker', trackWindowWidth);
     };
   }, [])
+
+  useEffect(() => {
+    const handleResize = () => {
+      // console.log(`window.innerWidth - ${window.innerWidth}`);
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    // console.log(`window width - ${windowWidth}`);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // console.log(`window width - ${windowWidth}`);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -193,6 +219,7 @@ const App = () => {
         scrollToTop={scrollToTop} 
         scrollToBottom={scrollToBottom} 
         scrollToSection={scrollToSection} 
+        screenWidth={windowWidth}
       />
       <HDRParallaxFrames />
       <div className='hdr-element'>

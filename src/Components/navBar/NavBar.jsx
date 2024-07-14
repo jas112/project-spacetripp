@@ -28,7 +28,7 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
             <div></div>
             <div></div>
         </div> */}
-        <div className='nav-console'>
+        <div className={`nav-console ${isNavOpen ? 'nav-vertical' : 'nav-horizontal'}`}>
             {/* <div className='nfo-console'>
                 <div className='scroll-data console-data'>SROLV-{currentScroll}</div>
                 <div className='date-data console-data'>{currentDate}</div> 
@@ -41,7 +41,7 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                     onClick={scrollToTop}
                 >
                     <div className='nav-link-element-1'>
-                        <NavBar_NavPoint />
+                        <NavBar_NavPoint targetSection={'start'} />
                     </div>
                     <div className='nav-link-element-2'>
                         <div className='nav-link-label'>Start</div>
@@ -53,7 +53,8 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 onClick={() => scrollToSection('about')}
                 >
                     <div className='nav-link-element-1'>
-                        <NavBar_NavPoint />
+                        <NavBar_NavPoint targetSection={'about'}
+ />
                     </div>
                     <div className='nav-link-element-2'>
                         <div className='nav-link-label'>About</div>
@@ -65,7 +66,7 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 onClick={() => scrollToSection('webDevelopment')}
                 >
                     <div className='nav-link-element-1'>
-                        <NavBar_NavPoint />
+                        <NavBar_NavPoint targetSection={'webDevelopment'} />
                     </div>
                     <div className='nav-link-element-2'>
                         <div className='nav-link-label'>Web+Dev</div>
@@ -77,7 +78,7 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 onClick={() => scrollToSection('emailDevelopment')}
                 >
                     <div className='nav-link-element-1'>
-                        <NavBar_NavPoint />
+                        <NavBar_NavPoint targetSection={'emailDevelopment'} />
                     </div>
                     <div className='nav-link-element-2'>
                         <div className='nav-link-label'>Email+Dev</div>
@@ -89,7 +90,7 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 onClick={() => scrollToSection('graphicDesign')}
                 >
                     <div className='nav-link-element-1'>
-                        <NavBar_NavPoint />
+                        <NavBar_NavPoint targetSection={'graphicDesign'} />
                     </div>
                     <div className='nav-link-element-2'>
                         <div className='nav-link-label'>Gfx+Dsn</div>
@@ -101,7 +102,7 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 onClick={() => scrollToSection('visualDesign')}
                 >
                     <div className='nav-link-element-1'>
-                        <NavBar_NavPoint />
+                        <NavBar_NavPoint targetSection={'visualDesign'} />
                     </div>
                     <div className='nav-link-element-2'>
                         <div className='nav-link-label'>Vis+Dsn</div>
@@ -113,7 +114,7 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 onClick={() => scrollToSection('terminus')}
                 >
                     <div className='nav-link-element-1'>
-                        <NavBar_NavPoint />
+                        <NavBar_NavPoint targetSection={'terminus'} />
                     </div>
                     <div className='nav-link-element-2'>
                         <div className='nav-link-label'>Terminus</div>
@@ -125,7 +126,7 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 onClick={scrollToBottom}
                 >
                     <div className='nav-link-element-1'>
-                        <NavBar_NavPoint />
+                        <NavBar_NavPoint targetSection={'end'} />
                     </div>
                     <div className='nav-link-element-2'>
                         <div className='nav-link-label'>End</div>
@@ -133,7 +134,7 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 </div>
             </div>
         </div>
-        <div className={`nav-minimized ${isNavOpen ? 'vNavOpen' : ''}`} onClick={toggleNavMode}>
+        <div className={`nav-minimized ${isNavOpen ? 'vNavOpen' : 'vNavClosed'}`} onClick={toggleNavMode}>
             <div></div>
             <div></div>
             <div></div>
