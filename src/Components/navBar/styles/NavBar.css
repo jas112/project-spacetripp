@@ -114,6 +114,15 @@
     overflow: hidden;
 }
 
+.navbar-panel{
+    width: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid #ff4500; */
+}
+
 .navbar-logo{
     height: 30px;
     margin: 0px 20px;

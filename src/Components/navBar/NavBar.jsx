@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles/NavBar.css';
 import stLogo from '../../assets/images/siteFeatures_imgs/ST_logo-RSCCsm.png'
 import NavBar_NavPoint from './NavBar_NavPoint';
+import AudioPlayer from '../audioPlayer/AudioPlayer';
 
 const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, scrollToTop, scrollToBottom, scrollToSection}) => {
 
@@ -21,13 +22,10 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
 
   return (
     <nav className='navbar'>
-        <img src={stLogo} className='navbar-logo' alt='SpaceTripp Logo'/>
-        {/* <div className="nav-minimized" onClick={toggleNavMode}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div> */}
+        <div className='navbar-panel left-panel'>
+            <img src={stLogo} className='navbar-logo' alt='SpaceTripp Logo'/>
+            <AudioPlayer/>  
+        </div>
         <div className={`nav-console ${isNavOpen ? 'nav-vertical' : 'nav-horizontal'}`}>
             {/* <div className='nfo-console'>
                 <div className='scroll-data console-data'>SROLV-{currentScroll}</div>
@@ -53,8 +51,7 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 onClick={() => scrollToSection('about')}
                 >
                     <div className='nav-link-element-1'>
-                        <NavBar_NavPoint targetSection={'about'}
- />
+                        <NavBar_NavPoint targetSection={'about'} />
                     </div>
                     <div className='nav-link-element-2'>
                         <div className='nav-link-label'>About</div>
