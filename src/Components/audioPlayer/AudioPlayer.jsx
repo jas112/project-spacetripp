@@ -72,7 +72,7 @@ const AudioPlayer = () => {
     useEffect(() => {
       const audioElement = audioRef.current;
       audioElement.volume = audioVolume;
-      audioElement.autoplay = true;
+    //   audioElement.autoplay = true;
 
       const handleEnded = () => {
         if(isRepeating){

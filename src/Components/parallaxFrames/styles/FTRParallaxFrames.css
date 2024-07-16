@@ -202,6 +202,19 @@
 	transform: scale(.048);
 }
 
+.ftr-plx-slideXL {
+    width: 200%;
+    position: relative;
+    top: 35px;
+    z-index: -2000;
+	-webkit-animation: animateStarship 35s linear infinite;
+	-moz-animation: animateStarship 35s linear infinite;
+	animation: animateStarship 35s linear infinite;
+	-webkit-transform: scale(5.5);
+	-moz-transform: scale(5.5);
+	transform: scale(5.5);
+}
+
 .starship{
     width:500px;
     height: 131px;

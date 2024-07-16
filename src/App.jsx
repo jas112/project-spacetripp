@@ -22,6 +22,7 @@ const App = () => {
   const [scrollPositionY, setScrollPositionY] = useState(0);
   const [dateString, setDateString] = useState('');
   const [timeString, setTimeString] = useState('');
+  const [sfxActive, setSfxActive] = useState(true);
 
   const [currentPageLocation, setCurrentPageLocation] = useState('start');
 
@@ -220,6 +221,8 @@ const App = () => {
         scrollToBottom={scrollToBottom} 
         scrollToSection={scrollToSection} 
         screenWidth={windowWidth}
+        sfxActive={sfxActive}
+        setSfxActive={setSfxActive}
       />
       <HDRParallaxFrames />
       <div className='hdr-element'>
@@ -238,6 +241,7 @@ const App = () => {
             hasGallery={sectionsData.about.hasGallery} 
             galleryType={sectionsData.about.galleryType} 
             galleryImages={sectionsData.about.galleryImages} 
+            sfxActive={sfxActive}
           />
         </div>
         <SpacerElement factor={2}/>
@@ -251,6 +255,7 @@ const App = () => {
             hasGallery={sectionsData.webDev.hasGallery} 
             galleryType={sectionsData.webDev.galleryType} 
             galleryImages={sectionsData.webDev.galleryImages} 
+            sfxActive={sfxActive}
           />
         </div>
         <SpacerElement factor={2}/>
@@ -264,6 +269,7 @@ const App = () => {
             hasGallery={sectionsData.emailDev.hasGallery} 
             galleryType={sectionsData.emailDev.galleryType} 
             galleryImages={sectionsData.emailDev.galleryImages} 
+            sfxActive={sfxActive}
           />
         </div>
         <SpacerElement factor={2}/>
@@ -277,6 +283,7 @@ const App = () => {
             hasGallery={sectionsData.grfxDsn.hasGallery} 
             galleryType={sectionsData.grfxDsn.galleryType} 
             galleryImages={sectionsData.grfxDsn.galleryImages} 
+            sfxActive={sfxActive}
           />
         </div>
         <SpacerElement factor={2}/>
@@ -290,6 +297,7 @@ const App = () => {
             hasGallery={sectionsData.visDsn.hasGallery} 
             galleryType={sectionsData.visDsn.galleryType} 
             galleryImages={sectionsData.visDsn.galleryImages} 
+            sfxActive={sfxActive}
           />
         </div>
         <SpacerElement factor={7}/>
@@ -308,6 +316,7 @@ const App = () => {
             galleryImages={sectionsData.terminus.galleryImages}
             sectionLinksA={sectionsData.terminus.sectionLinksA}
             sectionLinksB={sectionsData.terminus.sectionLinksB}
+            sfxActive={sfxActive}
           />
         </div>
         <FTR_Element currentPageLocation={currentPageLocation} />

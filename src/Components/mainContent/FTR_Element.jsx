@@ -4,6 +4,7 @@ import TerminusSection from './TerminusSection'
 import sectionsData from '../../data/sections'
 import FTRParallaxFrames_Star from '../parallaxFrames/FTRParallaxFrames_Star'
 import FTRParallaxFrames_Starships from '../parallaxFrames/FTRParallaxFrames_Starships'
+import FTRParallaxFrames_Starships_B from '../parallaxFrames/FTRParallax_Starships_B.jsx'
 import FTRParallaxFrames_Starships_2 from '../parallaxFrames/FTRParallax_Starships_2'
 
 const FTR_Element = () => {
@@ -35,6 +36,7 @@ const FTR_Element = () => {
                 <FTRParallaxFrames_Starships_2 />
             </div>
             <div className='ftr-element-bg-frm ftr-bg-frm1'>
+                {/* <FTRParallaxFrames_Starships_B /> */}
                 <FTRParallaxFrames_Starships />
             </div>
             <div className='ftr-element-bg-frm ftr-bg-frm2'>

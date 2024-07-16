@@ -3,18 +3,33 @@ import './styles/NavBar.css';
 import stLogo from '../../assets/images/siteFeatures_imgs/ST_logo-RSCCsm.png'
 import NavBar_NavPoint from './NavBar_NavPoint';
 import AudioPlayer from '../audioPlayer/AudioPlayer';
+import menuHoverSoundRef from '../../assets/audio/beam_sound-103367.mp3'
+import hoverSoundRef  from '../../assets/audio/space_signal-213481.mp3'
+import clickSoundRef from '../../assets/audio/select_2-96163.mp3'
+// import menuNavPointHoverSoundRef from '../../assets/audio/space_signal-213481.mp3'
 
 const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, scrollToTop, scrollToBottom, scrollToSection}) => {
 
     const [isNavOpen, setIsNavOpen] = useState(false);
 
+    const menuIconHoverSound = new Audio(menuHoverSoundRef);
+    const menuIconClickSound = new Audio(clickSoundRef);
+
+    const menuNavPointHoverSound = new Audio(hoverSoundRef);
+    const menuNavPointClickSound = new Audio(clickSoundRef);
+
+    menuIconHoverSound.volume = 0.21;
+    menuIconClickSound.volume = 0.11;
+
+    menuNavPointHoverSound.volume = 0.11;
+    menuNavPointHoverSound.playbackRate = .5;
+
+    menuNavPointClickSound.volume = 0.11;
+    menuNavPointClickSound.playbackRate = .5;
+
     const toggleNavMode = () => {
       setIsNavOpen(!isNavOpen);
     };
-
-    // const getClassName = (id) => {
-    //     return `navbar-link ${currentPageLocation === id ? 'active' : ''}`;
-    // };
 
     const getClassName = (id) => {
         return `nav-link ${currentPageLocation == id ? 'active' : ''}`;
@@ -35,20 +50,28 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
             <div className={`nav-links ${isNavOpen ? 'linksActive' : ''}`}>
                 <div 
                     className={getClassName('start')} 
-                    id='start' 
-                    onClick={scrollToTop}
+                    id='start'
+                    onMouseEnter={() => menuNavPointHoverSound.play()}  
+                    onClick={() =>{ 
+                        menuIconClickSound.play();
+                        scrollToTop();
+                    }}
                 >
                     <div className='nav-link-element-1'>
                         <NavBar_NavPoint targetSection={'start'} />
                     </div>
                     <div className='nav-link-element-2'>
-                        <div className='nav-link-label'>Start</div>
+                        <div className='nav-link-label'>HDR</div>
                     </div>
                 </div>
                 <div 
                 className={getClassName('about')} 
-                id='about' 
-                onClick={() => scrollToSection('about')}
+                id='about'
+                onMouseEnter={() => menuNavPointHoverSound.play()}  
+                onClick={() => {
+                    menuNavPointClickSound.play();
+                    scrollToSection('about');
+                }}
                 >
                     <div className='nav-link-element-1'>
                         <NavBar_NavPoint targetSection={'about'} />
@@ -59,8 +82,12 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 </div>
                 <div 
                 className={getClassName('webDevelopment')} 
-                id='webDevelopment' 
-                onClick={() => scrollToSection('webDevelopment')}
+                id='webDevelopment'
+                onMouseEnter={() => menuNavPointHoverSound.play()} 
+                onClick={() => {
+                    menuNavPointClickSound.play();
+                    scrollToSection('webDevelopment')
+                }}
                 >
                     <div className='nav-link-element-1'>
                         <NavBar_NavPoint targetSection={'webDevelopment'} />
@@ -71,8 +98,12 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 </div>
                 <div 
                 className={getClassName('emailDevelopment')} 
-                id='emailDevelopment' 
-                onClick={() => scrollToSection('emailDevelopment')}
+                id='emailDevelopment'
+                onMouseEnter={() => menuNavPointHoverSound.play()}  
+                onClick={() => {
+                    menuNavPointClickSound.play();
+                    scrollToSection('emailDevelopment');
+                }}
                 >
                     <div className='nav-link-element-1'>
                         <NavBar_NavPoint targetSection={'emailDevelopment'} />
@@ -83,8 +114,12 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 </div>
                 <div 
                 className={getClassName('graphicDesign')} 
-                id='graphicDesign' 
-                onClick={() => scrollToSection('graphicDesign')}
+                id='graphicDesign'
+                onMouseEnter={() => menuNavPointHoverSound.play()}  
+                onClick={() => {
+                    menuNavPointClickSound.play();
+                    scrollToSection('graphicDesign');
+                }}
                 >
                     <div className='nav-link-element-1'>
                         <NavBar_NavPoint targetSection={'graphicDesign'} />
@@ -95,8 +130,12 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 </div>
                 <div 
                 className={getClassName('visualDesign')} 
-                id='visualDesign' 
-                onClick={() => scrollToSection('visualDesign')}
+                id='visualDesign'
+                onMouseEnter={() => menuNavPointHoverSound.play()}  
+                onClick={() => {
+                    menuNavPointClickSound.play();
+                    scrollToSection('visualDesign')
+                }}
                 >
                     <div className='nav-link-element-1'>
                         <NavBar_NavPoint targetSection={'visualDesign'} />
@@ -107,8 +146,12 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 </div>
                 <div 
                 className={getClassName('terminus')} 
-                id='terminus' 
-                onClick={() => scrollToSection('terminus')}
+                id='terminus'
+                onMouseEnter={() => menuNavPointHoverSound.play()}
+                onClick={() => {
+                    menuNavPointClickSound.play();
+                    scrollToSection('terminus');
+                }}
                 >
                     <div className='nav-link-element-1'>
                         <NavBar_NavPoint targetSection={'terminus'} />
@@ -120,18 +163,28 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 <div 
                 className={getClassName('end')} 
                 id='end' 
-                onClick={scrollToBottom}
+                onMouseEnter={() => menuNavPointHoverSound.play()}
+                onClick={() => {
+                    menuNavPointClickSound.play();
+                    scrollToBottom();
+                }}
                 >
                     <div className='nav-link-element-1'>
                         <NavBar_NavPoint targetSection={'end'} />
                     </div>
                     <div className='nav-link-element-2'>
-                        <div className='nav-link-label'>End</div>
+                        <div className='nav-link-label'>FTR</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div className={`nav-minimized ${isNavOpen ? 'vNavOpen' : 'vNavClosed'}`} onClick={toggleNavMode}>
+        <div 
+            className={`nav-minimized ${isNavOpen ? 'vNavOpen' : 'vNavClosed'}`} 
+            onMouseEnter={() => menuIconHoverSound.play()}
+            onClick={() => {
+                menuIconClickSound.play();
+                toggleNavMode();
+            }}>
             <div></div>
             <div></div>
             <div></div>
