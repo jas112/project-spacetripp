@@ -15,6 +15,10 @@ import HDRParallaxFrames from './Components/parallaxFrames/HDRParallaxFrames.jsx
 import FTRParallaxFrames_Starships from './Components/parallaxFrames/FTRParallaxFrames_Starships.jsx';
 import FTRParallaxFrames_Star from './Components/parallaxFrames/FTRParallaxFrames_Star.jsx';
 import FTR_Element from './Components/mainContent/FTR_Element.jsx';
+import navMenuClickSoundRef from '/src/assets/audio/space_signal-213481.mp3'
+import navPntClickSoundRef from '/src/assets/audio/52460-SCIENCE_FICTION_DOOR_WHOOSH_OPEN_SHORT_01.wav'
+import btnHoverSoundRef from '/src/assets/audio/51574-SCIENCE_FICTION_MULTIMEDIA_TECHNOLOGY_COMPUTER_BLIP_01.wav'
+import btnClickSoundRef from '/src/assets/audio/space_signal-213481.mp3'
 
 const App = () => {
 
@@ -22,7 +26,7 @@ const App = () => {
   const [scrollPositionY, setScrollPositionY] = useState(0);
   const [dateString, setDateString] = useState('');
   const [timeString, setTimeString] = useState('');
-  const [sfxActive, setSfxActive] = useState(true);
+  const [sfxActive, setSfxActive] = useState(false);
 
   const [currentPageLocation, setCurrentPageLocation] = useState('start');
 
@@ -210,6 +214,20 @@ const App = () => {
     }
   };
 
+  const navMenuClickSound = new Audio(navMenuClickSoundRef);
+  const navPntClickSound = new Audio(navPntClickSoundRef)
+  const btnhoverSound = new Audio(btnHoverSoundRef);
+  const btnClickSound = new Audio(btnClickSoundRef);
+
+  navMenuClickSound.volume = 0.11;
+  navPntClickSound.volume = 0.11;
+  btnhoverSound.volume = 0.21;
+  btnClickSound.volume = 0.11;
+
+  navPntClickSound.playbackRate = .5;
+  btnhoverSound.playbackRate = 1;
+  btnClickSound.playbackRate = 1;
+
   return (
     <Router>
       <NavBar 
@@ -223,6 +241,10 @@ const App = () => {
         screenWidth={windowWidth}
         sfxActive={sfxActive}
         setSfxActive={setSfxActive}
+        navMenuClickSound={navMenuClickSound}
+        navPntClickSound={navPntClickSound}
+        btnhoverSound={btnhoverSound}
+        btnClickSound={btnClickSound}
       />
       <HDRParallaxFrames />
       <div className='hdr-element'>
@@ -256,6 +278,8 @@ const App = () => {
             galleryType={sectionsData.webDev.galleryType} 
             galleryImages={sectionsData.webDev.galleryImages} 
             sfxActive={sfxActive}
+            btnhoverSound={btnhoverSound}
+            btnClickSound={btnClickSound}
           />
         </div>
         <SpacerElement factor={2}/>
@@ -270,6 +294,8 @@ const App = () => {
             galleryType={sectionsData.emailDev.galleryType} 
             galleryImages={sectionsData.emailDev.galleryImages} 
             sfxActive={sfxActive}
+            btnhoverSound={btnhoverSound}
+            btnClickSound={btnClickSound}
           />
         </div>
         <SpacerElement factor={2}/>
@@ -284,6 +310,8 @@ const App = () => {
             galleryType={sectionsData.grfxDsn.galleryType} 
             galleryImages={sectionsData.grfxDsn.galleryImages} 
             sfxActive={sfxActive}
+            btnhoverSound={btnhoverSound}
+            btnClickSound={btnClickSound}
           />
         </div>
         <SpacerElement factor={2}/>
@@ -298,6 +326,8 @@ const App = () => {
             galleryType={sectionsData.visDsn.galleryType} 
             galleryImages={sectionsData.visDsn.galleryImages} 
             sfxActive={sfxActive}
+            btnhoverSound={btnhoverSound}
+            btnClickSound={btnClickSound}
           />
         </div>
         <SpacerElement factor={7}/>
@@ -317,6 +347,8 @@ const App = () => {
             sectionLinksA={sectionsData.terminus.sectionLinksA}
             sectionLinksB={sectionsData.terminus.sectionLinksB}
             sfxActive={sfxActive}
+            btnhoverSound={btnhoverSound}
+            btnClickSound={btnClickSound}
           />
         </div>
         <FTR_Element currentPageLocation={currentPageLocation} />

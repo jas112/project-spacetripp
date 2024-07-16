@@ -18,7 +18,9 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-intersection-observer": "^9.10.3",
-    "react-router-dom": "^6.24.0"
+    "react-router-dom": "^6.24.0",
+    "vite-plugin-pwa": "^0.20.0",
+    "workbox-build": "^7.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

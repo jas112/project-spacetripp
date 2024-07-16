@@ -1,11 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faStop } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faStop, faBackwardStep, faForwardStep, faRepeat } from '@fortawesome/free-solid-svg-icons';
 import './styles/AudioPlayer.css'
-import bgMusic from '../../assets/audio/Stars_in_the_Night.mp3'
+import bgMusic1 from '../../assets/audio/Stars_in_the_Night.mp3'
+import bgMusic2 from '../../assets/audio/Galactic_Voyage.mp3'
+import bgMusic3 from '../../assets/audio/Road_to_Glory.mp3'
 
 const tracks = [
-    {title: 'Stars in the Night', src: bgMusic},
+    {track_number: 1, title: 'Stars in the Night', src: bgMusic1},
+    {track_number: 2, title: 'Galactic Voyage', src: bgMusic2},
+    {track_number: 3, title: 'Road to Glory', src: bgMusic3},
 ]
 
 const AudioPlayer = () => {
@@ -14,10 +18,12 @@ const AudioPlayer = () => {
     const [audioVolume, setAudioVolume] = useState(0.11);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
-    const [currentTrack, setCurrentTrack] = useState(tracks[0]);
+    // const [currentTrack, setCurrentTrack] = useState(tracks[0]);
+    const [currentTrackIdx, setCurrentTrackIdx] = useState(0);
     const [isRepeating, setIsRepeating] = useState(true);
     const [isPlaying, setIsPlaying] = useState(false);
-    
+
+    const currentTrack = tracks[currentTrackIdx];
 
     const playAudio = () => {
         audioRef.current.play();
@@ -57,12 +63,20 @@ const AudioPlayer = () => {
         audioRef.current.currentTime = newTime;
     }
 
-    const selectTrack = (track) => {
-        setCurrentTrack(track);
+    const selectTrack = (idx) => {
+        setCurrentTrackIdx(idx);
         audioRef.current.pause();
-        audioRef.current.src = track.src;
+        audioRef.current.src = tracks[idx].src;
         audioRef.current.load();
         playAudio();
+    }
+
+    const handleForward = () => {
+        selectTrack((currentTrackIdx + 1) % tracks.length);
+    }
+
+    const handleBackward = () => {
+        selectTrack((currentTrackIdx - 1 + tracks.length) % tracks.length);
     }
 
     const toggleRepeat = () => {
@@ -78,6 +92,8 @@ const AudioPlayer = () => {
         if(isRepeating){
             audioElement.currentTime = 0;
             playAudio();
+        }else{
+            handleForward();
         }
       }
 
@@ -85,14 +101,14 @@ const AudioPlayer = () => {
       audioElement.addEventListener('timeupdate', onTimeUpdate);
       audioElement.addEventListener('ended', handleEnded);
 
-      console.log(`current volume: ${audioVolume}`);
+    //   console.log(`current volume: ${audioVolume}`);
     
       return () => {
         audioElement.removeEventListener('loadedmetadata', onLoadedMetadata);
         audioElement.removeEventListener('timeupdate', onTimeUpdate);
         audioElement.removeEventListener('ended', handleEnded);
       }
-    }, [audioVolume, isRepeating])
+    }, [audioVolume, isRepeating, currentTrackIdx])
     
 
   return (
@@ -103,14 +119,20 @@ const AudioPlayer = () => {
         </audio>
         <div className='control-console'>
             <div className='control-console-panel btn-panel'>
-                <div className={`audio-player-btn ${isPlaying ? 'pause' : 'play'}`} onClick={isPlaying ? pauseAudio : playAudio}>
+                <div className={`audio-player-btn ${isPlaying ? 'pause' : 'play'}`} onClick={isPlaying ? pauseAudio : playAudio} title={isPlaying ? 'Pause' : 'Play'}>
                     <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
                 </div>
-                <div className='audio-player-btn stop' onClick={stopAudio}>
-                <FontAwesomeIcon icon={faStop} />
+                <div className='audio-player-btn stop' onClick={stopAudio} title='Stop'>
+                    <FontAwesomeIcon icon={faStop} />
                 </div>
-                <div className={`audio-player-btn repeat ${isRepeating ? 'repeat-active' : 'repeat-inactive'}`} onClick={toggleRepeat}>
-                    R
+                <div className='audio-player-btn backward' onClick={handleBackward} title='Prev Track'>
+                    <FontAwesomeIcon icon={faBackwardStep} />
+                </div>
+                <div className='audio-player-btn forward' onClick={handleForward} title='Next Track'>
+                    <FontAwesomeIcon icon={faForwardStep} />
+                </div>
+                <div className={`audio-player-btn repeat ${isRepeating ? 'repeat-active' : 'repeat-inactive'}`} onClick={toggleRepeat} title={`${isRepeating ? 'Repeat On' : 'Repeat Off'}`}>
+                    <FontAwesomeIcon icon={faRepeat} />
                 </div>
             </div>
             {/* <div className='control-console-panel slider-panel'>
@@ -133,13 +155,11 @@ const AudioPlayer = () => {
                 {Math.floor(currentTime / 60)}:{('0' + Math.floor(currentTime % 60)).slice(-2)} / {Math.floor(duration / 60)}:{('0' + (duration % 60)).slice(-2)}
             </div>
         </div>
-        <div className='seek-bar-frame'>
+        {/* <div className='seek-bar-frame'>
         </div>
         <div className='time-display'>
-            {/* {Math.floor(currentTime / 60)}:{('0' + Math.floor(currentTime % 60)).slice(-2)} / {Math.floor(duration / 60)}:{('0' + (duration % 60)).slice(-2)} */}
-        </div>
-
-        
+            {Math.floor(currentTime / 60)}:{('0' + Math.floor(currentTime % 60)).slice(-2)} / {Math.floor(duration / 60)}:{('0' + (duration % 60)).slice(-2)}
+        </div> */}    
     </div>
   )
 }

@@ -3,29 +3,26 @@ import './styles/NavBar.css';
 import stLogo from '../../assets/images/siteFeatures_imgs/ST_logo-RSCCsm.png'
 import NavBar_NavPoint from './NavBar_NavPoint';
 import AudioPlayer from '../audioPlayer/AudioPlayer';
-import menuHoverSoundRef from '../../assets/audio/beam_sound-103367.mp3'
-import hoverSoundRef  from '../../assets/audio/space_signal-213481.mp3'
-import clickSoundRef from '../../assets/audio/select_2-96163.mp3'
-// import menuNavPointHoverSoundRef from '../../assets/audio/space_signal-213481.mp3'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWaveSquare } from '@fortawesome/free-solid-svg-icons';
 
-const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, scrollToTop, scrollToBottom, scrollToSection}) => {
+
+const NavBar = ({
+    currentScroll, 
+    currentDate, 
+    currentTime, 
+    currentPageLocation, 
+    scrollToTop, 
+    scrollToBottom, 
+    scrollToSection, 
+    sfxActive, 
+    setSfxActive, 
+    navMenuClickSound, 
+    navPntClickSound,
+    btnhoverSound, 
+    btnClickSound}) => {
 
     const [isNavOpen, setIsNavOpen] = useState(false);
-
-    const menuIconHoverSound = new Audio(menuHoverSoundRef);
-    const menuIconClickSound = new Audio(clickSoundRef);
-
-    const menuNavPointHoverSound = new Audio(hoverSoundRef);
-    const menuNavPointClickSound = new Audio(clickSoundRef);
-
-    menuIconHoverSound.volume = 0.21;
-    menuIconClickSound.volume = 0.11;
-
-    menuNavPointHoverSound.volume = 0.11;
-    menuNavPointHoverSound.playbackRate = .5;
-
-    menuNavPointClickSound.volume = 0.11;
-    menuNavPointClickSound.playbackRate = .5;
 
     const toggleNavMode = () => {
       setIsNavOpen(!isNavOpen);
@@ -39,7 +36,12 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
     <nav className='navbar'>
         <div className='navbar-panel left-panel'>
             <img src={stLogo} className='navbar-logo' alt='SpaceTripp Logo'/>
-            <AudioPlayer/>  
+            <AudioPlayer/> 
+            <div className={`sfx-btn ${sfxActive ? '' : 'sfx-muted'}`} title={sfxActive ? 'Mute Sound FX' : 'Unmute Sound FX'}>
+                <FontAwesomeIcon 
+                    icon={faWaveSquare}
+                    onClick={() => setSfxActive(!sfxActive)}  />
+            </div> 
         </div>
         <div className={`nav-console ${isNavOpen ? 'nav-vertical' : 'nav-horizontal'}`}>
             {/* <div className='nfo-console'>
@@ -51,9 +53,15 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 <div 
                     className={getClassName('start')} 
                     id='start'
-                    onMouseEnter={() => menuNavPointHoverSound.play()}  
+                    onMouseEnter={() => {
+                        if(sfxActive){
+                            btnhoverSound.play();
+                        }
+                    }}  
                     onClick={() =>{ 
-                        menuIconClickSound.play();
+                        if(sfxActive){
+                            navPntClickSound.play();
+                        }
                         scrollToTop();
                     }}
                 >
@@ -67,9 +75,15 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 <div 
                 className={getClassName('about')} 
                 id='about'
-                onMouseEnter={() => menuNavPointHoverSound.play()}  
+                onMouseEnter={() => {
+                    if(sfxActive){
+                        btnhoverSound.play();
+                    }
+                }}  
                 onClick={() => {
-                    menuNavPointClickSound.play();
+                    if(sfxActive){
+                        navPntClickSound.play();
+                    }
                     scrollToSection('about');
                 }}
                 >
@@ -83,9 +97,15 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 <div 
                 className={getClassName('webDevelopment')} 
                 id='webDevelopment'
-                onMouseEnter={() => menuNavPointHoverSound.play()} 
+                onMouseEnter={() => {
+                    if(sfxActive){
+                        btnhoverSound.play();
+                    }
+                }}  
                 onClick={() => {
-                    menuNavPointClickSound.play();
+                    if(sfxActive){
+                        navPntClickSound.play();
+                    }
                     scrollToSection('webDevelopment')
                 }}
                 >
@@ -99,9 +119,15 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 <div 
                 className={getClassName('emailDevelopment')} 
                 id='emailDevelopment'
-                onMouseEnter={() => menuNavPointHoverSound.play()}  
+                onMouseEnter={() => {
+                    if(sfxActive){
+                        btnhoverSound.play();
+                    }
+                }}   
                 onClick={() => {
-                    menuNavPointClickSound.play();
+                    if(sfxActive){
+                        navPntClickSound.play();
+                    }
                     scrollToSection('emailDevelopment');
                 }}
                 >
@@ -115,9 +141,15 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 <div 
                 className={getClassName('graphicDesign')} 
                 id='graphicDesign'
-                onMouseEnter={() => menuNavPointHoverSound.play()}  
+                onMouseEnter={() => {
+                    if(sfxActive){
+                        btnhoverSound.play();
+                    }
+                }}    
                 onClick={() => {
-                    menuNavPointClickSound.play();
+                    if(sfxActive){
+                        navPntClickSound.play();
+                    }
                     scrollToSection('graphicDesign');
                 }}
                 >
@@ -131,9 +163,15 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 <div 
                 className={getClassName('visualDesign')} 
                 id='visualDesign'
-                onMouseEnter={() => menuNavPointHoverSound.play()}  
+                onMouseEnter={() => {
+                    if(sfxActive){
+                        btnhoverSound.play();
+                    }
+                }}  
                 onClick={() => {
-                    menuNavPointClickSound.play();
+                    if(sfxActive){
+                        navPntClickSound.play();
+                    }
                     scrollToSection('visualDesign')
                 }}
                 >
@@ -147,9 +185,15 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 <div 
                 className={getClassName('terminus')} 
                 id='terminus'
-                onMouseEnter={() => menuNavPointHoverSound.play()}
+                onMouseEnter={() => {
+                    if(sfxActive){
+                        btnhoverSound.play();
+                    }
+                }}
                 onClick={() => {
-                    menuNavPointClickSound.play();
+                    if(sfxActive){
+                        navPntClickSound.play();
+                    }
                     scrollToSection('terminus');
                 }}
                 >
@@ -163,9 +207,15 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
                 <div 
                 className={getClassName('end')} 
                 id='end' 
-                onMouseEnter={() => menuNavPointHoverSound.play()}
+                onMouseEnter={() => {
+                    if(sfxActive){
+                        btnhoverSound.play();
+                    }
+                }}
                 onClick={() => {
-                    menuNavPointClickSound.play();
+                    if(sfxActive){
+                        navPntClickSound.play();
+                    }
                     scrollToBottom();
                 }}
                 >
@@ -180,9 +230,15 @@ const NavBar = ({currentScroll, currentDate, currentTime, currentPageLocation, s
         </div>
         <div 
             className={`nav-minimized ${isNavOpen ? 'vNavOpen' : 'vNavClosed'}`} 
-            onMouseEnter={() => menuIconHoverSound.play()}
+            onMouseEnter={() => {
+                if(sfxActive){
+                    btnhoverSound.play();
+                }
+            }}
             onClick={() => {
-                menuIconClickSound.play();
+                if(sfxActive){
+                    navMenuClickSound.play();
+                }
                 toggleNavMode();
             }}>
             <div></div>

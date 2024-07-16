@@ -11,9 +11,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGitAlt } from '@fortawesome/free-brands-svg-icons';
 import { faBolt } from '@fortawesome/free-solid-svg-icons'
 
-
-
-const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, galleryType, galleryImages, sectionLinksA, sectionLinksB}) => {
+const TerminusSection = ({
+    sectionTitle, 
+    sectionSubtitle, 
+    sectionNfo, 
+    sectionMarker, 
+    currentPageLocation, 
+    hasGallery, 
+    galleryType, 
+    galleryImages, 
+    sectionLinksA, 
+    sectionLinksB, 
+    sfxActive, 
+    btnhoverSound, 
+    btnClickSound}) => {
 
     const [currentStatusBool, setCurrentStatusBool] = useState(false);
     const [activateSectionMinor, setActivateSectionMinor] = useState(false);
@@ -83,13 +94,13 @@ const TerminusSection = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMark
                     </div> */}
                     {
                         sectionLinksA.map((link, idx) => (
-                            <LinkButtonTile key={`${sectionMarker}LinkA` + '-' + idx} linkData={link} linkBtnTileType={'A'} />
+                            <LinkButtonTile key={`${sectionMarker}LinkA` + '-' + idx} linkData={link} linkBtnTileType={'A'} sfxActive={sfxActive} btnHoverSound={btnhoverSound} btnClickSound={btnClickSound} />
                         )) 
                     }
                     <div className='terminus-console-panel-button-B-frame'>
                     {
                         sectionLinksB.map((link, idx) => (
-                            <LinkButtonTile key={`${sectionMarker}LinkB` + '-' + idx} linkData={link} linkBtnTileType={'B'} />
+                            <LinkButtonTile key={`${sectionMarker}LinkB` + '-' + idx} linkData={link} linkBtnTileType={'B'} sfxActive={sfxActive} btnHoverSound={btnhoverSound} btnClickSound={btnClickSound} />
                         )) 
                     }
                     </div>

@@ -5,14 +5,22 @@ import BottomSectionPanel from './BottomSectionPanel.jsx'
 import GalleryElement from './GalleryElement.jsx'
 import './styles/SectionElement.css'
 import {generateText} from '../../utils/contentTools.jsx'
+import sectionSoundRef from '../../assets/audio/beam_sound-103367.mp3'
 
-const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, galleryType, galleryImages}) => {
+const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarker, currentPageLocation, hasGallery, galleryType, galleryImages, sfxActive}) => {
 
     // console.log(JSON.stringify(GalleryImages, null, 2));
     // console.log(GalleryImages[0].image);
 
     const [currentStatusBool, setCurrentStatusBool] = useState(false);
     const [activateSectionMinor, setActivateSectionMinor] = useState(false);
+
+    const sectionHoverSound = new Audio(sectionSoundRef);
+    const sectionExitSound = new Audio(sectionSoundRef);
+    sectionHoverSound.volume = 0.21;
+    sectionHoverSound.playbackRate = 1.25;
+    sectionExitSound.volume = 0.21;
+    sectionExitSound.playbackRate = 1.25;
 
     const hasGalleryBool = hasGallery === 'true';
     // console.log(`${sectionMarker} has a gallery: ${hasGalleryBool} ||| ${hasGallery}`);
@@ -68,7 +76,21 @@ const SectionElement = ({sectionTitle, sectionSubtitle, sectionNfo, sectionMarke
     <>
         <div id={sectionMarker} ref={ref} className={`full-section-config floating ${inView ? 'fade-in' : 'fade-out'}`}>
             <TopSectionPanel currentStatusBool={currentStatusBool}/>
-            <div id={`${sectionMarker} + _Mkr`} ref={ref} className={`section-minor ${activateSectionMinor ? 'active-section-minor' : ''}`}>
+            <div 
+                id={`${sectionMarker} + _Mkr`} 
+                ref={ref} 
+                className={`section-minor ${activateSectionMinor ? 'active-section-minor' : ''}`}
+                onMouseEnter={() => {
+                    if(sfxActive){
+                        sectionHoverSound.play();
+                    }
+                }}
+                onMouseLeave={() => {
+                    if(sfxActive){
+                        sectionExitSound.play();
+                    }
+                }}
+            >
                 <div className="section-hdr">
                     <div className="section-title">{sectionTitle}</div>
                     <div className="section-position-value">{sectionTitle}</div>
