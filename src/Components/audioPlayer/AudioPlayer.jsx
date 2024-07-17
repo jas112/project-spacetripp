@@ -12,7 +12,9 @@ const tracks = [
     {track_number: 3, title: 'Road to Glory', src: bgMusic3},
 ]
 
-const AudioPlayer = () => {
+const AudioPlayer = ({        
+    musicActive,
+    setMusicActive}) => {
 
     const audioRef = useRef(null);
     const [audioVolume, setAudioVolume] = useState(0.11);
@@ -26,8 +28,10 @@ const AudioPlayer = () => {
     const currentTrack = tracks[currentTrackIdx];
 
     const playAudio = () => {
-        audioRef.current.play();
-        setIsPlaying(true);
+        if(musicActive){
+            audioRef.current.play();
+            setIsPlaying(true);
+        }
     }
 
     const pauseAudio = () => {
@@ -84,35 +88,43 @@ const AudioPlayer = () => {
     }
 
     useEffect(() => {
-      const audioElement = audioRef.current;
-      audioElement.volume = audioVolume;
+        const audioElement = audioRef.current;
+        audioElement.volume = audioVolume;
     //   audioElement.autoplay = true;
 
-      const handleEnded = () => {
-        if(isRepeating){
-            audioElement.currentTime = 0;
-            playAudio();
-        }else{
-            handleForward();
+        if(!musicActive && isPlaying){
+            pauseAudio();
+        }else if(!musicActive){
+            stopAudio();
         }
-      }
 
-      audioElement.addEventListener('loadedmetadata', onLoadedMetadata);
-      audioElement.addEventListener('timeupdate', onTimeUpdate);
-      audioElement.addEventListener('ended', handleEnded);
+        const handleEnded = () => {
+            if(isRepeating){
+                audioElement.currentTime = 0;
+                playAudio();
+            }else{
+                handleForward();
+            }
+        }
 
-    //   console.log(`current volume: ${audioVolume}`);
+        audioElement.addEventListener('loadedmetadata', onLoadedMetadata);
+        audioElement.addEventListener('timeupdate', onTimeUpdate);
+        audioElement.addEventListener('ended', handleEnded);
+
+        //   console.log(`current volume: ${audioVolume}`);
     
-      return () => {
-        audioElement.removeEventListener('loadedmetadata', onLoadedMetadata);
-        audioElement.removeEventListener('timeupdate', onTimeUpdate);
-        audioElement.removeEventListener('ended', handleEnded);
-      }
-    }, [audioVolume, isRepeating, currentTrackIdx])
+        return () => {
+            audioElement.removeEventListener('loadedmetadata', onLoadedMetadata);
+            audioElement.removeEventListener('timeupdate', onTimeUpdate);
+            audioElement.removeEventListener('ended', handleEnded);
+        }
+    }, [audioVolume, isRepeating, currentTrackIdx, musicActive])
     
 
   return (
-    <div className='audio-player-frame'>
+    <div 
+        className={`audio-player-frame ${musicActive ? '' : 'music-disabled'}`}
+    >
         <audio ref={audioRef}>
             <source src={currentTrack.src} type='audio/mpeg' />
             This browser does not support the audio element.

@@ -4,7 +4,7 @@ import stLogo from '../../assets/images/siteFeatures_imgs/ST_logo-RSCCsm.png'
 import NavBar_NavPoint from './NavBar_NavPoint';
 import AudioPlayer from '../audioPlayer/AudioPlayer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWaveSquare } from '@fortawesome/free-solid-svg-icons';
+import { faWaveSquare, faMusic } from '@fortawesome/free-solid-svg-icons';
 
 
 const NavBar = ({
@@ -17,6 +17,8 @@ const NavBar = ({
     scrollToSection, 
     sfxActive, 
     setSfxActive, 
+    musicActive,
+    setMusicActive,
     navMenuClickSound, 
     navPntClickSound,
     btnHoverSound, 
@@ -37,7 +39,15 @@ const NavBar = ({
     <nav className='navbar'>
         <div className='navbar-panel left-panel'>
             <img src={stLogo} className='navbar-logo' alt='SpaceTripp Logo'/>
-            <AudioPlayer/> 
+            <AudioPlayer 
+                musicActive={musicActive}
+                setMusicActive={setMusicActive}
+            />
+            <div className={`music-btn ${musicActive ? '' : 'music-muted'}`} title={musicActive ? 'Mute BG Music' : 'Unmute BG Music'}>
+                <FontAwesomeIcon 
+                    icon={faMusic}
+                    onClick={() => setMusicActive(!musicActive)}  />
+            </div> 
             <div className={`sfx-btn ${sfxActive ? '' : 'sfx-muted'}`} title={sfxActive ? 'Mute Sound FX' : 'Unmute Sound FX'}>
                 <FontAwesomeIcon 
                     icon={faWaveSquare}

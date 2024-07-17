@@ -107,6 +107,11 @@
     margin-top: 10px;
 }
 
+.music-disabled{
+    opacity: .1;
+    pointer-events: none;
+}
+
 @media (max-width: 698px) {
 
     .audio-player-frame{

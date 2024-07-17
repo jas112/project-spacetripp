@@ -28,6 +28,7 @@ const App = () => {
   const [dateString, setDateString] = useState('');
   const [timeString, setTimeString] = useState('');
   const [sfxActive, setSfxActive] = useState(false);
+  const [musicActive, setMusicActive] = useState(false);
 
   const [currentPageLocation, setCurrentPageLocation] = useState('start');
 
@@ -199,6 +200,8 @@ const App = () => {
         screenWidth={windowWidth}
         sfxActive={sfxActive}
         setSfxActive={setSfxActive}
+        musicActive={musicActive}
+        setMusicActive={setMusicActive}
         navMenuClickSound={navMenuClickSound}
         navPntClickSound={navPntClickSound}
         btnHoverSound={btnHoverSound}

@@ -298,6 +298,8 @@
 }
 
 .sfx-btn{
+    width: 16.25px;
+    height: 19.5px;
     margin: 0px 10px;
     font-size: 13px;
     opacity: 1;
@@ -319,6 +321,35 @@
 }
 
 .sfx-muted:hover{
+    color: #228DFF;
+    box-shadow: 0px 0px 8px #228DFF;
+    filter: drop-shadow(0 0 3em #228DFF);
+}
+
+.music-btn{
+    width: 16.25px;
+    height: 19.5px;
+    margin: 0px 10px;
+    font-size: 13px;
+    opacity: 1;
+    box-shadow: 0px 0px 0px #fff;
+    filter: drop-shadow(0 0 1em #ffffff); 
+    cursor: pointer;
+}
+
+.music-btn:hover{
+    opacity: 1;
+    box-shadow: 0px 0px 7px #fff;
+    filter: drop-shadow(0 0 1em #ffffff); 
+}
+
+.music-muted{
+    color: #ff0000;
+    box-shadow: 0px 0px 7px #ff0000;
+    filter: drop-shadow(0 0 1em #ff0000);
+}
+
+.music-muted:hover{
     color: #228DFF;
     box-shadow: 0px 0px 8px #228DFF;
     filter: drop-shadow(0 0 3em #228DFF);
