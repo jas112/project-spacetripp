@@ -47,39 +47,60 @@ const App = () => {
       const newScrollPositionValue = window.scrollY;
       setScrollPositionY(newScrollPositionValue);
 
-      const aboutSectionTop = sectionRefs['about'].current.offsetTop;
-      const aboutSectionUpperBoundY = sectionRefs['about'].current.offsetTop - 200;
-      const aboutSectionLowerBoundY = sectionRefs['about'].current.offsetTop + sectionRefs['about'].current.offsetHeight + 200;
+      const getSectionUpperBound = (sectionValue) => {
+        return sectionRefs[sectionValue].current.offsetTop - 200;
+      }
+
+      const getSectionLowerBound = (sectionValue) => {
+        return sectionRefs[sectionValue].current.offsetTop + sectionRefs[sectionValue].current.offsetHeight + 200;
+      }
+
+      const aboutSectionUpperBoundY = getSectionUpperBound('about');
+      const aboutSectionLowerBoundY = getSectionLowerBound('about');
+      const webDevSectionUpperBoundY = getSectionUpperBound('webDevelopment');
+      const webDevSectionLowerBoundY = getSectionLowerBound('webDevelopment');
+      const emailDevSectionUpperBoundY = getSectionUpperBound('emailDevelopment');
+      const emailDevSectionLowerBoundY = getSectionLowerBound('emailDevelopment');
+      const grfxDsnSectionUpperBoundY = getSectionUpperBound('graphicDesign');
+      const grfxDsnSectionLowerBoundY = getSectionLowerBound('graphicDesign');
+      const visDsnSectionUpperBoundY = getSectionUpperBound('visualDesign');
+      const visDsnSectionLowerBoundY = getSectionLowerBound('visualDesign');
+      const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
+      const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
+
+      // const aboutSectionTop = sectionRefs['about'].current.offsetTop;
+      // const aboutSectionUpperBoundY = sectionRefs['about'].current.offsetTop - 200;
+      // const aboutSectionLowerBoundY = sectionRefs['about'].current.offsetTop + sectionRefs['about'].current.offsetHeight + 200;
 
       // console.log(`aboutTp - ${aboutSectionTop} , aboutUB - ${aboutSectionUpperBoundY} , aboutLB - ${aboutSectionLowerBoundY}`);
 
-      const webDevSectionTop = sectionRefs['webDevelopment'].current.offsetTop;
-      const webDevSectionUpperBoundY = sectionRefs['webDevelopment'].current.offsetTop - 200;
-      const webDevSectionLowerBoundY = sectionRefs['webDevelopment'].current.offsetTop + sectionRefs['webDevelopment'].current.offsetHeight + 200;
+      // const webDevSectionTop = sectionRefs['webDevelopment'].current.offsetTop;
+      // const webDevSectionUpperBoundY = sectionRefs['webDevelopment'].current.offsetTop - 200;
+      // const webDevSectionLowerBoundY = sectionRefs['webDevelopment'].current.offsetTop + sectionRefs['webDevelopment'].current.offsetHeight + 200;
 
       // console.log(`webDevTp - ${webDevSectionTop} , webDevUB - ${webDevSectionUpperBoundY} , webDevLB - ${webDevSectionLowerBoundY}`);
 
-      const emailDevSectionTop = sectionRefs['emailDevelopment'].current.offsetTop;
-      const emailDevSectionUpperBoundY = sectionRefs['emailDevelopment'].current.offsetTop - 200;
-      const emailDevSectionLowerBoundY = sectionRefs['emailDevelopment'].current.offsetTop + sectionRefs['emailDevelopment'].current.offsetHeight + 200;
+      // const emailDevSectionTop = sectionRefs['emailDevelopment'].current.offsetTop;
+      // const emailDevSectionUpperBoundY = sectionRefs['emailDevelopment'].current.offsetTop - 200;
+      // const emailDevSectionLowerBoundY = sectionRefs['emailDevelopment'].current.offsetTop + sectionRefs['emailDevelopment'].current.offsetHeight + 200;
 
       // console.log(`emailDevTp - ${emailDevSectionTop} , emailDevUB - ${emailDevSectionUpperBoundY} , emailDevLB - ${emailDevSectionLowerBoundY}`);
 
-      const grfxDsnSectionTop = sectionRefs['graphicDesign'].current.offsetTop;
-      const grfxDsnSectionUpperBoundY = sectionRefs['graphicDesign'].current.offsetTop - 200;
-      const grfxDsnSectionLowerBoundY = sectionRefs['graphicDesign'].current.offsetTop + sectionRefs['graphicDesign'].current.offsetHeight + 200;
+      // const grfxDsnSectionTop = sectionRefs['graphicDesign'].current.offsetTop;
+      // const grfxDsnSectionUpperBoundY = sectionRefs['graphicDesign'].current.offsetTop - 200;
+      // const grfxDsnSectionLowerBoundY = sectionRefs['graphicDesign'].current.offsetTop + sectionRefs['graphicDesign'].current.offsetHeight + 200;
 
       // console.log(`grfxDsnTp - ${grfxDsnSectionTop} , grfxDsnUB - ${grfxDsnSectionUpperBoundY} , grfxDsnLB - ${grfxDsnSectionLowerBoundY}`);
 
-      const visDsnSectionTop = sectionRefs['visualDesign'].current.offsetTop;
-      const visDsnSectionUpperBoundY = sectionRefs['visualDesign'].current.offsetTop - 200;
-      const visDsnSectionLowerBoundY = sectionRefs['visualDesign'].current.offsetTop + sectionRefs['visualDesign'].current.offsetHeight + 200;
+      // const visDsnSectionTop = sectionRefs['visualDesign'].current.offsetTop;
+      // const visDsnSectionUpperBoundY = sectionRefs['visualDesign'].current.offsetTop - 200;
+      // const visDsnSectionLowerBoundY = sectionRefs['visualDesign'].current.offsetTop + sectionRefs['visualDesign'].current.offsetHeight + 200;
 
       // console.log(`visDevTp - ${visDsnSectionTop} , visDevUB - ${visDsnSectionUpperBoundY} , visDevLB - ${visDsnSectionLowerBoundY}`);
 
-      const terminusSectionTop = sectionRefs['terminus'].current.offsetTop;
-      const terminusSectionUpperBoundY = sectionRefs['terminus'].current.offsetTop - 200;
-      const terminusSectionLowerBoundY = sectionRefs['terminus'].current.offsetTop + sectionRefs['terminus'].current.offsetHeight + 200;
+      // const terminusSectionTop = sectionRefs['terminus'].current.offsetTop;
+      // const terminusSectionUpperBoundY = sectionRefs['terminus'].current.offsetTop - 200;
+      // const terminusSectionLowerBoundY = sectionRefs['terminus'].current.offsetTop + sectionRefs['terminus'].current.offsetHeight + 200;
 
       // console.log(`terminusTp - ${terminusSectionTop} , terminusUB - ${terminusSectionUpperBoundY} , terminusLB - ${terminusSectionLowerBoundY}`);
 
@@ -110,51 +131,11 @@ const App = () => {
     window.addEventListener('scroll', trackScrollandSetPageLocation);
 
     const trackTime = setInterval(() => {
+      const dateValue = new Date();
+      setDateString(`${dateValue.getMonth() + 1}/${dateValue.getDate()}/${dateValue. getFullYear()}`);
+      setTimeString(`${dateValue.getHours() < 10 ? '0' : ''}${dateValue.getHours()}.${dateValue.getMinutes() < 10 ? '0' : ''}${dateValue.getMinutes()}.${dateValue.getSeconds() < 10 ? '0' : ''}${dateValue.getSeconds()}`);
+    }, 1000);
 
-      var dateValue = new Date();
-      var yearValue = dateValue.getFullYear();
-      var monthValue = dateValue.getMonth() + 1;
-      var dayValue = dateValue.getDate();
-      var hourValue = dateValue.getHours()
-      var minutesValue = dateValue.getMinutes();
-      var secondsValue = dateValue.getSeconds();
-      var months = ["JAN. ", "FEB. ", "MAR. ", "APR. ", "MAY. ", "JUN. ", "JUL. ", "AUG. ", "SEP. ", "OCT. ", "NOV. ", "DEC. "];
-      var days = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
-      var mdvValue = months[monthValue] + dayValue;
-      var yrValue = yearValue;
-
-      // console.log(`monthValue: ${monthValue}`);
-
-      var hoursStr;
-
-      if(hourValue < 10){hoursStr = "0" + hourValue;
-      }else{hoursStr = hourValue;}
-
-      var minutesStr;
-
-      if(minutesValue < 10){minutesStr = "0" + minutesValue;
-      }else{minutesStr = minutesValue;}
-
-      var secondsStr;
-
-      if(secondsValue < 10){secondsStr = "0" + secondsValue;
-      }else{secondsStr = secondsValue;}
-
-      // var tmStrValue = mdvValue + ', ' + yrValue + ' | ' + hoursStr + "hrs : " + minutesStr + "min : " + secondsStr + 'sec';
-      var d8StrValue = `${monthValue}/${dayValue}/${yrValue}`;
-      var tmStrValue2 = `${hoursStr}.${minutesStr}.${secondsStr}` ;
-
-      setDateString(d8StrValue)
-      setTimeString(tmStrValue2)
-
-    }, 1000)
-
-    // const trackWindowWidth = () => {
-    //   setWindowWidth(window.innerWidth);
-    // };
-
-    // window.addEventListener('widthTracker', trackWindowWidth);
-    // console.log(`window width - ${windowWidth}`);
 
     return () => {
       window.removeEventListener('scroll', trackScrollandSetPageLocation);
@@ -228,6 +209,13 @@ const App = () => {
   btnhoverSound.playbackRate = 1;
   btnClickSound.playbackRate = 1;
 
+  const handleItemInteractionSound = (sound) => {
+    if (sfxActive) {
+      sound.currentTime = 0;
+      sound.play();
+    }
+  };
+
   return (
     <Router>
       <NavBar 
@@ -245,6 +233,7 @@ const App = () => {
         navPntClickSound={navPntClickSound}
         btnhoverSound={btnhoverSound}
         btnClickSound={btnClickSound}
+        handleItemInteractionSound={handleItemInteractionSound}
       />
       <HDRParallaxFrames />
       <div className='hdr-element'>
@@ -264,70 +253,77 @@ const App = () => {
             galleryType={sectionsData.about.galleryType} 
             galleryImages={sectionsData.about.galleryImages} 
             sfxActive={sfxActive}
+            btnhoverSound={btnhoverSound}
+            btnClickSound={btnClickSound}
+            handleItemInteractionSound={handleItemInteractionSound}
           />
         </div>
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
           <SectionElement 
-            sectionTitle={sectionsData.webDev.sectionTitle} 
-            sectionSubtitle={sectionsData.webDev.sectionSubTitle} 
-            sectionNfo={sectionsData.webDev.sectionNfo} 
-            sectionMarker={sectionsData.webDev.sectionMarker} 
+            sectionTitle={sectionsData.webDevelopment.sectionTitle} 
+            sectionSubtitle={sectionsData.webDevelopment.sectionSubTitle} 
+            sectionNfo={sectionsData.webDevelopment.sectionNfo} 
+            sectionMarker={sectionsData.webDevelopment.sectionMarker} 
             currentPageLocation={currentPageLocation}
-            hasGallery={sectionsData.webDev.hasGallery} 
-            galleryType={sectionsData.webDev.galleryType} 
-            galleryImages={sectionsData.webDev.galleryImages} 
+            hasGallery={sectionsData.webDevelopment.hasGallery} 
+            galleryType={sectionsData.webDevelopment.galleryType} 
+            galleryImages={sectionsData.webDevelopment.galleryImages} 
             sfxActive={sfxActive}
             btnhoverSound={btnhoverSound}
             btnClickSound={btnClickSound}
+            handleItemInteractionSound={handleItemInteractionSound}
           />
         </div>
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
           <SectionElement 
-            sectionTitle={sectionsData.emailDev.sectionTitle} 
-            sectionSubtitle={sectionsData.emailDev.sectionSubTitle} 
-            sectionNfo={sectionsData.emailDev.sectionNfo} 
-            sectionMarker={sectionsData.emailDev.sectionMarker} 
+            sectionTitle={sectionsData.emailDevelopment.sectionTitle} 
+            sectionSubtitle={sectionsData.emailDevelopment.sectionSubTitle} 
+            sectionNfo={sectionsData.emailDevelopment.sectionNfo} 
+            sectionMarker={sectionsData.emailDevelopment.sectionMarker} 
             currentPageLocation={currentPageLocation}
-            hasGallery={sectionsData.emailDev.hasGallery} 
-            galleryType={sectionsData.emailDev.galleryType} 
-            galleryImages={sectionsData.emailDev.galleryImages} 
+            hasGallery={sectionsData.emailDevelopment.hasGallery} 
+            galleryType={sectionsData.emailDevelopment.galleryType} 
+            galleryImages={sectionsData.emailDevelopment.galleryImages} 
             sfxActive={sfxActive}
             btnhoverSound={btnhoverSound}
             btnClickSound={btnClickSound}
+            handleItemInteractionSound={handleItemInteractionSound}
           />
         </div>
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
           <SectionElement 
-            sectionTitle={sectionsData.grfxDsn.sectionTitle} 
-            sectionSubtitle={sectionsData.grfxDsn.sectionSubTitle} 
-            sectionNfo={sectionsData.grfxDsn.sectionNfo} 
-            sectionMarker={sectionsData.grfxDsn.sectionMarker} 
+            sectionTitle={sectionsData.graphicDesign.sectionTitle} 
+            sectionSubtitle={sectionsData.graphicDesign.sectionSubTitle} 
+            sectionNfo={sectionsData.graphicDesign.sectionNfo} 
+            sectionMarker={sectionsData.graphicDesign.sectionMarker} 
             currentPageLocation={currentPageLocation}
-            hasGallery={sectionsData.grfxDsn.hasGallery} 
-            galleryType={sectionsData.grfxDsn.galleryType} 
-            galleryImages={sectionsData.grfxDsn.galleryImages} 
+            hasGallery={sectionsData.graphicDesign.hasGallery} 
+            galleryType={sectionsData.graphicDesign.galleryType} 
+            galleryImages={sectionsData.graphicDesign.galleryImages} 
             sfxActive={sfxActive}
             btnhoverSound={btnhoverSound}
             btnClickSound={btnClickSound}
+            handleItemInteractionSound={handleItemInteractionSound}
           />
         </div>
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
           <SectionElement 
-            sectionTitle={sectionsData.visDsn.sectionTitle} 
-            sectionSubtitle={sectionsData.visDsn.sectionSubTitle} 
-            sectionNfo={sectionsData.visDsn.sectionNfo} 
-            sectionMarker={sectionsData.visDsn.sectionMarker} 
+            sectionTitle={sectionsData.visualDesign.sectionTitle} 
+            sectionSubtitle={sectionsData.visualDesign.sectionSubTitle} 
+            sectionNfo={sectionsData.visualDesign.sectionNfo} 
+            sectionMarker={sectionsData.visualDesign.sectionMarker} 
             currentPageLocation={currentPageLocation}
-            hasGallery={sectionsData.visDsn.hasGallery} 
-            galleryType={sectionsData.visDsn.galleryType} 
-            galleryImages={sectionsData.visDsn.galleryImages} 
+            hasGallery={sectionsData.visualDesign.hasGallery} 
+            galleryType={sectionsData.visualDesign.galleryType} 
+            galleryImages={sectionsData.visualDesign.galleryImages} 
             sfxActive={sfxActive}
             btnhoverSound={btnhoverSound}
             btnClickSound={btnClickSound}
+            handleItemInteractionSound={handleItemInteractionSound}
           />
         </div>
         <SpacerElement factor={7}/>
@@ -349,6 +345,7 @@ const App = () => {
             sfxActive={sfxActive}
             btnhoverSound={btnhoverSound}
             btnClickSound={btnClickSound}
+            handleItemInteractionSound={handleItemInteractionSound}
           />
         </div>
         <FTR_Element currentPageLocation={currentPageLocation} />

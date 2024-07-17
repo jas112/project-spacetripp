@@ -8,10 +8,10 @@ import terminusSectionData from "./terminusSectionData";
 
 const sectionsData = {
     about: aboutSectionData,
-    webDev: webDevelopmentSectionData,
-    emailDev: emailDevelopmentSectionData,
-    grfxDsn: graphicDesignSectionData,
-    visDsn: visualDesignSectionData,
+    webDevelopment: webDevelopmentSectionData,
+    emailDevelopment: emailDevelopmentSectionData,
+    graphicDesign: graphicDesignSectionData,
+    visualDesign: visualDesignSectionData,
     terminus: terminusSectionData
 }
 

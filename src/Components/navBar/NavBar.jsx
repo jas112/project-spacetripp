@@ -20,7 +20,8 @@ const NavBar = ({
     navMenuClickSound, 
     navPntClickSound,
     btnhoverSound, 
-    btnClickSound}) => {
+    btnClickSound,
+    handleItemInteractionSound}) => {
 
     const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -54,14 +55,10 @@ const NavBar = ({
                     className={getClassName('start')} 
                     id='start'
                     onMouseEnter={() => {
-                        if(sfxActive){
-                            btnhoverSound.play();
-                        }
+                        handleItemInteractionSound(btnhoverSound);
                     }}  
                     onClick={() =>{ 
-                        if(sfxActive){
-                            navPntClickSound.play();
-                        }
+                        handleItemInteractionSound(btnClickSound);
                         scrollToTop();
                     }}
                 >
@@ -76,14 +73,10 @@ const NavBar = ({
                 className={getClassName('about')} 
                 id='about'
                 onMouseEnter={() => {
-                    if(sfxActive){
-                        btnhoverSound.play();
-                    }
+                    handleItemInteractionSound(btnhoverSound);
                 }}  
                 onClick={() => {
-                    if(sfxActive){
-                        navPntClickSound.play();
-                    }
+                    handleItemInteractionSound(btnClickSound);
                     scrollToSection('about');
                 }}
                 >
@@ -98,14 +91,10 @@ const NavBar = ({
                 className={getClassName('webDevelopment')} 
                 id='webDevelopment'
                 onMouseEnter={() => {
-                    if(sfxActive){
-                        btnhoverSound.play();
-                    }
+                    handleItemInteractionSound(btnhoverSound);
                 }}  
                 onClick={() => {
-                    if(sfxActive){
-                        navPntClickSound.play();
-                    }
+                    handleItemInteractionSound(btnClickSound);
                     scrollToSection('webDevelopment')
                 }}
                 >
@@ -120,14 +109,10 @@ const NavBar = ({
                 className={getClassName('emailDevelopment')} 
                 id='emailDevelopment'
                 onMouseEnter={() => {
-                    if(sfxActive){
-                        btnhoverSound.play();
-                    }
+                    handleItemInteractionSound(btnhoverSound);
                 }}   
                 onClick={() => {
-                    if(sfxActive){
-                        navPntClickSound.play();
-                    }
+                    handleItemInteractionSound(btnClickSound);
                     scrollToSection('emailDevelopment');
                 }}
                 >
@@ -142,14 +127,10 @@ const NavBar = ({
                 className={getClassName('graphicDesign')} 
                 id='graphicDesign'
                 onMouseEnter={() => {
-                    if(sfxActive){
-                        btnhoverSound.play();
-                    }
+                    handleItemInteractionSound(btnhoverSound);
                 }}    
                 onClick={() => {
-                    if(sfxActive){
-                        navPntClickSound.play();
-                    }
+                    handleItemInteractionSound(btnClickSound);
                     scrollToSection('graphicDesign');
                 }}
                 >
@@ -164,14 +145,10 @@ const NavBar = ({
                 className={getClassName('visualDesign')} 
                 id='visualDesign'
                 onMouseEnter={() => {
-                    if(sfxActive){
-                        btnhoverSound.play();
-                    }
+                    handleItemInteractionSound(btnhoverSound);
                 }}  
                 onClick={() => {
-                    if(sfxActive){
-                        navPntClickSound.play();
-                    }
+                    handleItemInteractionSound(btnClickSound);
                     scrollToSection('visualDesign')
                 }}
                 >
@@ -186,14 +163,10 @@ const NavBar = ({
                 className={getClassName('terminus')} 
                 id='terminus'
                 onMouseEnter={() => {
-                    if(sfxActive){
-                        btnhoverSound.play();
-                    }
+                    handleItemInteractionSound(btnhoverSound);
                 }}
                 onClick={() => {
-                    if(sfxActive){
-                        navPntClickSound.play();
-                    }
+                    handleItemInteractionSound(btnClickSound);
                     scrollToSection('terminus');
                 }}
                 >
@@ -208,14 +181,10 @@ const NavBar = ({
                 className={getClassName('end')} 
                 id='end' 
                 onMouseEnter={() => {
-                    if(sfxActive){
-                        btnhoverSound.play();
-                    }
+                    handleItemInteractionSound(btnhoverSound);
                 }}
                 onClick={() => {
-                    if(sfxActive){
-                        navPntClickSound.play();
-                    }
+                    handleItemInteractionSound(btnClickSound);
                     scrollToBottom();
                 }}
                 >
@@ -231,14 +200,10 @@ const NavBar = ({
         <div 
             className={`nav-minimized ${isNavOpen ? 'vNavOpen' : 'vNavClosed'}`} 
             onMouseEnter={() => {
-                if(sfxActive){
-                    btnhoverSound.play();
-                }
+                handleItemInteractionSound(btnhoverSound);
             }}
             onClick={() => {
-                if(sfxActive){
-                    navMenuClickSound.play();
-                }
+                handleItemInteractionSound(navMenuClickSound);
                 toggleNavMode();
             }}>
             <div></div>
