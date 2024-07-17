@@ -37,6 +37,33 @@
     }
 }
 
+@-webkit-keyframes animateStarshipXL {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 1400%;
+    }
+}
+
+@-moz-keyframes animateStarshipXL {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 1400%;
+    }
+}
+
+@keyframes animateStarshipXL {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 1400%;
+    }
+}
+
 /* FTR Parallax Frames Style Definitions */
 
 .ftr-plx-frames-holder{
@@ -50,6 +77,10 @@
     height: 1000px;
     /* border: 1px solid white; */
     z-index: -15;
+}
+
+.ftr-starships-frame-xl{
+    overflow-y: visible;
 }
 
 .ftr-plx-star-frame{
@@ -207,17 +238,52 @@
     position: relative;
     top: 35px;
     z-index: -2000;
-	-webkit-animation: animateStarship 35s linear infinite;
-	-moz-animation: animateStarship 35s linear infinite;
-	animation: animateStarship 35s linear infinite;
+	-webkit-animation: animateStarshipXL 35s linear infinite;
+	-moz-animation: animateStarshipXL 35s linear infinite;
+	animation: animateStarshipXL 35s linear infinite;
 	-webkit-transform: scale(5.5);
 	-moz-transform: scale(5.5);
 	transform: scale(5.5);
 }
 
+.ftr-plx-slideXL2 {
+    width: 200%;
+    position: relative;
+    top: -325px;
+    z-index: -2000;
+	-webkit-animation: animateStarshipXL 35s linear infinite;
+	-moz-animation: animateStarshipXL 35s linear infinite;
+	animation: animateStarshipXL 35s linear infinite;
+	-webkit-transform: scale(4.2);
+	-moz-transform: scale(4.2);
+	transform: scale(4.2);
+}
+
+.ftr-plx-slideXL3 {
+    width: 200%;
+    position: relative;
+    top: 100px;
+    z-index: -2000;
+	-webkit-animation: animateStarshipXL 35s linear infinite;
+	-moz-animation: animateStarshipXL 35s linear infinite;
+	animation: animateStarshipXL 35s linear infinite;
+	-webkit-transform: scale(4.2);
+	-moz-transform: scale(4.2);
+	transform: scale(4.2);
+}
+
 .starship{
     width:500px;
-    height: 131px;
+    height: 231px;
+    background-image: url('../../../assets/images/ftrParallax_imgs/ST_starship-shrp-2f.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+}
+
+.starshipXL{
+    width:500px;
+    height: 331px;
     background-image: url('../../../assets/images/ftrParallax_imgs/ST_starship-shrp-2f.png');
     background-repeat: no-repeat;
     background-size: 100% auto;

@@ -13,6 +13,9 @@ const FTRParallaxFrames_Starships = () => {
         <div className='ftr-plx-slide3'>
             <div className='starship'></div>
         </div>
+        <div className='ftr-plx-slideXL3'>
+            <div className='starshipXL'></div>
+        </div>
         <div className='ftr-plx-slide4'>
             <div className='starship'></div>
         </div>
