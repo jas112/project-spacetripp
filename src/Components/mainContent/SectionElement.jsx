@@ -7,14 +7,8 @@ import './styles/SectionElement.css'
 import {generateText} from '../../utils/contentTools.jsx'
 
 const SectionElement = ({
-    sectionTitle, 
-    sectionSubtitle, 
-    sectionNfo, 
-    sectionMarker, 
-    currentPageLocation, 
-    hasGallery, 
-    galleryType, 
-    galleryImages, 
+    sectionDataValue,
+    currentPageLocation,  
     sfxActive,
     btnhoverSound,
     btnClickSound,
@@ -26,7 +20,7 @@ const SectionElement = ({
     const [currentStatusBool, setCurrentStatusBool] = useState(false);
     const [activateSectionMinor, setActivateSectionMinor] = useState(false);
 
-    const hasGalleryBool = hasGallery === 'true';
+    const hasGalleryBool = sectionDataValue.hasGallery === 'true';
     // console.log(`${sectionMarker} has a gallery: ${hasGalleryBool} ||| ${hasGallery}`);
 
     const {ref, inView } = useInView({
@@ -36,7 +30,7 @@ const SectionElement = ({
 
     useEffect(() => {
 
-        setCurrentStatusBool(sectionMarker == currentPageLocation);
+        setCurrentStatusBool(sectionDataValue.sectionMarker == currentPageLocation);
 
     }, [currentPageLocation])
 
@@ -68,7 +62,7 @@ const SectionElement = ({
         // console.log(`currentBoolStr: ${currentBoolStr}`);
         if(hasGalleryBool){
             return(
-                <GalleryElement sectionMarker={sectionMarker} galleryType={galleryType} galleryImages={galleryImages} currentStatusBool={currentStatusBool}/>
+                <GalleryElement sectionMarker={sectionDataValue.sectionMarker} galleryType={sectionDataValue.galleryType} galleryImages={sectionDataValue.galleryImages} currentStatusBool={currentStatusBool}/>
                 // <div style={{width: '100%', height: '100px', color: '#fff', border: 'solid 1px white'}}>This section has a gallery</div>
             )
         }
@@ -78,10 +72,10 @@ const SectionElement = ({
 
   return (
     <>
-        <div id={sectionMarker} ref={ref} className={`full-section-config floating ${inView ? 'fade-in' : 'fade-out'}`}>
+        <div id={sectionDataValue.sectionMarker} ref={ref} className={`full-section-config floating ${inView ? 'fade-in' : 'fade-out'}`}>
             <TopSectionPanel currentStatusBool={currentStatusBool}/>
             <div 
-                id={`${sectionMarker} + _Mkr`} 
+                id={`${sectionDataValue.sectionMarker} + _Mkr`} 
                 ref={ref} 
                 className={`section-minor ${activateSectionMinor ? 'active-section-minor' : ''}`}
                 onMouseEnter={() => {
@@ -92,12 +86,12 @@ const SectionElement = ({
                 }}
             >
                 <div className="section-hdr">
-                    <div className="section-title">{sectionTitle}</div>
-                    <div className="section-position-value">{sectionTitle}</div>
-                    <div className="section-subtitle">{sectionSubtitle}</div>
+                    <div className="section-title">{sectionDataValue.sectionTitle}</div>
+                    <div className="section-position-value">{sectionDataValue.sectionTitle}</div>
+                    <div className="section-subtitle">{sectionDataValue.sectionSubtitle}</div>
                 </div>
                 <div className="section-nfo  nfo-scroll">
-                    {generateText(sectionNfo,'sectionNfo', sectionMarker)}
+                    {generateText(sectionDataValue.sectionNfo,'sectionNfo', sectionDataValue.sectionMarker)}
                 </div>
                 {/* {galleryValue} */}
                 {/* <div className='gallery-type-hero'>

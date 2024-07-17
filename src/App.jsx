@@ -68,42 +68,6 @@ const App = () => {
       const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
       const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
 
-      // const aboutSectionTop = sectionRefs['about'].current.offsetTop;
-      // const aboutSectionUpperBoundY = sectionRefs['about'].current.offsetTop - 200;
-      // const aboutSectionLowerBoundY = sectionRefs['about'].current.offsetTop + sectionRefs['about'].current.offsetHeight + 200;
-
-      // console.log(`aboutTp - ${aboutSectionTop} , aboutUB - ${aboutSectionUpperBoundY} , aboutLB - ${aboutSectionLowerBoundY}`);
-
-      // const webDevSectionTop = sectionRefs['webDevelopment'].current.offsetTop;
-      // const webDevSectionUpperBoundY = sectionRefs['webDevelopment'].current.offsetTop - 200;
-      // const webDevSectionLowerBoundY = sectionRefs['webDevelopment'].current.offsetTop + sectionRefs['webDevelopment'].current.offsetHeight + 200;
-
-      // console.log(`webDevTp - ${webDevSectionTop} , webDevUB - ${webDevSectionUpperBoundY} , webDevLB - ${webDevSectionLowerBoundY}`);
-
-      // const emailDevSectionTop = sectionRefs['emailDevelopment'].current.offsetTop;
-      // const emailDevSectionUpperBoundY = sectionRefs['emailDevelopment'].current.offsetTop - 200;
-      // const emailDevSectionLowerBoundY = sectionRefs['emailDevelopment'].current.offsetTop + sectionRefs['emailDevelopment'].current.offsetHeight + 200;
-
-      // console.log(`emailDevTp - ${emailDevSectionTop} , emailDevUB - ${emailDevSectionUpperBoundY} , emailDevLB - ${emailDevSectionLowerBoundY}`);
-
-      // const grfxDsnSectionTop = sectionRefs['graphicDesign'].current.offsetTop;
-      // const grfxDsnSectionUpperBoundY = sectionRefs['graphicDesign'].current.offsetTop - 200;
-      // const grfxDsnSectionLowerBoundY = sectionRefs['graphicDesign'].current.offsetTop + sectionRefs['graphicDesign'].current.offsetHeight + 200;
-
-      // console.log(`grfxDsnTp - ${grfxDsnSectionTop} , grfxDsnUB - ${grfxDsnSectionUpperBoundY} , grfxDsnLB - ${grfxDsnSectionLowerBoundY}`);
-
-      // const visDsnSectionTop = sectionRefs['visualDesign'].current.offsetTop;
-      // const visDsnSectionUpperBoundY = sectionRefs['visualDesign'].current.offsetTop - 200;
-      // const visDsnSectionLowerBoundY = sectionRefs['visualDesign'].current.offsetTop + sectionRefs['visualDesign'].current.offsetHeight + 200;
-
-      // console.log(`visDevTp - ${visDsnSectionTop} , visDevUB - ${visDsnSectionUpperBoundY} , visDevLB - ${visDsnSectionLowerBoundY}`);
-
-      // const terminusSectionTop = sectionRefs['terminus'].current.offsetTop;
-      // const terminusSectionUpperBoundY = sectionRefs['terminus'].current.offsetTop - 200;
-      // const terminusSectionLowerBoundY = sectionRefs['terminus'].current.offsetTop + sectionRefs['terminus'].current.offsetHeight + 200;
-
-      // console.log(`terminusTp - ${terminusSectionTop} , terminusUB - ${terminusSectionUpperBoundY} , terminusLB - ${terminusSectionLowerBoundY}`);
-
       const endTop = bottomRef.current.offsetTop;
 
       // console.log(`endTop - ${end}`);
@@ -244,14 +208,8 @@ const App = () => {
         <SpacerElement factor={10}/>
         <div className='page-nav-ref' ref={sectionRefs.about}>
           <SectionElement 
-            sectionTitle={sectionsData.about.sectionTitle} 
-            sectionSubtitle={sectionsData.about.sectionSubTitle} 
-            sectionNfo={sectionsData.about.sectionNfo} 
-            sectionMarker={sectionsData.about.sectionMarker} 
+            sectionDataValue={sectionsData.about} 
             currentPageLocation={currentPageLocation}
-            hasGallery={sectionsData.about.hasGallery} 
-            galleryType={sectionsData.about.galleryType} 
-            galleryImages={sectionsData.about.galleryImages} 
             sfxActive={sfxActive}
             btnhoverSound={btnhoverSound}
             btnClickSound={btnClickSound}
@@ -261,6 +219,7 @@ const App = () => {
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
           <SectionElement 
+            sectionDataValue={sectionsData.webDevelopment}
             sectionTitle={sectionsData.webDevelopment.sectionTitle} 
             sectionSubtitle={sectionsData.webDevelopment.sectionSubTitle} 
             sectionNfo={sectionsData.webDevelopment.sectionNfo} 
@@ -278,6 +237,7 @@ const App = () => {
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
           <SectionElement 
+            sectionDataValue={sectionsData.emailDevelopment}
             sectionTitle={sectionsData.emailDevelopment.sectionTitle} 
             sectionSubtitle={sectionsData.emailDevelopment.sectionSubTitle} 
             sectionNfo={sectionsData.emailDevelopment.sectionNfo} 
@@ -295,6 +255,7 @@ const App = () => {
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
           <SectionElement 
+            sectionDataValue={sectionsData.graphicDesign}
             sectionTitle={sectionsData.graphicDesign.sectionTitle} 
             sectionSubtitle={sectionsData.graphicDesign.sectionSubTitle} 
             sectionNfo={sectionsData.graphicDesign.sectionNfo} 
@@ -312,6 +273,7 @@ const App = () => {
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
           <SectionElement 
+            sectionDataValue={sectionsData.visualDesign}
             sectionTitle={sectionsData.visualDesign.sectionTitle} 
             sectionSubtitle={sectionsData.visualDesign.sectionSubTitle} 
             sectionNfo={sectionsData.visualDesign.sectionNfo} 
