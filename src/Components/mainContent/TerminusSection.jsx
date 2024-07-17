@@ -12,24 +12,18 @@ import { faLinkedinIn, faGitAlt } from '@fortawesome/free-brands-svg-icons';
 import { faBolt } from '@fortawesome/free-solid-svg-icons'
 
 const TerminusSection = ({
-    sectionTitle, 
-    sectionSubtitle, 
-    sectionNfo, 
-    sectionMarker, 
-    currentPageLocation, 
-    hasGallery, 
-    galleryType, 
-    galleryImages, 
-    sectionLinksA, 
-    sectionLinksB, 
-    sfxActive, 
-    btnhoverSound, 
-    btnClickSound}) => {
+    sectionDataValue, 
+    currentPageLocation,
+    sectionHoverSoundEnter,
+    sectionHoverSoundExit, 
+    btnHoverSound, 
+    btnClickSound,
+    handleItemInteractionSound }) => {
 
     const [currentStatusBool, setCurrentStatusBool] = useState(false);
     const [activateSectionMinor, setActivateSectionMinor] = useState(false);
 
-    const hasGalleryBool = hasGallery === 'true';
+    const hasGalleryBool = sectionDataValue.hasGallery === 'true';
     // console.log(`${sectionMarker} has a gallery: ${hasGalleryBool} ||| ${hasGallery}`);
 
     const {ref, inView } = useInView({
@@ -39,7 +33,7 @@ const TerminusSection = ({
 
     useEffect(() => {
 
-        const isTheEnd = (sectionMarker == currentPageLocation) || (currentPageLocation == 'end');
+        const isTheEnd = (sectionDataValue.sectionMarker == currentPageLocation) || (currentPageLocation == 'end');
 
         // setCurrentStatusBool(sectionMarker == currentPageLocation);
 
@@ -67,24 +61,49 @@ const TerminusSection = ({
       }, [currentStatusBool]);
 
   return (
-    <div id={sectionMarker} ref={ref} className={`full-section-config floating ${currentStatusBool ? 'fade-in' : 'fade-out'}`}>
+    <div 
+        id={sectionDataValue.sectionMarker} 
+        ref={ref} 
+        className={`full-section-config floating ${currentStatusBool ? 'fade-in' : 'fade-out'}`}
+    >
         <div className='terminus-console-frame-outer'>
             <TopTerminusSectionPanel currentStatusBool={currentStatusBool} />
             <div className='terminus-hdr-frame'>
-                <div className="ftr-txt-title ftr-main-title">{sectionTitle}</div>
+                <div className="ftr-txt-title ftr-main-title">{sectionDataValue.sectionTitle}</div>
             </div>
             <div className='terminus-console-frame-inner'>
-                <div className='terminus-console-panel terminus-console-panel-A'>
+                <div 
+                    className='terminus-console-panel terminus-console-panel-A'
+                    onMouseEnter={() => {
+                        handleItemInteractionSound(sectionHoverSoundEnter);
+                    }} 
+                    onMouseLeave={() =>{
+                        handleItemInteractionSound(sectionHoverSoundExit)
+                    }} 
+                >
                     <div className='terminus-avatar-frame'>
-                        <div className='terminus-avatar' style={{backgroundImage: `url(${galleryImages[0].image})`}}></div>
+                        <div 
+                            className='terminus-avatar' style={{backgroundImage: `url(${sectionDataValue.galleryImages[0].image})`}}
+                            onMouseEnter={() => {
+                                handleItemInteractionSound(sectionHoverSoundEnter);
+                            }} 
+                        ></div>
                     </div>
                     <div className='terminus-end-msg-frame'>
                         <div className='terminus-end-msg'>
-                            {generateText(sectionNfo,'sectionNfo', sectionMarker)}
+                            {generateText(sectionDataValue.sectionNfo,'sectionNfo', sectionDataValue.sectionMarker)}
                         </div>
                     </div>
                 </div>
-                <div className='terminus-console-panel terminus-console-panel-B'>
+                <div 
+                    className='terminus-console-panel terminus-console-panel-B'
+                    onMouseEnter={() => {
+                        handleItemInteractionSound(sectionHoverSoundEnter);
+                    }} 
+                    onMouseLeave={() =>{
+                        handleItemInteractionSound(sectionHoverSoundExit)
+                    }} 
+                >
                     {/* <div className='terminus-console-panel-indicator'></div>
                     <div className='terminus-console-panel-button-A'>
                         <a className='terminus-console-panel-button-text' href='www.cartoonbrew.com' target='_blank' rel='noopener noreferrer'>Email Me</a>
@@ -93,14 +112,26 @@ const TerminusSection = ({
                         <a className='terminus-console-panel-button-text' href='www.cartoonbrew.com' target='_blank' rel='noopener noreferrer'>Resume</a>
                     </div> */}
                     {
-                        sectionLinksA.map((link, idx) => (
-                            <LinkButtonTile key={`${sectionMarker}LinkA` + '-' + idx} linkData={link} linkBtnTileType={'A'} sfxActive={sfxActive} btnHoverSound={btnhoverSound} btnClickSound={btnClickSound} />
+                        sectionDataValue.sectionLinksA.map((link, idx) => (
+                            <LinkButtonTile 
+                            key={`${sectionDataValue.sectionMarker}LinkA` + '-' + idx} 
+                            linkData={link} linkBtnTileType={'A'} 
+                            btnHoverSound={btnHoverSound} 
+                            btnClickSound={btnClickSound} 
+                            handleItemInteractionSound={handleItemInteractionSound} 
+                        />
                         )) 
                     }
                     <div className='terminus-console-panel-button-B-frame'>
                     {
-                        sectionLinksB.map((link, idx) => (
-                            <LinkButtonTile key={`${sectionMarker}LinkB` + '-' + idx} linkData={link} linkBtnTileType={'B'} sfxActive={sfxActive} btnHoverSound={btnhoverSound} btnClickSound={btnClickSound} />
+                        sectionDataValue.sectionLinksB.map((link, idx) => (
+                            <LinkButtonTile 
+                                key={`${sectionDataValue.sectionMarker}LinkB` + '-' + idx} 
+                                linkData={link} linkBtnTileType={'B'} 
+                                btnHoverSound={btnHoverSound} 
+                                btnClickSound={btnClickSound} 
+                                handleItemInteractionSound={handleItemInteractionSound} 
+                            />
                         )) 
                     }
                     </div>

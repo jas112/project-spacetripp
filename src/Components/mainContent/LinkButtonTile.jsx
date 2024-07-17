@@ -4,7 +4,7 @@ import './styles/LinkButtonTile.css'
 import btnHoverSoundRef from '../../assets/audio/space_signal-213481.mp3'
 import btnClickSoundRef from '../../assets/audio/space_signal-213481.mp3'
 
-const LinkButtonTile = ({ linkData, linkBtnTileType, sfxActive, btnHoverSound, btnClickSound }) => {
+const LinkButtonTile = ({ linkData, linkBtnTileType, btnHoverSound, btnClickSound, handleItemInteractionSound }) => {
 
     const isLinkBtnTypeA = linkBtnTileType == 'A';
 
@@ -14,10 +14,11 @@ const LinkButtonTile = ({ linkData, linkBtnTileType, sfxActive, btnHoverSound, b
                 <div 
                     className='link-button-tile-A'
                     onMouseEnter={() => {
-                        if(sfxActive){
-                            btnHoverSound.play();
-                        }
+                        handleItemInteractionSound(btnHoverSound);
                     }} 
+                    onClick={() =>{
+                        handleItemInteractionSound(btnClickSound)
+                    }}
                 >
                     <a className='link-button-tile-text' href={linkData.url} title={linkData.title}>
                         {linkData.linkText}
@@ -31,10 +32,11 @@ const LinkButtonTile = ({ linkData, linkBtnTileType, sfxActive, btnHoverSound, b
                         <div 
                             className='icon-frame'
                             onMouseEnter={() => {
-                                if(sfxActive){
-                                    btnHoverSound.play();
-                                }
+                                handleItemInteractionSound(btnHoverSound);
                             }} 
+                            onClick={() =>{
+                                handleItemInteractionSound(btnClickSound)
+                            }}
                         >
                             <a href={linkData.url} className='link-button-tile-link'>
                                 <FontAwesomeIcon icon={linkData.icon} className="icon" size='2x' />

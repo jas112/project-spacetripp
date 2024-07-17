@@ -9,8 +9,9 @@ import {generateText} from '../../utils/contentTools.jsx'
 const SectionElement = ({
     sectionDataValue,
     currentPageLocation,  
-    sfxActive,
-    btnhoverSound,
+    sectionHoverSoundEnter,
+    sectionHoverSoundExit,
+    btnHoverSound,
     btnClickSound,
     handleItemInteractionSound}) => {
 
@@ -62,7 +63,14 @@ const SectionElement = ({
         // console.log(`currentBoolStr: ${currentBoolStr}`);
         if(hasGalleryBool){
             return(
-                <GalleryElement sectionMarker={sectionDataValue.sectionMarker} galleryType={sectionDataValue.galleryType} galleryImages={sectionDataValue.galleryImages} currentStatusBool={currentStatusBool}/>
+                <GalleryElement 
+                sectionMarker={sectionDataValue.sectionMarker} 
+                galleryType={sectionDataValue.galleryType} 
+                galleryImages={sectionDataValue.galleryImages} 
+                currentStatusBool={currentStatusBool} 
+                btnHoverSound={btnHoverSound}
+                btnClickSound={btnClickSound}
+                handleItemInteractionSound={handleItemInteractionSound} />
                 // <div style={{width: '100%', height: '100px', color: '#fff', border: 'solid 1px white'}}>This section has a gallery</div>
             )
         }
@@ -79,10 +87,10 @@ const SectionElement = ({
                 ref={ref} 
                 className={`section-minor ${activateSectionMinor ? 'active-section-minor' : ''}`}
                 onMouseEnter={() => {
-                    handleItemInteractionSound(btnhoverSound);
+                    handleItemInteractionSound(sectionHoverSoundEnter);
                 }}
                 onMouseLeave={() => {
-                    handleItemInteractionSound(btnhoverSound);
+                    handleItemInteractionSound(sectionHoverSoundExit);
                 }}
             >
                 <div className="section-hdr">

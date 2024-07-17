@@ -19,7 +19,7 @@ const NavBar = ({
     setSfxActive, 
     navMenuClickSound, 
     navPntClickSound,
-    btnhoverSound, 
+    btnHoverSound, 
     btnClickSound,
     handleItemInteractionSound}) => {
 
@@ -55,7 +55,7 @@ const NavBar = ({
                     className={getClassName('start')} 
                     id='start'
                     onMouseEnter={() => {
-                        handleItemInteractionSound(btnhoverSound);
+                        handleItemInteractionSound(btnHoverSound);
                     }}  
                     onClick={() =>{ 
                         handleItemInteractionSound(btnClickSound);
@@ -73,7 +73,7 @@ const NavBar = ({
                 className={getClassName('about')} 
                 id='about'
                 onMouseEnter={() => {
-                    handleItemInteractionSound(btnhoverSound);
+                    handleItemInteractionSound(btnHoverSound);
                 }}  
                 onClick={() => {
                     handleItemInteractionSound(btnClickSound);
@@ -91,7 +91,7 @@ const NavBar = ({
                 className={getClassName('webDevelopment')} 
                 id='webDevelopment'
                 onMouseEnter={() => {
-                    handleItemInteractionSound(btnhoverSound);
+                    handleItemInteractionSound(btnHoverSound);
                 }}  
                 onClick={() => {
                     handleItemInteractionSound(btnClickSound);
@@ -109,7 +109,7 @@ const NavBar = ({
                 className={getClassName('emailDevelopment')} 
                 id='emailDevelopment'
                 onMouseEnter={() => {
-                    handleItemInteractionSound(btnhoverSound);
+                    handleItemInteractionSound(btnHoverSound);
                 }}   
                 onClick={() => {
                     handleItemInteractionSound(btnClickSound);
@@ -127,7 +127,7 @@ const NavBar = ({
                 className={getClassName('graphicDesign')} 
                 id='graphicDesign'
                 onMouseEnter={() => {
-                    handleItemInteractionSound(btnhoverSound);
+                    handleItemInteractionSound(btnHoverSound);
                 }}    
                 onClick={() => {
                     handleItemInteractionSound(btnClickSound);
@@ -145,7 +145,7 @@ const NavBar = ({
                 className={getClassName('visualDesign')} 
                 id='visualDesign'
                 onMouseEnter={() => {
-                    handleItemInteractionSound(btnhoverSound);
+                    handleItemInteractionSound(btnHoverSound);
                 }}  
                 onClick={() => {
                     handleItemInteractionSound(btnClickSound);
@@ -163,7 +163,7 @@ const NavBar = ({
                 className={getClassName('terminus')} 
                 id='terminus'
                 onMouseEnter={() => {
-                    handleItemInteractionSound(btnhoverSound);
+                    handleItemInteractionSound(btnHoverSound);
                 }}
                 onClick={() => {
                     handleItemInteractionSound(btnClickSound);
@@ -181,7 +181,7 @@ const NavBar = ({
                 className={getClassName('end')} 
                 id='end' 
                 onMouseEnter={() => {
-                    handleItemInteractionSound(btnhoverSound);
+                    handleItemInteractionSound(btnHoverSound);
                 }}
                 onClick={() => {
                     handleItemInteractionSound(btnClickSound);
@@ -200,7 +200,7 @@ const NavBar = ({
         <div 
             className={`nav-minimized ${isNavOpen ? 'vNavOpen' : 'vNavClosed'}`} 
             onMouseEnter={() => {
-                handleItemInteractionSound(btnhoverSound);
+                handleItemInteractionSound(btnHoverSound);
             }}
             onClick={() => {
                 handleItemInteractionSound(navMenuClickSound);

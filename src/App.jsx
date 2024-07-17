@@ -15,6 +15,7 @@ import HDRParallaxFrames from './Components/parallaxFrames/HDRParallaxFrames.jsx
 import FTRParallaxFrames_Starships from './Components/parallaxFrames/FTRParallaxFrames_Starships.jsx';
 import FTRParallaxFrames_Star from './Components/parallaxFrames/FTRParallaxFrames_Star.jsx';
 import FTR_Element from './Components/mainContent/FTR_Element.jsx';
+import sectionHoverSoundRef from '/src/assets/audio/286926-TheLibrarybyMTC-UI-Computer-250.wav'
 import navMenuClickSoundRef from '/src/assets/audio/space_signal-213481.mp3'
 import navPntClickSoundRef from '/src/assets/audio/52460-SCIENCE_FICTION_DOOR_WHOOSH_OPEN_SHORT_01.wav'
 import btnHoverSoundRef from '/src/assets/audio/51574-SCIENCE_FICTION_MULTIMEDIA_TECHNOLOGY_COMPUTER_BLIP_01.wav'
@@ -159,18 +160,23 @@ const App = () => {
     }
   };
 
+  const sectionHoverSoundEnter = new Audio(sectionHoverSoundRef);
+  const sectionHoverSoundExit = new Audio(sectionHoverSoundRef);
   const navMenuClickSound = new Audio(navMenuClickSoundRef);
   const navPntClickSound = new Audio(navPntClickSoundRef)
-  const btnhoverSound = new Audio(btnHoverSoundRef);
+  const btnHoverSound = new Audio(btnHoverSoundRef);
   const btnClickSound = new Audio(btnClickSoundRef);
 
+  sectionHoverSoundEnter.volume = 0.81;
+  sectionHoverSoundExit.volume = 0.81;
   navMenuClickSound.volume = 0.11;
   navPntClickSound.volume = 0.11;
-  btnhoverSound.volume = 0.21;
+  btnHoverSound.volume = 0.21;
   btnClickSound.volume = 0.11;
 
+  sectionHoverSoundExit.playbackRate = 1.5;
   navPntClickSound.playbackRate = .5;
-  btnhoverSound.playbackRate = 1;
+  btnHoverSound.playbackRate = 1;
   btnClickSound.playbackRate = 1;
 
   const handleItemInteractionSound = (sound) => {
@@ -195,7 +201,7 @@ const App = () => {
         setSfxActive={setSfxActive}
         navMenuClickSound={navMenuClickSound}
         navPntClickSound={navPntClickSound}
-        btnhoverSound={btnhoverSound}
+        btnHoverSound={btnHoverSound}
         btnClickSound={btnClickSound}
         handleItemInteractionSound={handleItemInteractionSound}
       />
@@ -210,8 +216,9 @@ const App = () => {
           <SectionElement 
             sectionDataValue={sectionsData.about} 
             currentPageLocation={currentPageLocation}
-            sfxActive={sfxActive}
-            btnhoverSound={btnhoverSound}
+            sectionHoverSoundEnter={sectionHoverSoundEnter}
+            sectionHoverSoundExit={sectionHoverSoundExit}
+            btnHoverSound={btnHoverSound}
             btnClickSound={btnClickSound}
             handleItemInteractionSound={handleItemInteractionSound}
           />
@@ -220,16 +227,10 @@ const App = () => {
         <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
           <SectionElement 
             sectionDataValue={sectionsData.webDevelopment}
-            sectionTitle={sectionsData.webDevelopment.sectionTitle} 
-            sectionSubtitle={sectionsData.webDevelopment.sectionSubTitle} 
-            sectionNfo={sectionsData.webDevelopment.sectionNfo} 
-            sectionMarker={sectionsData.webDevelopment.sectionMarker} 
-            currentPageLocation={currentPageLocation}
-            hasGallery={sectionsData.webDevelopment.hasGallery} 
-            galleryType={sectionsData.webDevelopment.galleryType} 
-            galleryImages={sectionsData.webDevelopment.galleryImages} 
-            sfxActive={sfxActive}
-            btnhoverSound={btnhoverSound}
+            currentPageLocation={currentPageLocation} 
+            sectionHoverSoundEnter={sectionHoverSoundEnter}
+            sectionHoverSoundExit={sectionHoverSoundExit}
+            btnHoverSound={btnHoverSound}
             btnClickSound={btnClickSound}
             handleItemInteractionSound={handleItemInteractionSound}
           />
@@ -237,17 +238,11 @@ const App = () => {
         <SpacerElement factor={2}/>
         <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
           <SectionElement 
-            sectionDataValue={sectionsData.emailDevelopment}
-            sectionTitle={sectionsData.emailDevelopment.sectionTitle} 
-            sectionSubtitle={sectionsData.emailDevelopment.sectionSubTitle} 
-            sectionNfo={sectionsData.emailDevelopment.sectionNfo} 
-            sectionMarker={sectionsData.emailDevelopment.sectionMarker} 
+            sectionDataValue={sectionsData.emailDevelopment} 
             currentPageLocation={currentPageLocation}
-            hasGallery={sectionsData.emailDevelopment.hasGallery} 
-            galleryType={sectionsData.emailDevelopment.galleryType} 
-            galleryImages={sectionsData.emailDevelopment.galleryImages} 
-            sfxActive={sfxActive}
-            btnhoverSound={btnhoverSound}
+            sectionHoverSoundEnter={sectionHoverSoundEnter}
+            sectionHoverSoundExit={sectionHoverSoundExit}
+            btnHoverSound={btnHoverSound}
             btnClickSound={btnClickSound}
             handleItemInteractionSound={handleItemInteractionSound}
           />
@@ -256,16 +251,10 @@ const App = () => {
         <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
           <SectionElement 
             sectionDataValue={sectionsData.graphicDesign}
-            sectionTitle={sectionsData.graphicDesign.sectionTitle} 
-            sectionSubtitle={sectionsData.graphicDesign.sectionSubTitle} 
-            sectionNfo={sectionsData.graphicDesign.sectionNfo} 
-            sectionMarker={sectionsData.graphicDesign.sectionMarker} 
             currentPageLocation={currentPageLocation}
-            hasGallery={sectionsData.graphicDesign.hasGallery} 
-            galleryType={sectionsData.graphicDesign.galleryType} 
-            galleryImages={sectionsData.graphicDesign.galleryImages} 
-            sfxActive={sfxActive}
-            btnhoverSound={btnhoverSound}
+            sectionHoverSoundEnter={sectionHoverSoundEnter}
+            sectionHoverSoundExit={sectionHoverSoundExit}
+            btnHoverSound={btnHoverSound}
             btnClickSound={btnClickSound}
             handleItemInteractionSound={handleItemInteractionSound}
           />
@@ -274,16 +263,10 @@ const App = () => {
         <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
           <SectionElement 
             sectionDataValue={sectionsData.visualDesign}
-            sectionTitle={sectionsData.visualDesign.sectionTitle} 
-            sectionSubtitle={sectionsData.visualDesign.sectionSubTitle} 
-            sectionNfo={sectionsData.visualDesign.sectionNfo} 
-            sectionMarker={sectionsData.visualDesign.sectionMarker} 
             currentPageLocation={currentPageLocation}
-            hasGallery={sectionsData.visualDesign.hasGallery} 
-            galleryType={sectionsData.visualDesign.galleryType} 
-            galleryImages={sectionsData.visualDesign.galleryImages} 
-            sfxActive={sfxActive}
-            btnhoverSound={btnhoverSound}
+            sectionHoverSoundEnter={sectionHoverSoundEnter}
+            sectionHoverSoundExit={sectionHoverSoundExit}
+            btnHoverSound={btnHoverSound}
             btnClickSound={btnClickSound}
             handleItemInteractionSound={handleItemInteractionSound}
           />
@@ -294,18 +277,11 @@ const App = () => {
         <SpacerElement factor={2}/>
         <div className='page-nav-ref terminus-nav' ref={sectionRefs.terminus}>
           <TerminusSection 
-            sectionTitle={sectionsData.terminus.sectionTitle}
-            sectionSubtitle={sectionsData.terminus.sectionSubTitle}
-            sectionNfo={sectionsData.terminus.sectionNfo}
-            sectionMarker={sectionsData.terminus.sectionMarker}
+            sectionDataValue={sectionsData.terminus}
             currentPageLocation={currentPageLocation}
-            hasGallery={sectionsData.terminus.hasGallery} 
-            galleryType={sectionsData.terminus.galleryType} 
-            galleryImages={sectionsData.terminus.galleryImages}
-            sectionLinksA={sectionsData.terminus.sectionLinksA}
-            sectionLinksB={sectionsData.terminus.sectionLinksB}
-            sfxActive={sfxActive}
-            btnhoverSound={btnhoverSound}
+            sectionHoverSoundEnter={sectionHoverSoundEnter}
+            sectionHoverSoundExit={sectionHoverSoundExit}
+            btnHoverSound={btnHoverSound}
             btnClickSound={btnClickSound}
             handleItemInteractionSound={handleItemInteractionSound}
           />

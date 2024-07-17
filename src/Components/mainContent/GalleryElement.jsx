@@ -5,7 +5,14 @@ import './styles/GalleryElement.css'
 import GalleryItemTypeA from './GalleryItemTypeA.jsx'
 
 
-const GalleryElement = ({sectionMarker, galleryType, galleryImages, currentStatusBool}) => {
+const GalleryElement = ({
+    sectionMarker, 
+    galleryType, 
+    galleryImages, 
+    currentStatusBool,
+    btnHoverSound,
+    btnClickSound,
+    handleItemInteractionSound}) => {
 
     useEffect(() => {
         Fancybox.bind('[data-fancybox]', {});
@@ -27,8 +34,17 @@ const GalleryElement = ({sectionMarker, galleryType, galleryImages, currentStatu
     const generateGalleryItems = () => {
         return(
             galleryImages.map((image, idx) => (
-                <a key={`${sectionMarker}` + '-' + idx} data-fancybox={sectionMarker} href={image.image}>
-                    <GalleryItemTypeA galleryItemImage={image} />
+                <a 
+                    key={`${sectionMarker}` + '-' + idx} 
+                    data-fancybox={sectionMarker} 
+                    href={image.image}
+                >
+                    <GalleryItemTypeA 
+                        galleryItemImage={image} 
+                        btnHoverSound={btnHoverSound}
+                        btnClickSound={btnClickSound}
+                        handleItemInteractionSound={handleItemInteractionSound}
+                    />
                 </a>
             ))        
         )
@@ -46,8 +62,18 @@ const GalleryElement = ({sectionMarker, galleryType, galleryImages, currentStatu
 
             {
                 galleryImages.map((image, idx) => (
-                    <a key={`${sectionMarker}` + '-' + idx} data-fancybox={sectionMarker} data-caption={image.imageDescription} href={image.image}>
-                        <GalleryItemTypeA galleryItemImage={image} />
+                    <a 
+                        key={`${sectionMarker}` + '-' + idx} 
+                        data-fancybox={sectionMarker} 
+                        data-caption={image.imageDescription} 
+                        href={image.image}
+                    >
+                        <GalleryItemTypeA 
+                            galleryItemImage={image}
+                            btnHoverSound={btnHoverSound}
+                            btnClickSound={btnClickSound}
+                            handleItemInteractionSound={handleItemInteractionSound} 
+                        />
                     </a>
                 )) 
             }
