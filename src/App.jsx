@@ -48,20 +48,19 @@ const App = () => {
   // console.log(`sectionRefs Object - about`);
   // console.log(JSON.stringify(sectionsData[Object.keys(sectionRefs)[0]]));
 
+  const getSectionUpperBound = (sectionValue) => {
+    return sectionRefs[sectionValue].current.offsetTop - 200;
+  }
+
+  const getSectionLowerBound = (sectionValue) => {
+    return sectionRefs[sectionValue].current.offsetTop + sectionRefs[sectionValue].current.offsetHeight + 200;
+  }
 
   useEffect(() => {
 
     const trackScrollandSetPageLocation = () => {
       const newScrollPositionValue = window.scrollY;
       setScrollPositionY(newScrollPositionValue);
-
-      const getSectionUpperBound = (sectionValue) => {
-        return sectionRefs[sectionValue].current.offsetTop - 200;
-      }
-
-      const getSectionLowerBound = (sectionValue) => {
-        return sectionRefs[sectionValue].current.offsetTop + sectionRefs[sectionValue].current.offsetHeight + 200;
-      }
 
       const aboutSectionUpperBoundY = getSectionUpperBound('about');
       const aboutSectionLowerBoundY = getSectionLowerBound('about');
@@ -112,6 +111,29 @@ const App = () => {
       clearInterval(trackTime);
     };
   }, [])
+
+  const determineScrollbarThumbBGColorByScroll = () => {
+    const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
+    const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
+    if(scrollPositionY > 0 && scrollPositionY < 60) return '#ffffff40';
+    if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '#ffffff70';
+    if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return '#ff450070';
+    if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '#ff4500';
+  }
+
+  const determineScrollbarThumbBorderColorByScroll = () => {
+    const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
+    const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
+    if(scrollPositionY < 60) return '3px solid #ffffff40';
+    if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '0px solid #ffffff';
+    if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return '0px solid #ff4500';
+    if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '0px solid #ff4500';
+  }
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--scrollbar-thumb-bgColor', determineScrollbarThumbBGColorByScroll());
+    document.documentElement.style.setProperty('--scrollbar-thumb-border', determineScrollbarThumbBorderColorByScroll());
+  }, [scrollPositionY]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -222,7 +244,7 @@ const App = () => {
             />
           </div>
         ))}
-        
+
         <SpacerElement factor={7}/>
       </div>
       <div className='ftr-element'>

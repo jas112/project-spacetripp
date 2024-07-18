@@ -1,3 +1,8 @@
+:root{
+  --scrollbar-thumb-bgColor: #ffffff40;
+  --scrollbar-thumb-border: 3px solid #ffffff40;
+}
+
 html, body{
   height: 100%;
   margin: 0px;
@@ -21,8 +26,8 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   border-radius: 0px;
   height: 60px;
-  background-color: #ffffff40;
-  border: 3px solid #ffffff40;
+  background-color: var(--scrollbar-thumb-bgColor);
+  border: var(--scrollbar-thumb-border);
 }
 
 body::-webkit-scrollbar-thumb:hover {
