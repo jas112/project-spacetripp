@@ -310,20 +310,20 @@
 
 .sfx-btn:hover{
     opacity: 1;
-    box-shadow: 0px 0px 7px #fff;
+    box-shadow: 0px 0px 12px #fff;
     filter: drop-shadow(0 0 1em #ffffff); 
 }
 
 .sfx-muted{
     color: #ff0000;
-    box-shadow: 0px 0px 7px #ff0000;
+    box-shadow: 0px 0px 9px #ff0000;
     filter: drop-shadow(0 0 1em #ff0000);
 }
 
 .sfx-muted:hover{
     color: #228DFF;
-    box-shadow: 0px 0px 8px #228DFF;
-    filter: drop-shadow(0 0 3em #228DFF);
+    box-shadow: 0px 0px 12px #228DFF;
+    filter: drop-shadow(0 0 1em #228DFF);
 }
 
 .music-btn{
@@ -345,14 +345,14 @@
 
 .music-muted{
     color: #ff0000;
-    box-shadow: 0px 0px 7px #ff0000;
+    box-shadow: 0px 0px 9px #ff0000;
     filter: drop-shadow(0 0 1em #ff0000);
 }
 
 .music-muted:hover{
     color: #228DFF;
-    box-shadow: 0px 0px 8px #228DFF;
-    filter: drop-shadow(0 0 3em #228DFF);
+    box-shadow: 0px 0px 12px #228DFF;
+    filter: drop-shadow(0 0 1em #228DFF);
 }
 
 

@@ -96,6 +96,8 @@ const AudioPlayer = ({
             pauseAudio();
         }else if(!musicActive){
             stopAudio();
+        }else if(musicActive){
+            playAudio();
         }
 
         const handleEnded = () => {

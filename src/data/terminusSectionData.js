@@ -58,18 +58,31 @@ const avatarImage3 = new ImageData(
     'avatarImage1-full-03'
 );
 
+
+// LinkData
+// url
+// icon
+// title
+// linkText
+// linkDescription
+// linkTileType
+
 const myEmailLink = new LinkData(
     'mailto:jas.sandmaster@gmail.com',
     '-',
     'Email me here.',
-    'Email Me'
+    'Email Me',
+    'Use this link to send me a message.',
+    'A'
 );
 
 const myResumeLink = new LinkData(
     resumeRef,
     '-',
-    'Read my resume.',
-    'Resume'
+    'Review my resume.',
+    'Resume',
+    'Here is my resume for your review.',
+    'A-FancyBox-1'
 );
 
 
@@ -77,21 +90,27 @@ const myLinkedInLink = new LinkData(
     'https://www.linkedin.com/in/jim-tripp-sanders-10739495/',
     faLinkedinIn,
     'My LinkedIn Profile',
-    '-'
+    'LinkedIn Link',
+    '-',
+    'B'
 );
 
 const myGitHubLink = new LinkData(
     'https://github.com/jas112',
     faGitAlt,
     'My GitHub Repository',
-    '-'
+    'GitHub Link',
+    '-',
+    'B'
 );
 
 const myCargoLink = new LinkData(
     'https://cargocollective.com/TrippSanders',
     faBolt ,
     'My Cargocollective Site',
-    '-'
+    'Cargocollective Link',
+    '-',
+    'B'
 );
 
 terminusSectionData.galleryImages.push(avatarImage1);

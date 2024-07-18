@@ -43,6 +43,12 @@ const App = () => {
     terminus: useRef(null)
   };
 
+  // console.log(`sectionRefs Object`);
+  // console.log(JSON.stringify(Object.keys(sectionRefs)));
+  // console.log(`sectionRefs Object - about`);
+  // console.log(JSON.stringify(sectionsData[Object.keys(sectionRefs)[0]]));
+
+
   useEffect(() => {
 
     const trackScrollandSetPageLocation = () => {
@@ -71,8 +77,6 @@ const App = () => {
       const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
 
       const endTop = bottomRef.current.offsetTop;
-
-      // console.log(`endTop - ${end}`);
 
       if (newScrollPositionValue <= (aboutSectionUpperBoundY - 100)) {
         setCurrentPageLocation('start');
@@ -106,26 +110,21 @@ const App = () => {
     return () => {
       window.removeEventListener('scroll', trackScrollandSetPageLocation);
       clearInterval(trackTime);
-      // window.removeEventListener('widthTracker', trackWindowWidth);
     };
   }, [])
 
   useEffect(() => {
     const handleResize = () => {
-      // console.log(`window.innerWidth - ${window.innerWidth}`);
       setWindowWidth(window.innerWidth);
     };
 
     window.addEventListener('resize', handleResize);
-    // console.log(`window width - ${windowWidth}`);
 
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  // console.log(`window width - ${windowWidth}`);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -154,10 +153,6 @@ const App = () => {
         behavior: 'smooth',
       });
 
-      // window.scrollTo({
-      //   top:sectionRefs[section].current.offsetTop,
-      //   behavior: 'smooth',
-      // });
     }
   };
 
@@ -209,13 +204,27 @@ const App = () => {
         handleItemInteractionSound={handleItemInteractionSound}
       />
       <HDRParallaxFrames />
-      <div className='hdr-element'>
-
-      </div>
+      <div className='hdr-element'></div>
       <div className='content-element'>
         <div ref={topRef}></div>
         <SpacerElement factor={10}/>
-        <div className='page-nav-ref' ref={sectionRefs.about}>
+
+        {Object.keys(sectionRefs).slice(0, 5).map((sectionKey,idx) =>(
+          <div className='page-nav-ref section-nav-frame' key={idx} ref={sectionRefs[sectionKey]}>
+            <SectionElement 
+              sectionDataValue={sectionsData[sectionKey]} 
+              currentPageLocation={currentPageLocation}
+              sectionHoverSoundEnter={sectionHoverSoundEnter}
+              sectionHoverSoundExit={sectionHoverSoundExit}
+              btnHoverSound={btnHoverSound}
+              btnClickSound={btnClickSound}
+              handleItemInteractionSound={handleItemInteractionSound}
+            />
+            {/* <SpacerElement factor={2}/> */}
+          </div>
+        ))}
+
+        {/* <div className='page-nav-ref' ref={sectionRefs.about}>
           <SectionElement 
             sectionDataValue={sectionsData.about} 
             currentPageLocation={currentPageLocation}
@@ -273,7 +282,7 @@ const App = () => {
             btnClickSound={btnClickSound}
             handleItemInteractionSound={handleItemInteractionSound}
           />
-        </div>
+        </div> */}
         <SpacerElement factor={7}/>
       </div>
       <div className='ftr-element'>
@@ -290,14 +299,7 @@ const App = () => {
           />
         </div>
         <FTR_Element currentPageLocation={currentPageLocation} />
-        {/* <FTRParallaxFrames_Starships />
-        <FTRParallaxFrames_Star /> */}
-        {/* <div className='ftr-scene'>
-          <FTRElementStarship/>
-          <FTRElement/>
-        </div> */}
       </div>
-      {/* <ForegroundFrame /> */}
       <BackgroundFrame currentScroll={scrollPositionY}/>
       <div className='page-nav-ref' ref={bottomRef}></div>
     </Router>

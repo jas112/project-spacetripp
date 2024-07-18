@@ -1,15 +1,26 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Fancybox } from '@fancyapps/ui'
+import '@fancyapps/ui/dist/fancybox/fancybox.css'
 import './styles/LinkButtonTile.css'
 import btnHoverSoundRef from '../../assets/audio/space_signal-213481.mp3'
 import btnClickSoundRef from '../../assets/audio/space_signal-213481.mp3'
 
 const LinkButtonTile = ({ linkData, linkBtnTileType, btnHoverSound, btnClickSound, handleItemInteractionSound }) => {
 
-    const isLinkBtnTypeA = linkBtnTileType == 'A';
+    // LinkData
+    // url
+    // icon
+    // title
+    // linkText
+    // linkDescription
+    // linkTileType
+
+    console.log(`Link Text - ${linkData.linkText}`);
+    console.log(`Link Tile Type - ${linkData.linkTileType}`);
 
     const generateLinkBtnTile = () => {
-        if(isLinkBtnTypeA){
+        if(linkData.linkTileType == 'A'){
             return(
                 <div 
                     className='link-button-tile-A'
@@ -25,7 +36,28 @@ const LinkButtonTile = ({ linkData, linkBtnTileType, btnHoverSound, btnClickSoun
                     </a>
                 </div>
             );
-        }else{
+        }else if(linkData.linkTileType == 'A-FancyBox-1'){
+            return (
+                <div 
+                    className='link-button-tile-A'
+                    onMouseEnter={() => {
+                        handleItemInteractionSound(btnHoverSound);
+                    }} 
+                    onClick={() =>{
+                        handleItemInteractionSound(btnClickSound)
+                    }}
+                >
+                    <a 
+                        className='link-button-tile-text'
+                        data-fancybox={linkData.linkText}
+                        data-type={'pdf'}  
+                        href={linkData.url} 
+                        title={linkData.title}>
+                        {linkData.linkText}
+                    </a>
+                </div>
+            );
+        }else if(linkData.linkTileType == 'B'){
             return(
                 <div className='link-button-tile-shell'>
                     <div className='link-button-tile-B' title={linkData.title}>

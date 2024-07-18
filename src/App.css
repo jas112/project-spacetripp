@@ -51,6 +51,7 @@ html, body{
 
 .page-nav-ref{
   z-index: 8999;
+  margin: 600px 0;
 }
 
 .terminus-nav{
