@@ -220,69 +220,9 @@ const App = () => {
               btnClickSound={btnClickSound}
               handleItemInteractionSound={handleItemInteractionSound}
             />
-            {/* <SpacerElement factor={2}/> */}
           </div>
         ))}
-
-        {/* <div className='page-nav-ref' ref={sectionRefs.about}>
-          <SectionElement 
-            sectionDataValue={sectionsData.about} 
-            currentPageLocation={currentPageLocation}
-            sectionHoverSoundEnter={sectionHoverSoundEnter}
-            sectionHoverSoundExit={sectionHoverSoundExit}
-            btnHoverSound={btnHoverSound}
-            btnClickSound={btnClickSound}
-            handleItemInteractionSound={handleItemInteractionSound}
-          />
-        </div>
-        <SpacerElement factor={2}/>
-        <div className='page-nav-ref' ref={sectionRefs.webDevelopment}>
-          <SectionElement 
-            sectionDataValue={sectionsData.webDevelopment}
-            currentPageLocation={currentPageLocation} 
-            sectionHoverSoundEnter={sectionHoverSoundEnter}
-            sectionHoverSoundExit={sectionHoverSoundExit}
-            btnHoverSound={btnHoverSound}
-            btnClickSound={btnClickSound}
-            handleItemInteractionSound={handleItemInteractionSound}
-          />
-        </div>
-        <SpacerElement factor={2}/>
-        <div className='page-nav-ref' ref={sectionRefs.emailDevelopment}>
-          <SectionElement 
-            sectionDataValue={sectionsData.emailDevelopment} 
-            currentPageLocation={currentPageLocation}
-            sectionHoverSoundEnter={sectionHoverSoundEnter}
-            sectionHoverSoundExit={sectionHoverSoundExit}
-            btnHoverSound={btnHoverSound}
-            btnClickSound={btnClickSound}
-            handleItemInteractionSound={handleItemInteractionSound}
-          />
-        </div>
-        <SpacerElement factor={2}/>
-        <div className='page-nav-ref' ref={sectionRefs.graphicDesign}>
-          <SectionElement 
-            sectionDataValue={sectionsData.graphicDesign}
-            currentPageLocation={currentPageLocation}
-            sectionHoverSoundEnter={sectionHoverSoundEnter}
-            sectionHoverSoundExit={sectionHoverSoundExit}
-            btnHoverSound={btnHoverSound}
-            btnClickSound={btnClickSound}
-            handleItemInteractionSound={handleItemInteractionSound}
-          />
-        </div>
-        <SpacerElement factor={2}/>
-        <div className='page-nav-ref' ref={sectionRefs.visualDesign}>
-          <SectionElement 
-            sectionDataValue={sectionsData.visualDesign}
-            currentPageLocation={currentPageLocation}
-            sectionHoverSoundEnter={sectionHoverSoundEnter}
-            sectionHoverSoundExit={sectionHoverSoundExit}
-            btnHoverSound={btnHoverSound}
-            btnClickSound={btnClickSound}
-            handleItemInteractionSound={handleItemInteractionSound}
-          />
-        </div> */}
+        
         <SpacerElement factor={7}/>
       </div>
       <div className='ftr-element'>

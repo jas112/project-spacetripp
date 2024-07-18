@@ -108,6 +108,7 @@
 }
 
 .music-disabled{
+    display: none;
     opacity: .1;
     pointer-events: none;
 }

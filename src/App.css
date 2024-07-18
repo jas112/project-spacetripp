@@ -5,6 +5,31 @@ html, body{
   /* border: solid 5px lightskyblue; */
 }
 
+body::-webkit-scrollbar {
+  /* display: none; */
+}
+
+body::-webkit-scrollbar {
+  /* margin-top: 15px; */
+  width: 14px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #00000060;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  height: 60px;
+  background-color: #ffffff40;
+  border: 3px solid #ffffff40;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #ff450040;
+  border: 3px solid #ff4500;
+}
+
 .hdr-element{
   display: flex;
   justify-content: center; /* Centers the image horizontally */
