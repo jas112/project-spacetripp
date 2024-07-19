@@ -10,6 +10,7 @@ import SectionElement from './Components/mainContent/SectionElement.jsx';
 import SpacerElement from './Components/mainContent/SpacerElement.jsx';
 import TerminusSection from './Components/mainContent/TerminusSection.jsx';
 import sectionsData from './data/sections.js';
+import scrollTransforms from './data/scrollTransforms.js';
 import stFigureA_L1 from './assets/images/hdrParallax_imgs/ST_tripp_figure-A-L1-RSCC.png'
 import HDRParallaxFrames from './Components/parallaxFrames/HDRParallaxFrames.jsx';
 import FTRParallaxFrames_Starships from './Components/parallaxFrames/FTRParallaxFrames_Starships.jsx';
@@ -112,37 +113,51 @@ const App = () => {
     };
   }, [])
 
-  const determineScrollbarTrackBGColorByScroll = () => {
+
+  const determineScrollTransform = (targetProperty) => {
     const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
     const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
-    if(scrollPositionY > 0 && scrollPositionY < 60) return '#000000';
-    if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '#000000';
-    if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return 'linear-gradient(#ff450010, #ff450030)';
-    if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '#ff450050';
+    if(scrollPositionY >= 0 && scrollPositionY < 60) return scrollTransforms[targetProperty].phase_0_transform;
+    if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return scrollTransforms[targetProperty].phase_1_transform;
+    if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return scrollTransforms[targetProperty].phase_2_transform;
+    if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return scrollTransforms[targetProperty].phase_3_transform;
   }
 
-  const determineScrollbarThumbBGColorByScroll = () => {
-    const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
-    const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
-    if(scrollPositionY > 0 && scrollPositionY < 60) return '#ffffff40';
-    if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '#ffffff40';
-    if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return '#ff450040';
-    if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '#eb8d0a40';
-  }
+  // const determineScrollbarTrackBGColorByScroll = () => {
+  //   const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
+  //   const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
+  //   if(scrollPositionY > 0 && scrollPositionY < 60) return '#000000';
+  //   if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '#000000';
+  //   if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return 'linear-gradient(#ff450010, #ff450030)';
+  //   if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '#ff450050';
+  // }
 
-  const determineScrollbarThumbBorderColorByScroll = () => {
-    const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
-    const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
-    if(scrollPositionY < 60) return '2px solid #ffffff40';
-    if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '2px solid #ffffff';
-    if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return '2px solid #ff4500';
-    if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '2px solid #eb8d0a';
-  }
+  // const determineScrollbarThumbBGColorByScroll = () => {
+  //   const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
+  //   const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
+  //   if(scrollPositionY > 0 && scrollPositionY < 60) return '#ffffff40';
+  //   if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '#ffffff40';
+  //   if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return '#ff450040';
+  //   if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '#eb8d0a40';
+  // }
+
+  // const determineScrollbarThumbBorderColorByScroll = () => {
+  //   const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
+  //   const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
+  //   if(scrollPositionY < 60) return '2px solid #ffffff40';
+  //   if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '2px solid #ffffff';
+  //   if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return '2px solid #ff4500';
+  //   if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '2px solid #eb8d0a';
+  // }
+  
 
   useEffect(() => {
-    document.documentElement.style.setProperty('--scrollbar-track-bgColor', determineScrollbarTrackBGColorByScroll());
-    document.documentElement.style.setProperty('--scrollbar-thumb-bgColor', determineScrollbarThumbBGColorByScroll());
-    document.documentElement.style.setProperty('--scrollbar-thumb-border', determineScrollbarThumbBorderColorByScroll());
+    // document.documentElement.style.setProperty('--scrollbar-track-bgColor', determineScrollbarTrackBGColorByScroll());
+    // document.documentElement.style.setProperty('--scrollbar-thumb-bgColor', determineScrollbarThumbBGColorByScroll());
+    // document.documentElement.style.setProperty('--scrollbar-thumb-border', determineScrollbarThumbBorderColorByScroll());
+    document.documentElement.style.setProperty('--scrollbar-track-bgColor', determineScrollTransform('sBarTrackBGolor'));
+    document.documentElement.style.setProperty('--scrollbar-thumb-bgColor', determineScrollTransform('sBarThumbBGColor'));
+    document.documentElement.style.setProperty('--scrollbar-thumb-border', determineScrollTransform('sBarThumbBorder'));
   }, [scrollPositionY]);
 
   useEffect(() => {

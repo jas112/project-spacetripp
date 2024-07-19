@@ -115,7 +115,8 @@ const TerminusSection = ({
                         sectionDataValue.sectionLinksA.map((link, idx) => (
                             <LinkButtonTile 
                             key={`${sectionDataValue.sectionMarker}LinkA` + '-' + idx} 
-                            linkData={link} linkBtnTileType={'A'} 
+                            linkData={link} 
+                            linkBtnTileType={'A'} 
                             btnHoverSound={btnHoverSound} 
                             btnClickSound={btnClickSound} 
                             handleItemInteractionSound={handleItemInteractionSound} 
@@ -127,7 +128,8 @@ const TerminusSection = ({
                         sectionDataValue.sectionLinksB.map((link, idx) => (
                             <LinkButtonTile 
                                 key={`${sectionDataValue.sectionMarker}LinkB` + '-' + idx} 
-                                linkData={link} linkBtnTileType={'B'} 
+                                linkData={link} 
+                                linkBtnTileType={'B'} 
                                 btnHoverSound={btnHoverSound} 
                                 btnClickSound={btnClickSound} 
                                 handleItemInteractionSound={handleItemInteractionSound} 

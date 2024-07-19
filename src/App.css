@@ -1,7 +1,7 @@
 :root{
   --scrollbar-track-bgColor: #00000060;
   --scrollbar-thumb-bgColor: #ffffff40;
-  --scrollbar-thumb-border: 3px solid #ffffff40;
+  --scrollbar-thumb-border: 2px solid #ffffff40;
 }
 
 html, body{
