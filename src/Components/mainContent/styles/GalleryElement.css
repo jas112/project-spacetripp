@@ -99,6 +99,11 @@
     z-index: 9999;
 }
 
+.fancybox__caption {
+    max-width: 700px;
+    padding: 1rem 3rem 1rem 1rem;
+  }
+
 /* background: #11111170;
 background:linear-gradient(45deg, #000000, #ff450040, #000000);
 filter: blur(4px); */

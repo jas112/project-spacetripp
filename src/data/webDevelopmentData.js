@@ -113,73 +113,73 @@ const webDevelopmentSectionData = new SectionData(
 const imageFull_01 = new ImageData(
     imageFull_01ref, 
     imageThumb_01ref, 
-    'webDev image-1 fullsize', 
-    'webDev-full-01', 
-    'webDev-full-01'
+    'webDev Drebble-01 fullsize', 
+    `Rails Project Operation Drebbel - (Game splash screen) A social media platform for an underwater themed game built in Ruby. My responsibilities for this project revolved around login, registration, admin dash, messaging, and user management. The idea behind the front end design was that the app features were floating in mid-water.`,
+    'Drebble-01'
 );
 
 const imageFull_02 = new ImageData(
     imageFull_02ref, 
     imageThumb_02ref, 
-    'webDev image-1 fullsize', 
-    'webDev-full-01', 
-    'webDev-full-01'
+    'webDev Drebble-02 fullsize', 
+    `Rails Project Operation Drebbel - Project Login`, 
+    'Drebble-02'
 );
 
 const imageFull_03 = new ImageData(
     imageFull_03ref, 
     imageThumb_03ref, 
-    'webDev image-1 fullsize', 
-    'webDev-full-01', 
-    'webDev-full-01'
+    'webDev Drebble-01 fullsize', 
+    `Rails Project Operation Drebbel - Project Registration`, 
+    'Drebble-01'
 );
 
 const imageFull_04 = new ImageData(
     imageFull_04ref, 
     imageThumb_04ref, 
-    'webDev image-1 fullsize', 
-    'webDev-full-01', 
-    'webDev-full-01'
+    'webDev Drebble-01 fullsize', 
+    `Rails Project Operation Drebbel - Admin User Profile Dashboard`, 
+    'Drebble-01'
 );
 
 const imageFull_05 = new ImageData(
     imageFull_05ref, 
     imageThumb_05ref, 
-    'webDev image-1 fullsize', 
-    'webDev-full-01', 
-    'webDev-full-01'
+    'webDev Drebble-01 fullsize', 
+    `Rails Project Operation Drebbel - Discussion Board`,
+    'Drebble-01'
 );
 
 const imageFull_06 = new ImageData(
     imageFull_06ref, 
     imageThumb_06ref, 
-    'webDev image-1 fullsize', 
-    'webDev-full-01', 
-    'webDev-full-01'
+    'webDev Drebble-01 fullsize', 
+    `Rails Project Operation Drebbel - Topic Discussion`, 
+    'Drebble-01'
 );
 
 const imageFull_07 = new ImageData(
     imageFull_07ref, 
     imageThumb_07ref, 
-    'webDev image-1 fullsize', 
-    'webDev-full-01', 
-    'webDev-full-01'
+    'webDev Drebble-07 fullsize', 
+    `Rails Project Operation Drebbel - User Direct Messaging`, 
+    'Drebble-07'
 );
 
 const imageFull_08 = new ImageData(
     imageFull_08ref, 
     imageThumb_08ref, 
-    'webDev image-1 fullsize', 
-    'webDev-full-01', 
-    'webDev-full-01'
+    'webDev Drebble-08 fullsize', 
+    `Rails Project Operation Drebbel - User Management Console`, 
+    'Drebble-08'
 );
 
 const imageFull_09 = new ImageData(
     imageFull_09ref, 
     imageThumb_09ref, 
-    'webDev image-1 fullsize', 
-    'webDev-full-01', 
-    'webDev-full-01'
+    'webDev Drebble-09 fullsize', 
+    `Rails Project Operation Drebbel - User Management Console - User Moderation (Warning Creation)`, 
+    'Drebble-09'
 );
 
 const imageFull_10 = new ImageData(
@@ -288,7 +288,7 @@ const chroma_10 = new ImageData(
     chroma_10ref, 
     chroma_10refThumb, 
     'webDev chroma_10 fullsize', 
-    `React Color Picker App - From the home page, users can click the "Create Palette" to add to their collection.`, 
+    `React Color Picker App - From the home page, users can click the "Create Palette" to add to their collection. Once the user is satified with their selection they can then save the new palette.`, 
     'chroma_10'
 );
 
@@ -296,7 +296,7 @@ const chroma_11 = new ImageData(
     chroma_11ref, 
     chroma_11refThumb, 
     'webDev chroma_11 fullsize', 
-    `React Color Picker App - `, 
+    `React Color Picker App - The palette creaton save form.`, 
     'chroma_11'
 );
 
@@ -304,7 +304,7 @@ const chroma_12 = new ImageData(
     chroma_12ref, 
     chroma_12refThumb, 
     'webDev chroma_12 fullsize', 
-    `React Color Picker App - `, 
+    `React Color Picker App - Project screen 12 - the home page with the new palette in place.`, 
     'chroma_12'
 );
 
@@ -312,7 +312,7 @@ const lightsOut_01 = new ImageData(
     lightsOut_01ref, 
     lightsOut_01refThumb, 
     'webDev lightsOut_01 fullsize', 
-    'React Lights Out Game App', 
+    `React Lights Out Game App - A fun game app that can be found on my GitHub. Get all the lights out and win! Link to my GitHub is below in Terminus`, 
     'lightsOut_01'
 );
 
@@ -320,7 +320,7 @@ const lightsOut_02 = new ImageData(
     lightsOut_02ref, 
     lightsOut_02refThumb, 
     'webDev lightsOut_02 fullsize', 
-    'React Lights Out Game App', 
+    `React Lights Out Game App - Game screen 2`, 
     'lightsOut_02'
 );
 
@@ -328,7 +328,7 @@ const lightsOut_03 = new ImageData(
     lightsOut_03ref, 
     lightsOut_03refThumb, 
     'webDev lightsOut_03 fullsize', 
-    'React Lights Out Game App', 
+    `React Lights Out Game App - Game screen 3`, 
     'lightsOut_03'
 );
 
@@ -336,7 +336,7 @@ const lightsOut_04 = new ImageData(
     lightsOut_04ref, 
     lightsOut_04refThumb, 
     'webDev lightsOut_04 fullsize', 
-    'React Lights Out Game App', 
+    `React Lights Out Game App - Game screen 4`, 
     'lightsOut_04'
 );
 
@@ -344,7 +344,7 @@ const lightsOut_05 = new ImageData(
     lightsOut_05ref, 
     lightsOut_05refThumb, 
     'webDev lightsOut_05 fullsize', 
-    'React Lights Out Game App', 
+    `React Lights Out Game App - Winner's Screen Frame 1`, 
     'lightsOut_05'
 );
 
@@ -352,7 +352,7 @@ const lightsOut_06 = new ImageData(
     lightsOut_06ref, 
     lightsOut_06refThumb, 
     'webDev lightsOut_06 fullsize', 
-    'React Lights Out Game App', 
+    `React Lights Out Game App - Winner's Screen Frame 2`, 
     'lightsOut_06'
 );
 
@@ -360,7 +360,7 @@ const yahtzee_01 = new ImageData(
     yahtzee_01ref, 
     yahtzee_01refThumb, 
     'webDev image-1 fullsize', 
-    'React Yahtzee Game App', 
+    `React Yahtzee Game App - A react app game featuring Yahtzee. This can be found on my GitHub on the link below in Terminus.`, 
     'yahtzee_01'
 );
 
@@ -368,7 +368,7 @@ const yahtzee_02 = new ImageData(
     yahtzee_02ref, 
     yahtzee_02refThumb, 
     'webDev yahtzee_02 fullsize', 
-    'React Yahtzee Game App', 
+    `React Yahtzee Game App - Game screen 2`, 
     'yahtzee_02'
 );
 
@@ -376,7 +376,7 @@ const yahtzee_03 = new ImageData(
     yahtzee_03ref, 
     yahtzee_03refThumb, 
     'webDev yahtzee_03 fullsize', 
-    'React Yahtzee Game App', 
+    `React Yahtzee Game App - Game screen 3`, 
     'yahtzee_03'
 );
 
@@ -384,7 +384,7 @@ const yahtzee_04 = new ImageData(
     yahtzee_04ref, 
     yahtzee_04refThumb, 
     'webDev yahtzee_04 fullsize', 
-    'React Yahtzee Game App', 
+    `React Yahtzee Game App - Game screen 4`, 
     'yahtzee_04'
 );
 
@@ -392,7 +392,7 @@ const yahtzee_05 = new ImageData(
     yahtzee_05ref, 
     yahtzee_05refThumb, 
     'webDev yahtzee_05 fullsize', 
-    'React Yahtzee Game App', 
+    `React Yahtzee Game App - Game screen 5`, 
     'yahtzee_05'
 );
 
@@ -400,7 +400,7 @@ const yahtzee_06 = new ImageData(
     yahtzee_06ref, 
     yahtzee_06refThumb, 
     'webDev yahtzee_06 fullsize', 
-    'React Yahtzee Game App', 
+    `React Yahtzee Game App - Game screen 6`, 
     'yahtzee_06'
 );
 
@@ -408,7 +408,7 @@ const yahtzee_07 = new ImageData(
     yahtzee_07ref, 
     yahtzee_07refThumb, 
     'webDev yahtzee_07 fullsize', 
-    'React Yahtzee Game App', 
+    `React Yahtzee Game App - Game screen 7`, 
     'yahtzee_07'
 );
 
