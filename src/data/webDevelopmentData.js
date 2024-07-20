@@ -25,6 +25,62 @@ import imageFull_11ref from '../assets/images/webIcons_imgs/ST_icon-N2.png';
 import imageThumb_12ref from '../assets/images/webIcons_imgs/ST_icon-N2.png';
 import imageFull_12ref from '../assets/images/webIcons_imgs/ST_icon-N2.png';
 
+import chroma_01refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-1-thumb.png';
+import chroma_02refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-2-thumb.png';
+import chroma_03refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-3-thumb.png';
+import chroma_04refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-4-thumb.png';
+import chroma_05refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-5-thumb.png';
+import chroma_06refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-6-thumb.png';
+import chroma_07refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-7-thumb.png';
+import chroma_08refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-8-thumb.png';
+import chroma_09refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-9-thumb.png';
+import chroma_10refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-10-thumb.png';
+import chroma_11refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-11-thumb.png';
+import chroma_12refThumb from '../assets/images/webDevProjects_imgs/react_chromapalooza/thumbs/react-chromapalooza-12-thumb.png';
+
+import chroma_01ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-1.png';
+import chroma_02ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-2.png';
+import chroma_03ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-3.png';
+import chroma_04ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-4.png';
+import chroma_05ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-5.png';
+import chroma_06ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-6.png';
+import chroma_07ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-7.png';
+import chroma_08ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-8.png';
+import chroma_09ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-9.png';
+import chroma_10ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-10.png';
+import chroma_11ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-11.png';
+import chroma_12ref from '../assets/images/webDevProjects_imgs/react_chromapalooza/react-chromapalooza-12.png';
+
+import lightsOut_01refThumb from '../assets/images/webDevProjects_imgs/react_lights_out/thumbs/react-lights-out-project-1-thumb.png';
+import lightsOut_02refThumb from '../assets/images/webDevProjects_imgs/react_lights_out/thumbs/react-lights-out-project-2-thumb.png';
+import lightsOut_03refThumb from '../assets/images/webDevProjects_imgs/react_lights_out/thumbs/react-lights-out-project-3-thumb.png';
+import lightsOut_04refThumb from '../assets/images/webDevProjects_imgs/react_lights_out/thumbs/react-lights-out-project-4-thumb.png';
+import lightsOut_05refThumb from '../assets/images/webDevProjects_imgs/react_lights_out/thumbs/react-lights-out-project-5-thumb.png';
+import lightsOut_06refThumb from '../assets/images/webDevProjects_imgs/react_lights_out/thumbs/react-lights-out-project-6-thumb.png';
+
+import lightsOut_01ref from '../assets/images/webDevProjects_imgs/react_lights_out/react-lights-out-project-1.png';
+import lightsOut_02ref from '../assets/images/webDevProjects_imgs/react_lights_out/react-lights-out-project-2.png';
+import lightsOut_03ref from '../assets/images/webDevProjects_imgs/react_lights_out/react-lights-out-project-3.png';
+import lightsOut_04ref from '../assets/images/webDevProjects_imgs/react_lights_out/react-lights-out-project-4.png';
+import lightsOut_05ref from '../assets/images/webDevProjects_imgs/react_lights_out/react-lights-out-project-5.png';
+import lightsOut_06ref from '../assets/images/webDevProjects_imgs/react_lights_out/react-lights-out-project-6.png';
+
+import yahtzee_01refThumb from '../assets/images/webDevProjects_imgs/react_yahtzee/thumbs/react-yahtzee-1-thumb.png';
+import yahtzee_02refThumb from '../assets/images/webDevProjects_imgs/react_yahtzee/thumbs/react-yahtzee-2-thumb.png';
+import yahtzee_03refThumb from '../assets/images/webDevProjects_imgs/react_yahtzee/thumbs/react-yahtzee-3-thumb.png';
+import yahtzee_04refThumb from '../assets/images/webDevProjects_imgs/react_yahtzee/thumbs/react-yahtzee-4-thumb.png';
+import yahtzee_05refThumb from '../assets/images/webDevProjects_imgs/react_yahtzee/thumbs/react-yahtzee-5-thumb.png';
+import yahtzee_06refThumb from '../assets/images/webDevProjects_imgs/react_yahtzee/thumbs/react-yahtzee-6-thumb.png';
+import yahtzee_07refThumb from '../assets/images/webDevProjects_imgs/react_yahtzee/thumbs/react-yahtzee-7-thumb.png';
+
+import yahtzee_01ref from '../assets/images/webDevProjects_imgs/react_yahtzee/react-yahtzee-1.png';
+import yahtzee_02ref from '../assets/images/webDevProjects_imgs/react_yahtzee/react-yahtzee-2.png';
+import yahtzee_03ref from '../assets/images/webDevProjects_imgs/react_yahtzee/react-yahtzee-3.png';
+import yahtzee_04ref from '../assets/images/webDevProjects_imgs/react_yahtzee/react-yahtzee-4.png';
+import yahtzee_05ref from '../assets/images/webDevProjects_imgs/react_yahtzee/react-yahtzee-5.png';
+import yahtzee_06ref from '../assets/images/webDevProjects_imgs/react_yahtzee/react-yahtzee-6.png';
+import yahtzee_07ref from '../assets/images/webDevProjects_imgs/react_yahtzee/react-yahtzee-7.png';
+
 const webDevelopmentSectionData = new SectionData(
     'webDevelopment',
     'webDevelopment', 
@@ -150,6 +206,240 @@ const imageFull_12 = new ImageData(
     'webDev-full-01'
 );
 
+const chroma_01 = new ImageData(
+    chroma_01ref, 
+    chroma_01refThumb, 
+    'webDev chroma_01 fullsize', 
+    `React Color Picker App: This project is a simple color picker app. Users can create new palettes and colors. 
+    This project can be found on my GitHub account. The link is at the Terminus section of the page.`, 
+    'chroma_01'
+);
+
+const chroma_02 = new ImageData(
+    chroma_02ref, 
+    chroma_02refThumb, 
+    'webDev chroma_02 fullsize', 
+    `React Color Picker App - Color Palette detail page - shows all the colors of a palette. Users can click on a 
+    color and get a detail of that color.`, 
+    'chroma_02'
+);
+
+const chroma_03 = new ImageData(
+    chroma_03ref, 
+    chroma_03refThumb, 
+    'webDev chroma_03 fullsize', 
+    `React Color Picker App - Color Palette detail page - shows all the colors of a palette. Users can click on a 
+    color and get a detail of that color.`,  
+    'chroma_03'
+);
+
+const chroma_04 = new ImageData(
+    chroma_04ref, 
+    chroma_04refThumb, 
+    'webDev chroma_04 fullsize', 
+    `React Color Picker App - Every color palette page has color slider that users can can use to view lighter and 
+    darker values of the palette's colors.`, 
+    'chroma_04'
+);
+
+const chroma_05 = new ImageData(
+    chroma_05ref, 
+    chroma_05refThumb, 
+    'webDev chroma_05 fullsize', 
+    `React Color Picker App - Every color palette page has color slider that users can can use to view lighter and 
+    darker values of the palette's colors.`, 
+    'chroma_05'
+);
+
+const chroma_06 = new ImageData(
+    chroma_06ref, 
+    chroma_06refThumb, 
+    'webDev chroma_06 fullsize', 
+    `React Color Picker App - By clicking on the the color tile, users can copy a color value for use elsewhere.`,
+    'chroma_06'
+);
+
+const chroma_07 = new ImageData(
+    chroma_07ref, 
+    chroma_07refThumb, 
+    'webDev chroma_07 fullsize', 
+    `React Color Picker App -  Color detail page showing different hues of the selected color.`, 
+    'chroma_07'
+);
+
+const chroma_08 = new ImageData(
+    chroma_08ref, 
+    chroma_08refThumb, 
+    'webDev chroma_08 fullsize', 
+    `React Color Picker App - Each color tile has a more button where users can get hue information about the selected color.`, 
+    'chroma_08'
+);
+
+const chroma_09 = new ImageData(
+    chroma_09ref, 
+    chroma_09refThumb, 
+    'webDev chroma_09 fullsize', 
+    `React Color Picker App - In the upper right corner of the color detail page, there is a dropdown, from which users can 
+    choose what kind of color notation that they would like.`, 
+    'chroma_09'
+);
+
+const chroma_10 = new ImageData(
+    chroma_10ref, 
+    chroma_10refThumb, 
+    'webDev chroma_10 fullsize', 
+    `React Color Picker App - From the home page, users can click the "Create Palette" to add to their collection.`, 
+    'chroma_10'
+);
+
+const chroma_11 = new ImageData(
+    chroma_11ref, 
+    chroma_11refThumb, 
+    'webDev chroma_11 fullsize', 
+    `React Color Picker App - `, 
+    'chroma_11'
+);
+
+const chroma_12 = new ImageData(
+    chroma_12ref, 
+    chroma_12refThumb, 
+    'webDev chroma_12 fullsize', 
+    `React Color Picker App - `, 
+    'chroma_12'
+);
+
+const lightsOut_01 = new ImageData(
+    lightsOut_01ref, 
+    lightsOut_01refThumb, 
+    'webDev lightsOut_01 fullsize', 
+    'React Lights Out Game App', 
+    'lightsOut_01'
+);
+
+const lightsOut_02 = new ImageData(
+    lightsOut_02ref, 
+    lightsOut_02refThumb, 
+    'webDev lightsOut_02 fullsize', 
+    'React Lights Out Game App', 
+    'lightsOut_02'
+);
+
+const lightsOut_03 = new ImageData(
+    lightsOut_03ref, 
+    lightsOut_03refThumb, 
+    'webDev lightsOut_03 fullsize', 
+    'React Lights Out Game App', 
+    'lightsOut_03'
+);
+
+const lightsOut_04 = new ImageData(
+    lightsOut_04ref, 
+    lightsOut_04refThumb, 
+    'webDev lightsOut_04 fullsize', 
+    'React Lights Out Game App', 
+    'lightsOut_04'
+);
+
+const lightsOut_05 = new ImageData(
+    lightsOut_05ref, 
+    lightsOut_05refThumb, 
+    'webDev lightsOut_05 fullsize', 
+    'React Lights Out Game App', 
+    'lightsOut_05'
+);
+
+const lightsOut_06 = new ImageData(
+    lightsOut_06ref, 
+    lightsOut_06refThumb, 
+    'webDev lightsOut_06 fullsize', 
+    'React Lights Out Game App', 
+    'lightsOut_06'
+);
+
+const yahtzee_01 = new ImageData(
+    yahtzee_01ref, 
+    yahtzee_01refThumb, 
+    'webDev image-1 fullsize', 
+    'React Yahtzee Game App', 
+    'yahtzee_01'
+);
+
+const yahtzee_02 = new ImageData(
+    yahtzee_02ref, 
+    yahtzee_02refThumb, 
+    'webDev yahtzee_02 fullsize', 
+    'React Yahtzee Game App', 
+    'yahtzee_02'
+);
+
+const yahtzee_03 = new ImageData(
+    yahtzee_03ref, 
+    yahtzee_03refThumb, 
+    'webDev yahtzee_03 fullsize', 
+    'React Yahtzee Game App', 
+    'yahtzee_03'
+);
+
+const yahtzee_04 = new ImageData(
+    yahtzee_04ref, 
+    yahtzee_04refThumb, 
+    'webDev yahtzee_04 fullsize', 
+    'React Yahtzee Game App', 
+    'yahtzee_04'
+);
+
+const yahtzee_05 = new ImageData(
+    yahtzee_05ref, 
+    yahtzee_05refThumb, 
+    'webDev yahtzee_05 fullsize', 
+    'React Yahtzee Game App', 
+    'yahtzee_05'
+);
+
+const yahtzee_06 = new ImageData(
+    yahtzee_06ref, 
+    yahtzee_06refThumb, 
+    'webDev yahtzee_06 fullsize', 
+    'React Yahtzee Game App', 
+    'yahtzee_06'
+);
+
+const yahtzee_07 = new ImageData(
+    yahtzee_07ref, 
+    yahtzee_07refThumb, 
+    'webDev yahtzee_07 fullsize', 
+    'React Yahtzee Game App', 
+    'yahtzee_07'
+);
+
+webDevelopmentSectionData.galleryImages.push(chroma_01);
+// webDevelopmentSectionData.galleryImages.push(chroma_02);
+webDevelopmentSectionData.galleryImages.push(chroma_03);
+webDevelopmentSectionData.galleryImages.push(chroma_04);
+webDevelopmentSectionData.galleryImages.push(chroma_05);
+webDevelopmentSectionData.galleryImages.push(chroma_06);
+webDevelopmentSectionData.galleryImages.push(chroma_07);
+webDevelopmentSectionData.galleryImages.push(chroma_08);
+webDevelopmentSectionData.galleryImages.push(chroma_09);
+webDevelopmentSectionData.galleryImages.push(chroma_10);
+webDevelopmentSectionData.galleryImages.push(chroma_11);
+webDevelopmentSectionData.galleryImages.push(chroma_12);
+
+webDevelopmentSectionData.galleryImages.push(lightsOut_01);
+webDevelopmentSectionData.galleryImages.push(lightsOut_02);
+webDevelopmentSectionData.galleryImages.push(lightsOut_03);
+webDevelopmentSectionData.galleryImages.push(lightsOut_04);
+webDevelopmentSectionData.galleryImages.push(lightsOut_05);
+webDevelopmentSectionData.galleryImages.push(lightsOut_06);
+
+webDevelopmentSectionData.galleryImages.push(yahtzee_01);
+webDevelopmentSectionData.galleryImages.push(yahtzee_02);
+webDevelopmentSectionData.galleryImages.push(yahtzee_03);
+webDevelopmentSectionData.galleryImages.push(yahtzee_04);
+webDevelopmentSectionData.galleryImages.push(yahtzee_05);
+webDevelopmentSectionData.galleryImages.push(yahtzee_06);
+webDevelopmentSectionData.galleryImages.push(yahtzee_07);
+
 webDevelopmentSectionData.galleryImages.push(imageFull_01);
 webDevelopmentSectionData.galleryImages.push(imageFull_02);
 webDevelopmentSectionData.galleryImages.push(imageFull_03);
@@ -159,8 +449,8 @@ webDevelopmentSectionData.galleryImages.push(imageFull_06);
 webDevelopmentSectionData.galleryImages.push(imageFull_07);
 webDevelopmentSectionData.galleryImages.push(imageFull_08);
 webDevelopmentSectionData.galleryImages.push(imageFull_09);
-webDevelopmentSectionData.galleryImages.push(imageFull_10);
-webDevelopmentSectionData.galleryImages.push(imageFull_11);
-webDevelopmentSectionData.galleryImages.push(imageFull_12);
+// webDevelopmentSectionData.galleryImages.push(imageFull_10);
+// webDevelopmentSectionData.galleryImages.push(imageFull_11);
+// webDevelopmentSectionData.galleryImages.push(imageFull_12);
 
 export default webDevelopmentSectionData;

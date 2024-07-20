@@ -50,16 +50,17 @@ const App = () => {
   // console.log(JSON.stringify(sectionsData[Object.keys(sectionRefs)[0]]));
 
   const getSectionUpperBound = (sectionValue) => {
-    return sectionRefs[sectionValue].current.offsetTop - 200;
+    return sectionRefs[sectionValue].current.offsetTop - 400;
   }
 
   const getSectionLowerBound = (sectionValue) => {
-    return sectionRefs[sectionValue].current.offsetTop + sectionRefs[sectionValue].current.offsetHeight + 200;
+    return sectionRefs[sectionValue].current.offsetTop + sectionRefs[sectionValue].current.offsetHeight + 400;
   }
 
   useEffect(() => {
 
     const trackScrollandSetPageLocation = () => {
+      
       const newScrollPositionValue = window.scrollY;
       setScrollPositionY(newScrollPositionValue);
 
@@ -106,13 +107,12 @@ const App = () => {
       setTimeString(`${dateValue.getHours() < 10 ? '0' : ''}${dateValue.getHours()}.${dateValue.getMinutes() < 10 ? '0' : ''}${dateValue.getMinutes()}.${dateValue.getSeconds() < 10 ? '0' : ''}${dateValue.getSeconds()}`);
     }, 1000);
 
-
     return () => {
       window.removeEventListener('scroll', trackScrollandSetPageLocation);
       clearInterval(trackTime);
     };
-  }, [])
 
+  }, [])
 
   const determineScrollTransform = (targetProperty) => {
     const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
@@ -123,38 +123,7 @@ const App = () => {
     if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return scrollTransforms[targetProperty].phase_3_transform;
   }
 
-  // const determineScrollbarTrackBGColorByScroll = () => {
-  //   const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
-  //   const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
-  //   if(scrollPositionY > 0 && scrollPositionY < 60) return '#000000';
-  //   if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '#000000';
-  //   if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return 'linear-gradient(#ff450010, #ff450030)';
-  //   if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '#ff450050';
-  // }
-
-  // const determineScrollbarThumbBGColorByScroll = () => {
-  //   const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
-  //   const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
-  //   if(scrollPositionY > 0 && scrollPositionY < 60) return '#ffffff40';
-  //   if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '#ffffff40';
-  //   if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return '#ff450040';
-  //   if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '#eb8d0a40';
-  // }
-
-  // const determineScrollbarThumbBorderColorByScroll = () => {
-  //   const terminusSectionUpperBoundY = getSectionUpperBound('terminus');
-  //   const terminusSectionLowerBoundY = getSectionLowerBound('terminus');
-  //   if(scrollPositionY < 60) return '2px solid #ffffff40';
-  //   if(scrollPositionY > 60 && scrollPositionY < terminusSectionUpperBoundY) return '2px solid #ffffff';
-  //   if(scrollPositionY > terminusSectionUpperBoundY && scrollPositionY < terminusSectionLowerBoundY + 10) return '2px solid #ff4500';
-  //   if(scrollPositionY > terminusSectionLowerBoundY + 10 ) return '2px solid #eb8d0a';
-  // }
-  
-
   useEffect(() => {
-    // document.documentElement.style.setProperty('--scrollbar-track-bgColor', determineScrollbarTrackBGColorByScroll());
-    // document.documentElement.style.setProperty('--scrollbar-thumb-bgColor', determineScrollbarThumbBGColorByScroll());
-    // document.documentElement.style.setProperty('--scrollbar-thumb-border', determineScrollbarThumbBorderColorByScroll());
     document.documentElement.style.setProperty('--scrollbar-track-bgColor', determineScrollTransform('sBarTrackBGolor'));
     document.documentElement.style.setProperty('--scrollbar-thumb-bgColor', determineScrollTransform('sBarThumbBGColor'));
     document.documentElement.style.setProperty('--scrollbar-thumb-border', determineScrollTransform('sBarThumbBorder'));
@@ -172,6 +141,7 @@ const App = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -255,7 +225,6 @@ const App = () => {
       <div className='content-element'>
         <div ref={topRef}></div>
         <SpacerElement factor={10}/>
-
         {Object.keys(sectionRefs).slice(0, 5).map((sectionKey,idx) =>(
           <div className='page-nav-ref section-nav-frame' key={idx} ref={sectionRefs[sectionKey]}>
             <SectionElement 
@@ -269,7 +238,6 @@ const App = () => {
             />
           </div>
         ))}
-
         <SpacerElement factor={7}/>
       </div>
       <div className='ftr-element'>
