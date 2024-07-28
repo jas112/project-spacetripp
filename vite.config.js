@@ -33,6 +33,8 @@ export default defineConfig({
       },
     }),
   ],
+  publicDir: 'public',
+  assetsInclude: ['**/*.html'],
   server: {
     port: 3000,
   },

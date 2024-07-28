@@ -1,5 +1,5 @@
 import SectionData from "./sectionData";
-import ImageData from "./imageData";
+import GalleryItemData from "./galleryItemData";
 import imageThumb_01ref from '../assets/images/illoProjects_imgs/illio_thumbs/09152015_Architectural_Drawing_thumb.png';
 import imageFull_01ref from '../assets/images/illoProjects_imgs/09152015_Architectural_Drawing.png';
 import imageThumb_02ref from '../assets/images/illoProjects_imgs/illio_thumbs/BlockPlex_BlocTek_Buildings_Size_Comparison_3_thumb.jpg';
@@ -42,83 +42,93 @@ const visualDesignSectionData = new SectionData(
     []     
 );
 
-// ImageData fields:
-// image
-// thumbnail
-// imageAlt
-// imageDescription
-// imageId
-// thumbId
+// GalleryItemData fields:
+// item path
+// item thumbnail path
+// item type
+// item Alt
+// item Description
+// item Id
+// item thumbId (generated from itemId)
 
-const imageFull_01 = new ImageData(
+const imageFull_01 = new GalleryItemData(
     imageFull_01ref, 
-    imageThumb_01ref, 
-    'visDsn image-1 fullsize', 
+    imageThumb_01ref,
+    'image', 
+    'visDsn image-01 fullsize', 
     'visDsn visualDesign-full-01', 
-    'visDsn visualDesign-full-01'
+    'visDsn-img-full-01'
 );
 
-const imageFull_02 = new ImageData(
+const imageFull_02 = new GalleryItemData(
     imageFull_02ref, 
-    imageThumb_02ref, 
-    'visDsn image-2 fullsize', 
-    'visDsn visualDesign-full-01', 
-    'visDsn visualDesign-full-01'
+    imageThumb_02ref,
+    'image', 
+    'visDsn image-02 fullsize', 
+    'visDsn visualDesign-full-02', 
+    'visDsn-img-full-02'
 );
 
-const imageFull_03 = new ImageData(
+const imageFull_03 = new GalleryItemData(
     imageFull_03ref, 
-    imageThumb_03ref, 
-    'visDsn image-3 fullsize', 
-    'visDsn visualDesign-full-01', 
-    'visDsn visualDesign-full-01'
+    imageThumb_03ref,
+    'image', 
+    'visDsn image-03 fullsize', 
+    'visDsn visualDesign-full-03', 
+    'visDsn-img-full-03'
 );
 
-const imageFull_04 = new ImageData(
+const imageFull_04 = new GalleryItemData(
     imageFull_04ref, 
-    imageThumb_04ref, 
-    'visDsn image-4 fullsize', 
-    'visDsn visualDesign-full-01', 
-    'visDsn visualDesign-full-01'
+    imageThumb_04ref,
+    'image', 
+    'visDsn image-04 fullsize', 
+    'visDsn visualDesign-full-04', 
+    'visDsn-img-full-04'
 );
-const imageFull_05 = new ImageData(
+const imageFull_05 = new GalleryItemData(
     imageFull_05ref, 
-    imageThumb_05ref, 
-    'visDsn image-5 fullsize', 
-    'visDsn visualDesign-full-01', 
-    'visDsn visualDesign-full-01'
+    imageThumb_05ref,
+    'image', 
+    'visDsn image-05 fullsize', 
+    'visDsn visualDesign-full-05', 
+    'visDsn-img-full-05'
 );
 
-const imageFull_06 = new ImageData(
+const imageFull_06 = new GalleryItemData(
     imageFull_06ref, 
-    imageThumb_06ref, 
-    'visDsn image-6 fullsize', 
-    'visDsn visualDesign-full-01', 
-    'visDsn visualDesign-full-01'
+    imageThumb_06ref,
+    'image', 
+    'visDsn image-06 fullsize', 
+    'visDsn visualDesign-full-06', 
+    'visDsn-img-full-06'
 );
 
-const imageFull_07 = new ImageData(
+const imageFull_07 = new GalleryItemData(
     imageFull_07ref, 
-    imageThumb_07ref, 
-    'visDsn image-7 fullsize', 
-    'visDsn visualDesign-full-01', 
-    'visDsn visualDesign-full-01'
+    imageThumb_07ref,
+    'image', 
+    'visDsn image-07 fullsize', 
+    'visDsn visualDesign-full-07', 
+    'visDsn-img-full-07'
 );
 
-const imageFull_08 = new ImageData(
+const imageFull_08 = new GalleryItemData(
     imageFull_08ref, 
-    imageThumb_08ref, 
-    'visDsn image-8 fullsize', 
-    'visDsn visualDesign-full-01', 
-    'visDsn visualDesign-full-01'
+    imageThumb_08ref,
+    'image', 
+    'visDsn image-08 fullsize', 
+    'visDsn visualDesign-full-08', 
+    'visDsn-img-full-08'
 );
 
-const imageFull_09 = new ImageData(
+const imageFull_09 = new GalleryItemData(
     imageFull_09ref, 
-    imageThumb_09ref, 
-    'visDsn image-8 fullsize', 
-    'visDsn visualDesign-full-01', 
-    'visDsn visualDesign-full-01'
+    imageThumb_09ref,
+    'image', 
+    'visDsn image-09 fullsize', 
+    'visDsn visualDesign-full-09', 
+    'visDsn-img-full-09'
 );
 
 visualDesignSectionData.galleryImages.push(imageFull_01);

@@ -16,8 +16,8 @@ const LinkButtonTile = ({ linkData, linkBtnTileType, btnHoverSound, btnClickSoun
     // linkDescription
     // linkTileType
 
-    console.log(`Link Text - ${linkData.linkText}`);
-    console.log(`Link Tile Type - ${linkData.linkTileType}`);
+    // console.log(`Link Text - ${linkData.linkText}`);
+    // console.log(`Link Tile Type - ${linkData.linkTileType}`);
 
     const generateLinkBtnTile = () => {
         if(linkData.linkTileType == 'A'){

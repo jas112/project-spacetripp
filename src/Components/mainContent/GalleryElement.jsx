@@ -33,20 +33,24 @@ const GalleryElement = ({
 
     const generateGalleryItems = () => {
         return(
-            galleryImages.map((image, idx) => (
+            galleryImages.map((gItem, gItem_idx) => (
                 <a 
-                    key={`${sectionMarker}` + '-' + idx} 
+                    key={`${sectionMarker}` + '-' + gItem_idx} 
                     data-fancybox={sectionMarker} 
-                    href={image.image}
+                    data-caption={gItem.galleryItemDescription}
+                    data-type={gItem.galleryItemType}
+                    // data-src={gItem.galleryItemType == 'iframe' ? gItem.galleryItemPath : gItem.galleryItemPath}
+                    // href={gItem.galleryItemType == 'iframe' ? '' : gItem.galleryItemPath}
+                    href={gItem.galleryItemPath}
                 >
                     <GalleryItemTypeA 
-                        galleryItemImage={image} 
+                        galleryItem={gItem} 
                         btnHoverSound={btnHoverSound}
                         btnClickSound={btnClickSound}
                         handleItemInteractionSound={handleItemInteractionSound}
                     />
                 </a>
-            ))        
+            )) 
         )
     }
 
@@ -58,10 +62,10 @@ const GalleryElement = ({
         </div>
         <div className={`gallery-element-console ${currentStatusBool ? 'active-gallery-element-console' : ''}`}>
 
-            {/* {generateGalleryItems()} */}
+            {generateGalleryItems()}
 
-            {
-                galleryImages.map((image, idx) => (
+            {/* {
+                galleryImages.map((gItem, gItem_idx) => (
                     <a 
                         key={`${sectionMarker}` + '-' + idx} 
                         data-fancybox={sectionMarker} 
@@ -75,8 +79,9 @@ const GalleryElement = ({
                             handleItemInteractionSound={handleItemInteractionSound} 
                         />
                     </a>
+                    generateGalleryItem(gItem, gItem_idx)
                 )) 
-            }
+            } */}
 
         </div>
         <div className='gallery-element-border'>

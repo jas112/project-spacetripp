@@ -3,7 +3,7 @@ import './styles/Animations.css'
 import './styles/GalleryItemTypes.css'
 
 const GalleryItemTypeA = ({
-  galleryItemImage, 
+  galleryItem, 
   btnHoverSound, 
   btnClickSound, 
   handleItemInteractionSound}) => {
@@ -17,7 +17,7 @@ const GalleryItemTypeA = ({
         handleItemInteractionSound(btnClickSound);
       }}>
         <div className={`gallery-item-indicator`}></div>
-            <div className='gallery-item-tile' style={{backgroundImage: `url(${galleryItemImage.thumbnail})`}}></div>
+            <div className='gallery-item-tile' style={{backgroundImage: `url(${galleryItem.galleryItemThumbnailPath})`}}></div>
         <div className={`gallery-item-indicator`}></div>
     </div>
   )

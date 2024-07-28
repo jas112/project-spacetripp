@@ -1,5 +1,5 @@
 import SectionData from "./sectionData";
-import ImageData from "./imageData";
+import GalleryItemData from "./galleryItemData";
 import imageThumb_01ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/IICFF_Poster_Contest_Entry_thumb.jpg';
 import imageFull_01ref from '../assets/images/grfxDsnProjects_imgs/IICFF_Poster_Contest_Entry.jpg';
 import imageThumb_02ref from '../assets/images/grfxDsnProjects_imgs/grfxDsn_thumbs/RMS_BCard_Layout_rs_thumb.jpg'
@@ -36,65 +36,73 @@ const graphicDesignSectionData = new SectionData(
     []     
 );
 
-const imageFull_01 = new ImageData(
+const imageFull_01 = new GalleryItemData(
     imageFull_01ref, 
-    imageThumb_01ref, 
+    imageThumb_01ref,
+    'image', 
     'grfxDsn image-1 fullsize', 
     'grfxDsn-full-01', 
     'grfxDsn-full-01'
 );
 
-const imageFull_02 = new ImageData(
+const imageFull_02 = new GalleryItemData(
     imageFull_02ref, 
-    imageThumb_02ref, 
+    imageThumb_02ref,
+    'image', 
     'grfxDsn image-1 fullsize', 
     'grfxDsn-full-01', 
     'grfxDsn-full-01'
 );
 
-const imageFull_03 = new ImageData(
+const imageFull_03 = new GalleryItemData(
     imageFull_03ref, 
-    imageThumb_03ref, 
+    imageThumb_03ref,
+    'image', 
     'grfxDsn image-1 fullsize', 
     'grfxDsn-full-01', 
     'grfxDsn-full-01'
 );
 
-const imageFull_04 = new ImageData(
+const imageFull_04 = new GalleryItemData(
     imageFull_04ref, 
-    imageThumb_04ref, 
+    imageThumb_04ref,
+    'image', 
     'grfxDsn image-1 fullsize', 
     'grfxDsn-full-01', 
     'grfxDsn-full-01'
 );
 
-const imageFull_05 = new ImageData(
+const imageFull_05 = new GalleryItemData(
     imageFull_05ref, 
-    imageThumb_05ref, 
+    imageThumb_05ref,
+    'image', 
     'grfxDsn image-1 fullsize', 
     'grfxDsn-full-01', 
     'grfxDsn-full-01'
 );
 
-const imageFull_06 = new ImageData(
+const imageFull_06 = new GalleryItemData(
     imageFull_06ref, 
-    imageThumb_06ref, 
+    imageThumb_06ref,
+    'image', 
     'grfxDsn image-1 fullsize', 
     'grfxDsn-full-01', 
     'grfxDsn-full-01'
 );
 
-const imageFull_07 = new ImageData(
+const imageFull_07 = new GalleryItemData(
     imageFull_07ref, 
-    imageThumb_07ref, 
+    imageThumb_07ref,
+    'image', 
     'grfxDsn image-1 fullsize', 
     'grfxDsn-full-01', 
     'grfxDsn-full-01'
 );
 
-const imageFull_08 = new ImageData(
+const imageFull_08 = new GalleryItemData(
     imageFull_06ref, 
-    imageThumb_06ref, 
+    imageThumb_06ref,
+    'image', 
     'grfxDsn image-1 fullsize', 
     'grfxDsn-full-01', 
     'grfxDsn-full-01'
