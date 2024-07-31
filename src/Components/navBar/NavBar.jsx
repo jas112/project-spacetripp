@@ -19,11 +19,15 @@ const NavBar = ({
     setSfxActive, 
     musicActive,
     setMusicActive,
+    sectionHoverSoundEnter,
+    sectionHoverSoundExit,
     navMenuClickSound, 
     navPntClickSound,
     btnHoverSound, 
     btnClickSound,
-    handleItemInteractionSound}) => {
+    handleItemInteractionSound,
+    parallaxRemix,
+    setParallaxRemix}) => {
 
     const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -38,20 +42,42 @@ const NavBar = ({
   return (
     <nav className='navbar'>
         <div className='navbar-panel left-panel'>
-            <img src={stLogo} className='navbar-logo' alt='SpaceTripp Logo'/>
+            <img src={stLogo} 
+                className='navbar-logo' 
+                alt='SpaceTripp Logo'
+                onMouseEnter={() => {
+                    handleItemInteractionSound(sectionHoverSoundEnter);
+                }}
+                />
             <AudioPlayer 
                 musicActive={musicActive}
                 setMusicActive={setMusicActive}
             />
-            <div className={`music-btn ${musicActive ? '' : 'music-muted'}`} title={musicActive ? 'Mute BG Music' : 'Unmute BG Music'}>
+            <div 
+                className={`music-btn ${musicActive ? '' : 'music-muted'}`} 
+                title={musicActive ? 'Mute BG Music' : 'Unmute BG Music'} 
+                onMouseEnter={() => {
+                    handleItemInteractionSound(sectionHoverSoundEnter);
+                }} 
+                >
                 <FontAwesomeIcon 
                     icon={faMusic}
-                    onClick={() => setMusicActive(!musicActive)}  />
+                    onClick={() => {
+                        handleItemInteractionSound(sectionHoverSoundEnter)
+                        setMusicActive(!musicActive)}}  />
             </div> 
-            <div className={`sfx-btn ${sfxActive ? '' : 'sfx-muted'}`} title={sfxActive ? 'Mute Sound FX' : 'Unmute Sound FX'}>
+            <div 
+                className={`sfx-btn ${sfxActive ? '' : 'sfx-muted'}`}  
+                title={sfxActive ? 'Mute Sound FX' : 'Unmute Sound FX'}
+                onMouseEnter={() => {
+                    handleItemInteractionSound(sectionHoverSoundEnter);
+                }}
+                >
                 <FontAwesomeIcon 
                     icon={faWaveSquare}
-                    onClick={() => setSfxActive(!sfxActive)}  />
+                    onClick={() => {
+                        handleItemInteractionSound(sectionHoverSoundEnter)
+                        setSfxActive(!sfxActive)}}  />
             </div> 
         </div>
         <div className={`nav-console ${isNavOpen ? 'nav-vertical' : 'nav-horizontal'}`}>
@@ -82,6 +108,7 @@ const NavBar = ({
                 <div 
                 className={getClassName('about')} 
                 id='about'
+                title='About Me'
                 onMouseEnter={() => {
                     handleItemInteractionSound(btnHoverSound);
                 }}  
@@ -100,6 +127,7 @@ const NavBar = ({
                 <div 
                 className={getClassName('webDevelopment')} 
                 id='webDevelopment'
+                title='Web Development'
                 onMouseEnter={() => {
                     handleItemInteractionSound(btnHoverSound);
                 }}  
@@ -118,6 +146,7 @@ const NavBar = ({
                 <div 
                 className={getClassName('emailDevelopment')} 
                 id='emailDevelopment'
+                title='Email Development'
                 onMouseEnter={() => {
                     handleItemInteractionSound(btnHoverSound);
                 }}   
@@ -136,6 +165,7 @@ const NavBar = ({
                 <div 
                 className={getClassName('graphicDesign')} 
                 id='graphicDesign'
+                title='Graphic Design'
                 onMouseEnter={() => {
                     handleItemInteractionSound(btnHoverSound);
                 }}    
@@ -154,6 +184,7 @@ const NavBar = ({
                 <div 
                 className={getClassName('visualDesign')} 
                 id='visualDesign'
+                title='Visual Design'
                 onMouseEnter={() => {
                     handleItemInteractionSound(btnHoverSound);
                 }}  
@@ -172,6 +203,7 @@ const NavBar = ({
                 <div 
                 className={getClassName('terminus')} 
                 id='terminus'
+                title='My Contact Nfo'
                 onMouseEnter={() => {
                     handleItemInteractionSound(btnHoverSound);
                 }}

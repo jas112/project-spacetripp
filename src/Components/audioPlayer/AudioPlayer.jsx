@@ -5,11 +5,13 @@ import './styles/AudioPlayer.css'
 import bgMusic1 from '../../assets/audio/Stars_in_the_Night.mp3'
 import bgMusic2 from '../../assets/audio/Galactic_Voyage.mp3'
 import bgMusic3 from '../../assets/audio/Road_to_Glory.mp3'
+import bgMusic4 from '../../assets/audio/Cosmic_Warrior.mp3'
 
 const tracks = [
     {track_number: 1, title: 'Stars in the Night', src: bgMusic1},
     {track_number: 2, title: 'Galactic Voyage', src: bgMusic2},
     {track_number: 3, title: 'Road to Glory', src: bgMusic3},
+    {track_number: 4, title: 'Cosmic Warrior', src: bgMusic4}
 ]
 
 const AudioPlayer = ({        

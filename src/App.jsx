@@ -30,6 +30,7 @@ const App = () => {
   const [timeString, setTimeString] = useState('');
   const [sfxActive, setSfxActive] = useState(false);
   const [musicActive, setMusicActive] = useState(false);
+  const [parallaxRemix, setParallaxRemix] = useState(true);
 
   const [currentPageLocation, setCurrentPageLocation] = useState('start');
 
@@ -214,13 +215,17 @@ const App = () => {
         setSfxActive={setSfxActive}
         musicActive={musicActive}
         setMusicActive={setMusicActive}
+        sectionHoverSoundEnter={sectionHoverSoundEnter}
+        sectionHoverSoundExit={sectionHoverSoundExit}
         navMenuClickSound={navMenuClickSound}
         navPntClickSound={navPntClickSound}
         btnHoverSound={btnHoverSound}
         btnClickSound={btnClickSound}
         handleItemInteractionSound={handleItemInteractionSound}
+        parallaxRemix={parallaxRemix} 
+        setParallaxRemix={setParallaxRemix}
       />
-      <HDRParallaxFrames />
+      <HDRParallaxFrames parallaxRemix={parallaxRemix}/>
       <div className='hdr-element'></div>
       <div className='content-element'>
         <div ref={topRef}></div>

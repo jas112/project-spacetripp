@@ -10,7 +10,7 @@ import stPlanets_2D from '../../assets/images/hdrParallax_imgs/ST_planets_2D-RSC
 import stAsteroids from '../../assets/images/hdrParallax_imgs/ST_asteroids-RSCC.png'
 
 
-const HDRParallaxFrames = () => {
+const HDRParallaxFrames = ({parallaxRemix}) => {
 
     useEffect(() => {
         const parallaxTransform = () => {
