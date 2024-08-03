@@ -13,11 +13,12 @@ export default defineConfig({
       srcDir: 'src',
       filename: 'service-worker.js',
       manifest: {
-        name: 'My Vite App',
-        short_name: 'ViteApp',
+        name: 'React SpaceTripp',
+        short_name: 'SpaceTripp',
         start_url: '/',
         display: 'standalone',
         background_color: '#000000',
+        theme_color: '#000000',
         description: 'STH using PWA',
         icons: [
           {
