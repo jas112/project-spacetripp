@@ -4,7 +4,7 @@ import stLogo from '../../assets/images/siteFeatures_imgs/ST_logo-RSCCsm.png'
 import NavBar_NavPoint from './NavBar_NavPoint';
 import AudioPlayer from '../audioPlayer/AudioPlayer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWaveSquare, faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faWaveSquare, faMusic, faBurst, faEye, faRobot, faDiceD20, faMask } from '@fortawesome/free-solid-svg-icons';
 
 
 const NavBar = ({
@@ -54,7 +54,7 @@ const NavBar = ({
                 setMusicActive={setMusicActive}
             />
             <div 
-                className={`music-btn ${musicActive ? '' : 'music-muted'}`} 
+                className={`st-btn ${musicActive ? '' : 'st-off'}`} 
                 title={musicActive ? 'Mute BG Music' : 'Unmute BG Music'} 
                 onMouseEnter={() => {
                     handleItemInteractionSound(sectionHoverSoundEnter);
@@ -67,7 +67,7 @@ const NavBar = ({
                         setMusicActive(!musicActive)}}  />
             </div> 
             <div 
-                className={`sfx-btn ${sfxActive ? '' : 'sfx-muted'}`}  
+                className={`st-btn ${sfxActive ? '' : 'st-off'}`}  
                 title={sfxActive ? 'Mute Sound FX' : 'Unmute Sound FX'}
                 onMouseEnter={() => {
                     handleItemInteractionSound(sectionHoverSoundEnter);
@@ -79,6 +79,19 @@ const NavBar = ({
                         handleItemInteractionSound(sectionHoverSoundEnter)
                         setSfxActive(!sfxActive)}}  />
             </div> 
+            <div 
+                className={`st-btn ${parallaxRemix ? '' : 'st-off'}`}  
+                title={parallaxRemix ? 'Disengage Parallax Remix' : 'Engage Parallax Remix'}
+                onMouseEnter={() => {
+                    handleItemInteractionSound(sectionHoverSoundEnter);
+                }}
+                >
+                <FontAwesomeIcon 
+                    icon={faMask}
+                    onClick={() => {
+                        handleItemInteractionSound(sectionHoverSoundEnter)
+                        setParallaxRemix(!parallaxRemix)}}  />
+            </div>
         </div>
         <div className={`nav-console ${isNavOpen ? 'nav-vertical' : 'nav-horizontal'}`}>
             {/* <div className='nfo-console'>

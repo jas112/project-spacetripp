@@ -355,6 +355,43 @@
     filter: drop-shadow(0 0 1em #228DFF);
 }
 
+.st-btn{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0px 10px;
+    font-size: 13px;
+    opacity: 1;
+    color: #228DFF;
+    box-shadow: 0px 0px 9px #228DFF;
+    filter: drop-shadow(0 0 1em #228DFF); 
+    cursor: pointer;
+    text-align: center;
+}
+
+.st-btn:hover{
+    opacity: 1;
+    color: #ff4500;
+    box-shadow: 0px 0px 17px #ff4500;
+    filter: drop-shadow(0 0 1em #ff4500); 
+}
+
+.st-off{
+    color: #ff0000;
+    box-shadow: 0px 0px 9px #ff0000;
+    filter: drop-shadow(0 0 1em #ff0000);
+}
+
+.st-off:hover{
+    color: #3ee108;
+    box-shadow: 0px 0px 12px #3ee108;
+    filter: drop-shadow(0 0 1em #3ee108);
+}
+
 
 @media (max-width: 1598px) {
     .navbar{

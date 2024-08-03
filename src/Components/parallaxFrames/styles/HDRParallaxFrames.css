@@ -42,6 +42,16 @@
     top: 0%;
 }
 
+.hdr-parallax-frame-remix{
+    max-width: none; /* Prevents the image from scaling down */
+    width: 1400px; /* Ensures the image remains 842px wide */
+    margin: 0x auto;
+    /* border:1px solid red; */
+    align-self: center;
+    position: absolute;
+    top: 0%;
+}
+
 .spc-frame-100pct-width{
     max-width: 100%;
     width: 842px;
@@ -50,6 +60,10 @@
 
 .hdr-parallax-frame-img{
     width: 842px; /* Ensures the image remains 842px wide */
+}
+
+.hdr-parallax-frame-img-remix{
+    width: 1400px; /* Ensures the image remains 1400px wide */
 }
 
 .hdr-parallax-frame-secondary{
@@ -73,7 +87,8 @@
     z-index:-25;
     /* border: 1px solid lime; */
 }
-#hdr-plx-helmut{
+
+#hdr-plx-helmet{
     position: relative;
     bottom: 3320px;
     z-index:-22;

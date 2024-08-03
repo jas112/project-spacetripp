@@ -258,7 +258,7 @@ const App = () => {
             handleItemInteractionSound={handleItemInteractionSound}
           />
         </div>
-        <FTR_Element currentPageLocation={currentPageLocation} />
+        <FTR_Element parallaxRemix={parallaxRemix} currentPageLocation={currentPageLocation} />
       </div>
       <BackgroundFrame currentScroll={scrollPositionY}/>
       <div className='page-nav-ref' ref={bottomRef}></div>
