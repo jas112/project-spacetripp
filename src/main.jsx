@@ -16,10 +16,6 @@ const updateSW = registerSW({
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename='/project-spacetripp/'>
-      <Routes>
-        <Route path="*" element={<App />}/>
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+    <App />
+  </React.StrictMode>,
 )

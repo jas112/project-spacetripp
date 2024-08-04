@@ -37,6 +37,33 @@
     }
 }
 
+@-webkit-keyframes animateStarshipSM {
+    0% {
+        margin-left: -500px;
+    }
+    100% {
+        margin-left: 300%;
+    }
+}
+
+@-moz-keyframes animateStarshipSM {
+    0% {
+        margin-left: -500px;
+    }
+    100% {
+        margin-left: 300%;
+    }
+}
+
+@keyframes animateStarshipSM {
+    0% {
+        margin-left: -500px;
+    }
+    100% {
+        margin-left: 300%;
+    }
+}
+
 @-webkit-keyframes animateStarshipXL {
     0% {
         margin-left: -1000px;
@@ -102,9 +129,9 @@
 .ftr-plx-slide1 {
     width: 130%;
     z-index: -3000;
-	-webkit-animation: animateStarship 600s linear infinite;
-	-moz-animation: animateStarship 600s linear infinite;
-	animation: animateStarship 600s linear infinite;
+	-webkit-animation: animateStarshipSM 85s linear infinite;
+	-moz-animation: animateStarshipSM 85s linear infinite;
+	animation: animateStarshipSM 85s linear infinite;
 	-webkit-transform: scale(.2);
 	-moz-transform: scale(.2);
 	transform: scale(.2);
@@ -113,9 +140,9 @@
 .ftr-plx-slide2 {
     width: 130%;
     z-index: -3000;
-	-webkit-animation: animateStarship 400s linear infinite;
-	-moz-animation: animateStarship 400s linear infinite;
-	animation: animateStarship 400s linear infinite;
+	-webkit-animation: animateStarship 70s linear infinite;
+	-moz-animation: animateStarship 70s linear infinite;
+	animation: animateStarship 70s linear infinite;
 	-webkit-transform: scale(.4);
 	-moz-transform: scale(.4);
 	transform: scale(.4);
@@ -124,9 +151,9 @@
 .ftr-plx-slide3 {
     width: 200%;
     z-index: -3000;
-	-webkit-animation: animateStarship 500s linear infinite;
-	-moz-animation: animateStarship 500s linear infinite;
-	animation: animateStarship 500s linear infinite;
+	-webkit-animation: animateStarship 75s linear infinite;
+	-moz-animation: animateStarship 75s linear infinite;
+	animation: animateStarship 75s linear infinite;
 	-webkit-transform: scale(.3);
 	-moz-transform: scale(.3);
 	transform: scale(.3);
@@ -137,9 +164,9 @@
     position: relative;
     top: 35px;
     z-index: -2000;
-	-webkit-animation: animateStarship 30s linear infinite;
-	-moz-animation: animateStarship 30s linear infinite;
-	animation: animateStarship 30s linear infinite;
+	-webkit-animation: animateStarship 35s linear infinite;
+	-moz-animation: animateStarship 35s linear infinite;
+	animation: animateStarship 35s linear infinite;
 	-webkit-transform: scale(3);
 	-moz-transform: scale(3);
 	transform: scale(3);
@@ -148,9 +175,9 @@
 .ftr-plx-slide5 {
     width: 200%;
     z-index: -3000;
-	-webkit-animation: animateStarship 550s linear infinite;
-	-moz-animation: animateStarship 550s linear infinite;
-	animation: animateStarship 550s linear infinite;
+	-webkit-animation: animateStarship 80s linear infinite;
+	-moz-animation: animateStarship 80s linear infinite;
+	animation: animateStarship 80s linear infinite;
 	-webkit-transform: scale(.25);
 	-moz-transform: scale(.25);
 	transform: scale(.25);
@@ -159,9 +186,9 @@
 .ftr-plx-slide6 {
     width: 200%;
     z-index: -3000;
-	-webkit-animation: animateStarship 600s linear infinite;
-	-moz-animation: animateStarship 600s linear infinite;
-	animation: animateStarship 600s linear infinite;
+	-webkit-animation: animateStarship 85s linear infinite;
+	-moz-animation: animateStarship 85s linear infinite;
+	animation: animateStarship 85s linear infinite;
 	-webkit-transform: scale(.2);
 	-moz-transform: scale(.2);
 	transform: scale(.2);
@@ -170,9 +197,9 @@
 .ftr-plx-slide7 {
     width: 200%;
     z-index: -3000;
-	-webkit-animation: animateStarship 300s linear infinite;
-	-moz-animation: animateStarship 300s linear infinite;
-	animation: animateStarship 300s linear infinite;
+	-webkit-animation: animateStarship 60s linear infinite;
+	-moz-animation: animateStarship 60s linear infinite;
+	animation: animateStarship 60s linear infinite;
 	-webkit-transform: scale(.5);
 	-moz-transform: scale(.5);
 	transform: scale(.5);
@@ -181,9 +208,9 @@
 .ftr-plx-slide8 {
     width: 200%;
     z-index: -3000;
-	-webkit-animation: animateStarship 200s linear infinite;
-	-moz-animation: animateStarship 200s linear infinite;
-	animation: animateStarship 200s linear infinite;
+	-webkit-animation: animateStarship 50s linear infinite;
+	-moz-animation: animateStarship 50s linear infinite;
+	animation: animateStarship 50s linear infinite;
 	-webkit-transform: scale(.7);
 	-moz-transform: scale(.7);
 	transform: scale(.7);
@@ -192,9 +219,9 @@
 .ftr-plx-slide9 {
     width: 200%;
     z-index: -3000;
-	-webkit-animation: animateStarship 250s linear infinite;
-	-moz-animation: animateStarship 250s linear infinite;
-	animation: animateStarship 250s linear infinite;
+	-webkit-animation: animateStarship 55s linear infinite;
+	-moz-animation: animateStarship 55s linear infinite;
+	animation: animateStarship 55s linear infinite;
 	-webkit-transform: scale(.6);
 	-moz-transform: scale(.6);
 	transform: scale(.6);
@@ -203,9 +230,9 @@
 .ftr-plx-slide10 {
     width: 200%;
     z-index: -3000;
-	-webkit-animation: animateStarship 650s linear infinite;
-	-moz-animation: animateStarship 650s linear infinite;
-	animation: animateStarship 650s linear infinite;
+	-webkit-animation: animateStarship 70s linear infinite;
+	-moz-animation: animateStarship 70s linear infinite;
+	animation: animateStarship 70s linear infinite;
 	-webkit-transform: scale(.15);
 	-moz-transform: scale(.15);
 	transform: scale(.15);
@@ -214,9 +241,9 @@
 .ftr-plx-slide11 {
     width: 200%;
     z-index: -3000;
-	-webkit-animation: animateStarship 700 linear infinite;
-	-moz-animation: animateStarship 700s linear infinite;
-	animation: animateStarship 700s linear infinite;
+	-webkit-animation: animateStarship 80 linear infinite;
+	-moz-animation: animateStarship 80s linear infinite;
+	animation: animateStarship 80s linear infinite;
 	-webkit-transform: scale(.1);
 	-moz-transform: scale(.1);
 	transform: scale(.1);
@@ -225,9 +252,9 @@
 .ftr-plx-slide12 {
     width: 200%;
     z-index: -3000;
-	-webkit-animation: animateStarship 675s linear infinite;
-	-moz-animation: animateStarship 675s linear infinite;
-	animation: animateStarship 675s linear infinite;
+	-webkit-animation: animateStarship 75s linear infinite;
+	-moz-animation: animateStarship 75s linear infinite;
+	animation: animateStarship 75s linear infinite;
 	-webkit-transform: scale(.12);
 	-moz-transform: scale(.12);
 	transform: scale(.12);
@@ -238,9 +265,9 @@
     position: relative;
     top: 35px;
     z-index: -2000;
-	-webkit-animation: animateStarshipXL 35s linear infinite;
-	-moz-animation: animateStarshipXL 35s linear infinite;
-	animation: animateStarshipXL 35s linear infinite;
+	-webkit-animation: animateStarshipXL 25s linear infinite;
+	-moz-animation: animateStarshipXL 25s linear infinite;
+	animation: animateStarshipXL 25s linear infinite;
 	-webkit-transform: scale(5.5);
 	-moz-transform: scale(5.5);
 	transform: scale(5.5);
@@ -251,9 +278,9 @@
     position: relative;
     top: -35px;
     z-index: -2000;
-	-webkit-animation: animateStarshipXL 35s linear infinite;
-	-moz-animation: animateStarshipXL 35s linear infinite;
-	animation: animateStarshipXL 35s linear infinite;
+	-webkit-animation: animateStarshipXL 25s linear infinite;
+	-moz-animation: animateStarshipXL 25s linear infinite;
+	animation: animateStarshipXL 25s linear infinite;
 	-webkit-transform: scale(5.5);
 	-moz-transform: scale(5.5);
 	transform: scale(5.5);
@@ -264,9 +291,9 @@
     position: relative;
     top: -325px;
     z-index: -2000;
-	-webkit-animation: animateStarshipXL 35s linear infinite;
-	-moz-animation: animateStarshipXL 35s linear infinite;
-	animation: animateStarshipXL 35s linear infinite;
+	-webkit-animation: animateStarshipXL 30s linear infinite;
+	-moz-animation: animateStarshipXL 30s linear infinite;
+	animation: animateStarshipXL 30s linear infinite;
 	-webkit-transform: scale(4.2);
 	-moz-transform: scale(4.2);
 	transform: scale(4.2);
@@ -277,9 +304,9 @@
     position: relative;
     top: -485px;
     z-index: -2000;
-	-webkit-animation: animateStarshipXL 35s linear infinite;
-	-moz-animation: animateStarshipXL 35s linear infinite;
-	animation: animateStarshipXL 35s linear infinite;
+	-webkit-animation: animateStarshipXL 45s linear infinite;
+	-moz-animation: animateStarshipXL 45s linear infinite;
+	animation: animateStarshipXL 45s linear infinite;
 	-webkit-transform: scale(4.2);
 	-moz-transform: scale(4.2);
 	transform: scale(4.2);
@@ -290,9 +317,9 @@
     position: relative;
     top: 100px;
     z-index: -2000;
-	-webkit-animation: animateStarshipXL 35s linear infinite;
-	-moz-animation: animateStarshipXL 35s linear infinite;
-	animation: animateStarshipXL 35s linear infinite;
+	-webkit-animation: animateStarshipXL 45s linear infinite;
+	-moz-animation: animateStarshipXL 45s linear infinite;
+	animation: animateStarshipXL 45s linear infinite;
 	-webkit-transform: scale(4.2);
 	-moz-transform: scale(4.2);
 	transform: scale(4.2);
